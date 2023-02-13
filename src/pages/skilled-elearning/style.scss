@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+
+@mixin tablet() {
+  @media screen and (min-width: 720px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin screen-min($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+:root {
+  --chetwodeBlue: #666ca3;
+  --midnightExpress: #13183f;
+  --manatee: #83869a;
+  --frenchRose: #f74780;
+  --carnationPink: #ffa7c3;
+  --white: #ffffff;
+
+  --gradient1: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+  --gradient2: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
+
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.header {
+  padding: 1.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include tablet() {
+    padding: 2.4em 4em;
+  }
+
+  &__logo {
+    width: 9em;
+  }
+
+  &__cta {
+    font-weight: 700;
+    font-size: 1.6em;
+    color: var(--white);
+    padding: 1rem 2.4rem;
+    background-color: var(--midnightExpress);
+    border-radius: 2.8em;
+  }
+}
+
+main {
+  padding: 1.2em;
+
+  @include tablet() {
+    padding-inline: 4em;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15em;
+  }
+}
+
+.hero {
+  display: grid;
+  gap: 2em;
+
+  @include tablet() {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .copywrite {
+    margin-top: 1.4em;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4em;
+
+    @include tablet() {
+      margin-top: 6.4em;
+    }
+
+    &__heading {
+      font-weight: 800;
+      font-size: 4em;
+      line-height: 5rem;
+      color: var(--midnightExpress);
+    }
+
+    &__subheading {
+      font-weight: 500;
+      font-size: 1.6em;
+      line-height: 2.6rem;
+      color: var(--manatee);
+    }
+
+    &__cta {
+      font-weight: 700;
+      font-size: 1.6em;
+      color: var(--white);
+      padding: 1.5rem 3.8rem;
+      background-image: var(--gradient1);
+      border-radius: 3.2rem;
+      width: fit-content;
+    }
+  }
+
+  .image_container {
+    @include tablet() {
+      width: 100%;
+      overflow: hidden;
+      transform: translateY(-30%);
+
+      &__image {
+        display: block;
+        width: 64em;
+        height: 64em;
+      }
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 4em;
+
+  > .popular {
+    font-weight: 800;
+    font-size: 2.4em;
+    line-height: 3.2rem;
+    background-image: var(--gradient1);
+    border-radius: 1rem;
+    padding: 2.4rem 2.8rem 3.2rem;
+    color: var(--white);
+  }
+}
+
+.course {
+  padding-inline: 2.8em;
+  padding-bottom: 3.2em;
+  box-shadow: 0 2.5em 5em rgba(6, 22, 141, 0.05);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6em;
+  position: relative;
+
+  &__icon {
+    aspect-ratio: 1 / 1;
+    width: 5.6em;
+    position: absolute;
+    transform: translateY(-50%);
+  }
+
+  &__heading {
+    font-weight: 800;
+    font-size: 2em;
+    color: var(--midnightExpress);
+    margin-top: 5.6rem;
+  }
+
+  &__subheading {
+    font-weight: 500;
+    font-size: 1.6em;
+    line-height: 2.6rem;
+    color: var(--manatee);
+  }
+
+  &__cta {
+    font-weight: 700;
+    font-size: 1.8em;
+    color: var(--frenchRose);
+    margin-top: 0.8rem;
+    text-align: start;
+  }
+}
+
+.footer {
+  margin-top: 6.8em;
+  padding: 3.6em 1.6em;
+  background-color: var(--midnightExpress);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 9em;
+  }
+
+  &__cta {
+    font-weight: 700;
+    font-size: 1.6em;
+    color: var(--white);
+    padding: 1rem 2.4rem;
+    background-image: var(--gradient2);
+    border-radius: 2.8em;
+  }
+}
