@@ -1,0 +1,170 @@
+---
+import { Image } from "@astrojs/image/components"
+import Footer from "../../components/Footer.astro"
+import Layout from "../../layout/Layout.astro"
+import cartIcon from "/product-preview-card/icon-cart.svg"
+---
+
+<style lang="scss">
+  @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+  :root {
+    // Primary
+    --darkCyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+
+    // Neutral
+    --veryDarkBlue: hsl(212, 21%, 14%);
+    --darkgrayishblue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    // font-family: 'Fraunces', serif;
+    // font-family: 'Montserrat', sans-serif;
+
+    background-color: var(--cream);
+  }
+
+  main {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding-inline: 1.6em;
+  }
+
+  .card {
+    background-color: var(--white);
+    border-radius: 1em;
+    max-width: 34em;
+    overflow: hidden;
+
+    &__image {
+      height: 100%;
+    }
+
+    &__content {
+      padding: 2.4em;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+    }
+
+    &__category {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 1.2em;
+      letter-spacing: 0.5rem;
+      color: var(--darkgrayishblue);
+    }
+
+    &__heading {
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      font-size: 3.2em;
+      line-height: 3.2rem;
+      color: var(--veryDarkBlue);
+    }
+
+    &__subheading {
+      margin-top: 0.4em;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 1.4em;
+      line-height: 2.3rem;
+      color: var(--darkgrayishblue);
+    }
+
+    &__prices {
+      margin-top: 1.2em;
+      display: flex;
+      gap: 1.9em;
+      align-items: center;
+    }
+
+    &__current_price {
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      font-size: 3.2em;
+      color: var(--darkCyan);
+    }
+
+    &__previous_price {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-size: 1.3em;
+      color: var(--darkgrayishblue);
+    }
+
+    &__button {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 1.4em;
+      color: var(--white);
+
+      margin-top: 0.8rem;
+      background-color: var(--darkCyan);
+      border-radius: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .card {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 60em;
+
+      &__content {
+        padding: 3.2em;
+        gap: 2em;
+      }
+
+      &__prices {
+        margin-top: 0.9em;
+      }
+
+      &__button {
+        margin-top: 1rem;
+      }
+    }
+  }
+</style>
+
+<Layout title="Product Preview Card" component>
+  <main>
+    <div class="card">
+      <picture>
+        <source
+          srcset="/product-preview-card/image-product-desktop.jpg"
+          media="(min-width: 1024px)"
+        />
+        <img
+          src="/product-preview-card/image-product-mobile.jpg"
+          alt="Gabrielle Essence Eau De Parfum Image"
+          class="card__image"
+        />
+      </picture>
+      <div class="card__content">
+        <h2 class="card__category">PERFUME</h2>
+        <h1 class="card__heading">Gabrielle Essence Eau De Parfum</h1>
+        <p class="card__subheading">
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </p>
+        <div class="card__prices">
+          <strong class="card__current_price">$149.99</strong>
+          <span class="card__previous_price">$169.99</span>
+        </div>
+        <button class="card__button"
+          ><Image src={cartIcon} alt="" loading={null} width={16} height={16} />
+          Add to Cart</button
+        >
+      </div>
+    </div>
+  </main>
+  <Footer color="var(--darkCyan)" />
+</Layout>
