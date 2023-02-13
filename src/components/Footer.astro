@@ -6,7 +6,7 @@ type Props = {
 const { color = "blue" } = Astro.props
 ---
 
-<style style="scss" define:vars={{ color }}>
+<style define:vars={{ color }}>
   footer {
     display: none;
     position: fixed;
@@ -14,12 +14,6 @@ const { color = "blue" } = Astro.props
     right: 1em;
     font-size: 1.5em;
     text-align: end;
-  }
-
-  @media screen and (min-width: 1024px) {
-    footer {
-      display: block;
-    }
   }
 
   a {
@@ -32,6 +26,12 @@ const { color = "blue" } = Astro.props
 
   a:hover {
     opacity: 75%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    footer {
+      display: block;
+    }
   }
 </style>
 

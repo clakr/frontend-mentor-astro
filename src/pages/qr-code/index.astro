@@ -3,7 +3,7 @@ import Footer from "../../components/Footer.astro"
 import Layout from "../../layout/Layout.astro"
 ---
 
-<style lang="scss">
+<style>
   @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
 
   :root {
@@ -33,27 +33,27 @@ import Layout from "../../layout/Layout.astro"
     flex-direction: column;
     gap: 1.6em;
     max-width: 32em;
+  }
 
-    &__image {
-      border-radius: 1em;
-    }
+  .card__image {
+    border-radius: 1em;
+  }
 
-    &__heading {
-      font-size: 2.2em;
-      font-weight: bold;
-      color: var(--darkBlue);
-      line-height: 2.8rem;
-      text-align: center;
-      margin-top: 0.8em;
-    }
+  .card__heading {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: var(--darkBlue);
+    line-height: 2.8rem;
+    text-align: center;
+    margin-top: 0.8em;
+  }
 
-    &__subheading {
-      font-size: 1.5em;
-      color: var(--grayishBlue);
-      line-height: 1.9rem;
-      text-align: center;
-      padding-inline: 1.6em;
-    }
+  .card__subheading {
+    font-size: 1.5em;
+    color: var(--grayishBlue);
+    line-height: 1.9rem;
+    text-align: center;
+    padding-inline: 1.6em;
   }
 </style>
 
