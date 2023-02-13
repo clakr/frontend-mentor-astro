@@ -226,37 +226,37 @@
 @include desktop() {
   .header {
     padding-inline: 16.5em;
-  }
 
-  .hero {
-    padding-left: 0;
+    .hero {
+      padding-left: 0;
 
-    .copywrite {
-      gap: 2.9em;
-      max-width: 46em;
-      align-self: center;
+      .copywrite {
+        gap: 2.9em;
+        max-width: 46em;
+        align-self: center;
 
-      &__heading {
-        font-size: 5.6em;
-        line-height: 7.1rem;
+        &__heading {
+          font-size: 5.6em;
+          line-height: 7.1rem;
+        }
+
+        &__subheading {
+          font-size: 1.8em;
+          line-height: 2.8rem;
+        }
+
+        &__cta {
+          font-size: 1.8em;
+          padding: 1.8rem 3.2rem;
+        }
       }
 
-      &__subheading {
-        font-size: 1.8em;
-        line-height: 2.8rem;
-      }
+      .image {
+        height: 70em;
 
-      &__cta {
-        font-size: 1.8em;
-        padding: 1.8rem 3.2rem;
-      }
-    }
-
-    .image {
-      height: 70em;
-
-      picture {
-        width: 100em;
+        picture {
+          width: 100em;
+        }
       }
     }
   }
