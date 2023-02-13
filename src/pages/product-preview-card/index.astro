@@ -11,6 +11,7 @@ import cartIcon from "/product-preview-card/icon-cart.svg"
   :root {
     // Primary
     --darkCyan: hsl(158, 36%, 37%);
+    --darkCyanHover: hsl(157, 43%, 18%);
     --cream: hsl(30, 38%, 92%);
 
     // Neutral
@@ -37,10 +38,6 @@ import cartIcon from "/product-preview-card/icon-cart.svg"
     border-radius: 1em;
     max-width: 34em;
     overflow: hidden;
-
-    &__image {
-      height: 100%;
-    }
 
     &__content {
       padding: 2.4em;
@@ -109,6 +106,10 @@ import cartIcon from "/product-preview-card/icon-cart.svg"
       align-items: center;
       gap: 1.1rem;
       padding: 1.5rem;
+
+      &:active {
+        background-color: var(--darkCyanHover);
+      }
     }
   }
 
@@ -117,6 +118,10 @@ import cartIcon from "/product-preview-card/icon-cart.svg"
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       max-width: 60em;
+
+      &__image {
+        height: 100%;
+      }
 
       &__content {
         padding: 3.2em;
