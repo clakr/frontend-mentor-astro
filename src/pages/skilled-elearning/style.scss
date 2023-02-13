@@ -247,6 +247,17 @@
   .header {
     padding-inline: 16.5em;
 
+    .navbar {
+      &__logo {
+        width: 11em;
+      }
+
+      &__cta {
+        font-size: 1.8em;
+        padding: 1.4rem 3.2rem;
+      }
+    }
+
     .hero {
       padding-left: 0;
 
@@ -310,5 +321,19 @@
 
   .footer {
     padding-inline: 16.5em;
+    background-color: var(--midnightExpress);
+    padding: 3.6em 1.6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+      width: 11 em;
+    }
+
+    &__cta {
+      font-size: 1.8em;
+      padding: 1.4rem 3.2rem;
+    }
   }
 }
