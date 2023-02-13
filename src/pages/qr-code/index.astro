@@ -63,7 +63,12 @@ import qrCode from "/public/qr-code/image-qr-code.png"
 <Layout title="QR Code" component>
   <main>
     <div class="card">
-      <Image alt="QR Code Image" src={qrCode} class="card__image" />
+      <Image
+        alt="QR Code Image"
+        src={qrCode}
+        class="card__image"
+        loading="eager"
+      />
       <h1 class="card__heading">
         Improve your front-end skills by building projects
       </h1>
