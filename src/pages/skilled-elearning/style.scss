@@ -105,59 +105,60 @@
   }
 }
 
-.grid {
+.cards_container {
   padding: 0 1.6em 8em;
+  display: grid;
   gap: 4em;
-}
 
-.popular {
-  font-weight: 800;
-  font-size: 2.4em;
-  line-height: 3.2rem;
-  color: var(--white);
-  padding: 2.4rem 2.9rem 3.2rem;
-  background-image: var(--gradient1);
-  border-radius: 1rem;
-}
-
-.course {
-  background-color: var(--white);
-  box-shadow: 0 2.5em 5em rgba(6, 22, 141, 0.05);
-  padding: 5.6em 2.8em 3.2em;
-  border-radius: 1em;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6em;
-  position: relative;
-
-  &__icon {
-    position: absolute;
-    top: 0;
-    transform: translateY(-50%);
-  }
-
-  &__heading {
+  .popular {
     font-weight: 800;
-    font-size: 2em;
-    color: var(--midnightExpress);
+    font-size: 2.4em;
+    line-height: 3.2rem;
+    color: var(--white);
+    padding: 2.4rem 2.9rem 3.2rem;
+    background-image: var(--gradient1);
+    border-radius: 1rem;
   }
 
-  &__subheading {
-    font-weight: 500;
-    font-size: 1.6em;
-    line-height: 2.6rem;
-    color: var(--manatee);
-  }
+  .course {
+    background-color: var(--white);
+    box-shadow: 0 2.5em 5em rgba(6, 22, 141, 0.05);
+    padding: 5.6em 2.8em 3.2em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6em;
+    position: relative;
 
-  &__cta {
-    font-weight: 700;
-    font-size: 1.8em;
-    color: var(--frenchRose);
-    margin-top: 0.8rem;
-    width: fit-content;
+    &__icon {
+      position: absolute;
+      top: 0;
+      transform: translateY(-50%);
+    }
 
-    &:hover {
-      color: var(--carnationPink);
+    &__heading {
+      font-weight: 800;
+      font-size: 2em;
+      color: var(--midnightExpress);
+    }
+
+    &__subheading {
+      font-weight: 500;
+      font-size: 1.6em;
+      line-height: 2.6rem;
+      color: var(--manatee);
+    }
+
+    &__cta {
+      font-weight: 700;
+      font-size: 1.8em;
+      color: var(--frenchRose);
+      margin-top: 0.8rem;
+      width: fit-content;
+
+      &:hover {
+        color: var(--carnationPink);
+      }
     }
   }
 }
@@ -214,12 +215,28 @@
     }
   }
 
-  .grid {
+  .cards_container {
     padding-top: 1.6em;
     padding-inline: 4em;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 0.1em;
     row-gap: 5.6em;
+
+    .popular {
+      padding: 5.6rem 3.2rem;
+    }
+
+    .course {
+      padding: 5.6em 3.2em 3.2em;
+
+      &__cta {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .footer {
+    padding: 3.6em 4em;
   }
 }
 
@@ -261,10 +278,31 @@
     }
   }
 
-  .grid {
+  .cards_container {
     padding: 0 16.5em 14em;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 3em;
+
+    .popular {
+      font-size: 3.2em;
+      padding: 6.4rem 3.2rem;
+      border-radius: 1.5rem;
+    }
+
+    .course {
+      padding: 6.4em 3.2em 4em;
+      border-radius: 1.5em;
+      gap: 2.4em;
+
+      &__heading {
+        font-size: 2.4em;
+      }
+
+      &__subheading {
+        font-size: 1.8em;
+        line-height: 2.8rem;
+      }
+    }
   }
 
   .footer {
