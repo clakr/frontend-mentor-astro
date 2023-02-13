@@ -38,7 +38,7 @@ import equilibrium from '/public/nft-preview-card/image-equilibrium.jpg';
 <Layout title="NFT Preview Card" component>
   <main class="p-[2.4em] min-h-screen bg-veryDarkBlueMain grid place-items-center">
     <!-- TODO: Add `box-shadow` -->
-    <div class="bg-veryDarkBlueCard p-[2.4em] rounded-[1.5em] flex flex-col gap-[1.2em] max-w-[35em] lg:gap-[1.6em]">
+    <div class="bg-veryDarkBlueCard p-[2.4em] rounded-[1.5em] flex flex-col gap-[1.2em] max-w-[35em] lg:gap-[1.6em] shadow-nftPreviewCard">
       <button class="relative after:hidden active:after:block after:absolute after:inset-0 after:h-full after:w-full after:bg-cyan/50 after:bg-view after:bg-no-repeat after:bg-center after:bg-auto after:rounded-[.8em]" type="button">
         <Image src={equilibrium} alt="Equilibrium Image" loading={null} class='rounded-[.8em]' />
       </button>
@@ -56,7 +56,7 @@ import equilibrium from '/public/nft-preview-card/image-equilibrium.jpg';
       </div>
       <div class="flex gap-[1.6em] items-center mt-[.4em] lg:pb-[.8em]">
         <Image src={avatar} alt="Jules Wyvern's Avatar" loading={null} class='rounded-full w-[3.3em] h-[3.3em] border border-white' />
-        <h3 class="text-[1.5em] lg:text-[1.6em] text-softBlue">Creation of <button class="text-white active:text-cyan" type="button">Jules Wyvern</button></h3>
+        <h2 class="text-[1.5em] lg:text-[1.6em] text-softBlue">Creation of <button class="text-white active:text-cyan" type="button">Jules Wyvern</button></h2>
       </div>
     </div>
   </main>
