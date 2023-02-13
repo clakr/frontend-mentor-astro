@@ -1,5 +1,52 @@
 ---
 import Layout from "../layout/Layout.astro"
+
+type Link = {
+  projectName: string
+}
+
+const links: Link[] = [
+  {
+    projectName: "qr-code",
+  },
+  {
+    projectName: "product-preview-card",
+  },
+  {
+    projectName: "nft-preview-card",
+  },
+  {
+    projectName: "interactive-rating",
+  },
+  {
+    projectName: "3-column-preview-card",
+  },
+  {
+    projectName: "order-summary",
+  },
+  {
+    projectName: "stats-preview-card",
+  },
+  {
+    projectName: "ping-coming-soon-page",
+  },
+  {
+    projectName: "social-proof-section",
+  },
+  {
+    projectName: "profile-card",
+  },
+]
 ---
 
-<Layout />
+<Layout title="Frontend Mentor">
+  <ul>
+    {
+      links.map(({ projectName }) => (
+        <li>
+          <a href={`./${projectName}`}>{projectName}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
