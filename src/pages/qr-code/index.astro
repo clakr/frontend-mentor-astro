@@ -1,13 +1,78 @@
 ---
+import Footer from "../../components/Footer.astro"
 import Layout from "../../layout/Layout.astro"
 ---
 
-<style>
+<style lang="scss">
   @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
 
   :root {
+    --white: hsl(0, 0%, 100%);
+    --lightGray: hsl(211, 45%, 89%);
+    --grayishBlue: hsl(220, 15%, 55%);
+    --darkBlue: hsl(218, 44%, 22%);
+
     font-family: "Outfit", sans-serif;
+    background-color: var(--lightGray);
+  }
+
+  main {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+
+    padding-inline: 2.7em;
+  }
+
+  .card {
+    background-color: var(--white);
+    padding: 1.6em 1.6em 4em;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6em;
+    max-width: 32em;
+
+    &__image {
+      border-radius: 1em;
+    }
+
+    &__heading {
+      font-size: 2.2em;
+      font-weight: bold;
+      color: var(--darkBlue);
+      line-height: 2.8rem;
+      text-align: center;
+      margin-top: 0.8em;
+    }
+
+    &__subheading {
+      font-size: 1.5em;
+      color: var(--grayishBlue);
+      line-height: 1.9rem;
+      text-align: center;
+      padding-inline: 1.6em;
+    }
   }
 </style>
 
-<Layout title="QR Code">this is qrcode</Layout>
+<Layout title="QR Code">
+  <main>
+    <div class="card">
+      <img
+        class="card__image"
+        src="/qr-code/image-qr-code.png"
+        alt="QR Code Image"
+      />
+      <h1 class="card__heading">
+        Improve your front-end skills by building projects
+      </h1>
+      <p class="card__subheading">
+        Scan the QR code to visit Frontend Mentor and take your coding skills to
+        the next level
+      </p>
+    </div>
+  </main>
+  <Footer color="var(--darkBlue)" />
+</Layout>

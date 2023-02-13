@@ -1,0 +1,48 @@
+---
+type Props = {
+  color?: string
+}
+
+const { color = "blue" } = Astro.props
+---
+
+<style style="scss" define:vars={{ color }}>
+  footer {
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    font-size: 1.5em;
+    text-align: end;
+  }
+
+  @media screen and (min-width: 1024px) {
+    footer {
+      display: block;
+    }
+  }
+
+  a {
+    color: var(--color);
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 0.1em;
+    text-decoration-thickness: 0.1em;
+  }
+
+  a:hover {
+    opacity: 75%;
+  }
+</style>
+
+<footer>
+  <div>
+    Challenge by <a href="https://www.frontendmentor.io/" target="_blank"
+      >Frontend Mentor</a
+    >
+  </div>
+  <div>
+    Coded by <a href="https://github.com/clakr/" target="_blank">Clark Tolosa</a
+    >
+  </div>
+</footer>
