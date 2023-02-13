@@ -1,12 +1,14 @@
 ---
 type Props = {
   color?: string
+  dark?: boolean
 }
 
-const { color = "blue" } = Astro.props
+const { color = "blue", dark = false } = Astro.props
+let baseColor = dark ? 'white' : 'black';
 ---
 
-<style lang="scss" define:vars={{ color }}>
+<style lang="scss" define:vars={{ color, baseColor }}>
   footer {
     display: none;
     position: fixed;
@@ -15,6 +17,7 @@ const { color = "blue" } = Astro.props
     font-size: 1.5em;
     text-align: end;
     font-family: sans-serif;
+    color: var(--baseColor);
   }
 
   a {
