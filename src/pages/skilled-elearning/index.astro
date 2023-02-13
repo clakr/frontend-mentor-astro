@@ -60,21 +60,19 @@ const courses: Course[] = [
           <!-- TODO: Add other sources -->
           <source
             media="(min-width: 1024px)"
-            srcset="./skilled-elearning/image-hero-desktop@2x.webp 2x,./skilled-elearning/image-hero-desktop@2x.png 2x, ./skilled-elearning/image-hero-desktop.webp 1x, ./skilled-elearning/image-hero-desktop.png 1x"
+            srcset="./skilled-elearning/image-hero-desktop@2x.webp 2x, ./skilled-elearning/image-hero-desktop.png 1x"
           />
           <source
             media="(min-width: 720px)"
-            srcset="./skilled-elearning/image-hero-tablet@2x.webp 2x,./skilled-elearning/image-hero-tablet@2x.png 2x, ./skilled-elearning/image-hero-tablet.webp 1x, ./skilled-elearning/image-hero-tablet.png 1x"
+            srcset="./skilled-elearning/image-hero-tablet@2x.webp 2x,./skilled-elearning/image-hero-tablet.png 1x"
           />
-          <source
-            srcset="./skilled-elearning/image-hero-mobile@2x.webp 2x,./skilled-elearning/image-hero-mobile@2x.png 2x, ./skilled-elearning/image-hero-mobile.webp 1x"
-          />
+          <source srcset="./skilled-elearning/image-hero-mobile@2x.png 2x" />
           <img src="./skilled-elearning/image-hero-mobile.png" alt="" />
         </picture>
       </div>
     </div>
   </header>
-  <div class="cards_container">
+  <main class="cards_container">
     <div class="popular">Check out our most popular courses!</div>
     {
       courses.map(({ heading, subheading }) => (
@@ -90,7 +88,7 @@ const courses: Course[] = [
         </div>
       ))
     }
-  </div>
+  </main>
   <footer class="footer">
     <img
       class="footer__logo"
