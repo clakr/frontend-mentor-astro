@@ -12,12 +12,6 @@
   }
 }
 
-@mixin screen-min($width) {
-  @media screen and (min-width: $width) {
-    @content;
-  }
-}
-
 :root {
   --chetwodeBlue: #666ca3;
   --midnightExpress: #13183f;
@@ -29,123 +23,107 @@
   --gradient1: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
   --gradient2: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
 
+  --gradient1Hover: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+  --gradient2Hover: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
+
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .header {
-  padding: 1.2em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @include tablet() {
-    padding: 2.4em 4em;
-  }
-
-  &__logo {
-    width: 9em;
-  }
-
-  &__cta {
-    font-weight: 700;
-    font-size: 1.6em;
-    color: var(--white);
-    padding: 1rem 2.4rem;
-    background-color: var(--midnightExpress);
-    border-radius: 2.8em;
-  }
-}
-
-main {
-  padding: 1.2em;
-
-  @include tablet() {
-    padding-inline: 4em;
-    padding-right: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15em;
-  }
-}
-
-.hero {
+  padding: 1.6em 1.6em 0;
   display: grid;
-  gap: 2em;
+  gap: 3.8em;
+  overflow: hidden;
 
-  @include tablet() {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
-  }
-
-  .copywrite {
-    margin-top: 1.4em;
+  .navbar {
     display: flex;
-    flex-direction: column;
-    gap: 2.4em;
+    justify-content: space-between;
+    align-items: center;
 
-    @include tablet() {
-      margin-top: 6.4em;
-    }
-
-    &__heading {
-      font-weight: 800;
-      font-size: 4em;
-      line-height: 5rem;
-      color: var(--midnightExpress);
-    }
-
-    &__subheading {
-      font-weight: 500;
-      font-size: 1.6em;
-      line-height: 2.6rem;
-      color: var(--manatee);
+    &__logo {
+      width: 9em;
     }
 
     &__cta {
       font-weight: 700;
       font-size: 1.6em;
+      padding: 1rem 2.4rem;
+      background-color: var(--midnightExpress);
+      border-radius: 2.8rem;
       color: var(--white);
-      padding: 1.5rem 3.8rem;
-      background-image: var(--gradient1);
-      border-radius: 3.2rem;
-      width: fit-content;
+
+      &:hover {
+        background-color: var(--chetwodeBlue);
+      }
     }
   }
 
-  .image_container {
-    @include tablet() {
-      width: 100%;
-      overflow: hidden;
-      transform: translateY(-30%);
+  .hero {
+    .copywrite {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4em;
 
-      &__image {
-        display: block;
-        width: 64em;
-        height: 64em;
+      &__heading {
+        font-weight: 800;
+        font-size: 4em;
+        line-height: 5rem;
+        color: var(--midnightExpress);
+      }
+
+      &__subheading {
+        font-weight: 500;
+        font-size: 1.6em;
+        line-height: 2.6rem;
+        color: var(--manatee);
+      }
+
+      &__cta {
+        font-weight: 700;
+        font-size: 1.6em;
+        color: var(--white);
+        padding: 1.5rem 3.8rem;
+        background-image: var(--gradient1);
+        border-radius: 3.1rem;
+        width: fit-content;
+
+        &:hover {
+          background-image: var(--gradient1Hover);
+        }
       }
     }
   }
 }
 
 .grid {
-  display: grid;
+  padding: 0 1.6em 8em;
   gap: 4em;
+}
 
-  > .popular {
-    font-weight: 800;
-    font-size: 2.4em;
-    line-height: 3.2rem;
-    background-image: var(--gradient1);
-    border-radius: 1rem;
-    padding: 2.4rem 2.8rem 3.2rem;
-    color: var(--white);
-  }
+.popular {
+  font-weight: 800;
+  font-size: 2.4em;
+  line-height: 3.2rem;
+  color: var(--white);
+  padding: 2.4rem 2.9rem 3.2rem;
+  background-image: var(--gradient1);
+  border-radius: 1rem;
 }
 
 .course {
-  padding-inline: 2.8em;
-  padding-bottom: 3.2em;
+  background-color: var(--white);
   box-shadow: 0 2.5em 5em rgba(6, 22, 141, 0.05);
+  padding: 5.6em 2.8em 3.2em;
   border-radius: 1em;
   display: flex;
   flex-direction: column;
@@ -153,9 +131,8 @@ main {
   position: relative;
 
   &__icon {
-    aspect-ratio: 1 / 1;
-    width: 5.6em;
     position: absolute;
+    top: 0;
     transform: translateY(-50%);
   }
 
@@ -163,7 +140,6 @@ main {
     font-weight: 800;
     font-size: 2em;
     color: var(--midnightExpress);
-    margin-top: 5.6rem;
   }
 
   &__subheading {
@@ -178,14 +154,17 @@ main {
     font-size: 1.8em;
     color: var(--frenchRose);
     margin-top: 0.8rem;
-    text-align: start;
+    width: fit-content;
+
+    &:hover {
+      color: var(--carnationPink);
+    }
   }
 }
 
 .footer {
-  margin-top: 6.8em;
-  padding: 3.6em 1.6em;
   background-color: var(--midnightExpress);
+  padding: 3.6em 1.6em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -200,6 +179,95 @@ main {
     color: var(--white);
     padding: 1rem 2.4rem;
     background-image: var(--gradient2);
-    border-radius: 2.8em;
+    border-radius: 2.8rem;
+
+    &:hover {
+      background-image: var(--gradient2Hover);
+    }
+  }
+}
+
+@include tablet() {
+  .header {
+    padding: 2.4em 4em 1.6em;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-left: 4em;
+
+    .copywrite {
+      padding: unset;
+      align-self: center;
+    }
+
+    .image {
+      height: 50em;
+      z-index: -1;
+
+      picture {
+        display: block;
+        width: 64em;
+        transform: translateY(-25%);
+      }
+    }
+  }
+
+  .grid {
+    padding-top: 1.6em;
+    padding-inline: 4em;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 0.1em;
+    row-gap: 5.6em;
+  }
+}
+
+@include desktop() {
+  .header {
+    padding-inline: 16.5em;
+  }
+
+  .hero {
+    padding-left: 0;
+
+    .copywrite {
+      gap: 2.9em;
+      max-width: 46em;
+      align-self: center;
+
+      &__heading {
+        font-size: 5.6em;
+        line-height: 7.1rem;
+      }
+
+      &__subheading {
+        font-size: 1.8em;
+        line-height: 2.8rem;
+      }
+
+      &__cta {
+        font-size: 1.8em;
+        padding: 1.8rem 3.2rem;
+      }
+    }
+
+    .image {
+      height: 70em;
+
+      picture {
+        width: 100em;
+      }
+    }
+  }
+
+  .grid {
+    padding: 0 16.5em 14em;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3em;
+  }
+
+  .footer {
+    padding-inline: 16.5em;
   }
 }

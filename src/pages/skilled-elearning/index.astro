@@ -38,14 +38,14 @@ const courses: Course[] = [
 
 <Layout title="Skilled eLearning" component>
   <header class="header">
-    <img
-      class="header__logo"
-      src="./skilled-elearning/logo-dark.svg"
-      alt="Skilled eLearning Logo"
-    />
-    <button class="header__cta">Get Started</button>
-  </header>
-  <main>
+    <nav class="navbar">
+      <img
+        class="navbar__logo"
+        src="./skilled-elearning/logo-dark.svg"
+        alt="Skilled Logo"
+      />
+      <button class="navbar__cta" type="button">Get Started</button>
+    </nav>
     <div class="hero">
       <div class="copywrite">
         <h1 class="copywrite__heading">Maximize skill, minimize budget</h1>
@@ -55,51 +55,48 @@ const courses: Course[] = [
         </p>
         <button class="copywrite__cta">Get Started</button>
       </div>
-
-      <div class="image_container">
-        <picture class="image_container__image">
-          <!-- TODO: add other source & `alt` -->
-
+      <div class="image">
+        <picture>
+          <!-- TODO: Add other sources -->
           <source
-            media="(min-width: 720px)"
-            srcset="./skilled-elearning/image-hero-tablet@2x.webp 2x,
-              ./skilled-elearning/image-hero-tablet@2x.png 2x,
-              ./skilled-elearning/image-hero-tablet.webp 1x,
-              ./skilled-elearning/image-hero-tablet.png 1x"
+            media="(min-width: 1024px)"
+            srcset="./skilled-elearning/image-hero-desktop@2x.webp 2x,./skilled-elearning/image-hero-desktop@2x.png 2x, ./skilled-elearning/image-hero-desktop.webp 1x, ./skilled-elearning/image-hero-desktop.png 1x"
           />
           <source
-            srcset="./skilled-elearning/image-hero-mobile@2x.webp 2x, ./skilled-elearning/image-hero-mobile@2x.png 2x, ./skilled-elearning/image-hero-mobile.webp 1x"
+            media="(min-width: 720px)"
+            srcset="./skilled-elearning/image-hero-tablet@2x.webp 2x,./skilled-elearning/image-hero-tablet@2x.png 2x, ./skilled-elearning/image-hero-tablet.webp 1x, ./skilled-elearning/image-hero-tablet.png 1x"
+          />
+          <source
+            srcset="./skilled-elearning/image-hero-mobile@2x.webp 2x,./skilled-elearning/image-hero-mobile@2x.png 2x, ./skilled-elearning/image-hero-mobile.webp 1x"
           />
           <img src="./skilled-elearning/image-hero-mobile.png" alt="" />
         </picture>
       </div>
     </div>
-    <div class="grid">
-      <div class="popular">
-        <h2>Check out our most popular courses!</h2>
-      </div>
-      {
-        courses.map(({ heading, subheading }) => (
-          <div class="course">
-            <img
-              class="course__icon"
-              src={`./skilled-elearning/icon-${heading.toLowerCase()}.svg`}
-              alt=""
-            />
-            <h3 class="course__heading">{heading}</h3>
-            <p class="course__subheading">{subheading}</p>
-            <button class="course__cta">Get Started</button>
-          </div>
-        ))
-      }
-    </div>
-  </main>
+  </header>
+  <div class="grid">
+    <div class="popular">Check out our most popular courses!</div>
+    {
+      courses.map(({ heading, subheading }) => (
+        <div class="course">
+          <img
+            class="course__icon"
+            src={`./skilled-elearning/icon-${heading.toLowerCase()}.svg`}
+            alt=""
+          />
+          <h2 class="course__heading">{heading}</h2>
+          <p class="course__subheading">{subheading}</p>
+          <button class="course__cta">Get Started</button>
+        </div>
+      ))
+    }
+  </div>
   <footer class="footer">
     <img
       class="footer__logo"
       src="./skilled-elearning/logo-light.svg"
-      alt="Skilled eLearning Logo"
+      alt="Skilled Logo"
     />
-    <button class="footer__cta">Get Started</button>
+    <button class="footer__cta" type="button">Get Started</button>
   </footer>
 </Layout>
