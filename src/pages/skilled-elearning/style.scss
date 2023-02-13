@@ -321,6 +321,14 @@
 
   .footer {
     padding-inline: 16.5em;
+<<<<<<< HEAD
+=======
+    background-color: var(--midnightExpress);
+    padding: 3.6em 1.6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+>>>>>>> dd2a2b00867ade038337255dd91dc30392d060a4
 
     &__logo {
       width: 11 em;
