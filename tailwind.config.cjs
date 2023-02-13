@@ -15,7 +15,7 @@ module.exports = {
         white: "var(--white)",
       },
       backgroundImage: {
-        view: "url(./public/nft-preview-card/icon-view.svg)",
+        view: "url(./nft-preview-card/icon-view.svg)",
       },
     },
   },
