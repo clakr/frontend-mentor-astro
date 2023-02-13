@@ -1,8 +1,7 @@
 ---
-import { Image } from "@astrojs/image/components"
-import Footer from "../../components/Footer.astro"
-import Layout from "../../layout/Layout.astro"
-import cartIcon from "/product-preview-card/icon-cart.svg"
+import Footer from "../../components/Footer.astro";
+import Layout from "../../layout/Layout.astro";
+import cartIcon from "/product-preview-card/icon-cart.svg";
 ---
 
 <style lang="scss">
@@ -166,7 +165,8 @@ import cartIcon from "/product-preview-card/icon-cart.svg"
           <span class="card__previous_price">$169.99</span>
         </div>
         <button class="card__button"
-          ><Image src={cartIcon} alt="" loading={null} width={16} height={16} />
+          >
+          <img src={cartIcon} alt="" class="w-[1.6em] h-[1.6em]" />
           Add to Cart</button
         >
       </div>

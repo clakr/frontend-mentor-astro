@@ -2,8 +2,6 @@
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
 import Layout from "../../layout/Layout.astro";
-import clock from '/public/nft-preview-card/icon-clock.svg';
-import ethereum from '/public/nft-preview-card/icon-ethereum.svg';
 import avatar from '/public/nft-preview-card/image-avatar.png';
 import equilibrium from '/public/nft-preview-card/image-equilibrium.jpg';
 ---
@@ -48,11 +46,11 @@ import equilibrium from '/public/nft-preview-card/image-equilibrium.jpg';
       <p class="font-light text-[1.8em] leading-[2.6rem] text-softBlue">Our Equilibrium collection promotes balance and calm.</p>
       <div class="mt-[.4em] flex justify-between text-softBlue border-b border-b-veryDarkBlueLine pb-[1.6rem] lg:mt-[.8rem] lg:pb-[2.4rem]">
         <h2 class="font-semibold text-[1.5em] lg:text-[1.6em] flex gap-[.7rem] items-center ">
-          <Image src={ethereum} alt="" loading={null} width={11} height={18}  />
+          <img src='/nft-preview-card/icon-ethereum.svg' alt="" class="w-[1.1rem] h-[1.8rem]"  />
           0.041 ETH
         </h2>
         <span class="text-[1.5em] lg:text-[1.6em]  flex gap-[.7rem] items-center">
-          <Image src={clock} alt="" loading={null} width={16} height={16}  />
+          <img src='/nft-preview-card/icon-clock.svg' alt="" class="w-[1.6rem] h-[1.6.rem]" />
           3 days left
         </span>
       </div>
