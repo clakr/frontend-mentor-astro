@@ -36,6 +36,8 @@
     ),
     linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
 
+  --gridGradient: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
+
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -109,6 +111,7 @@
   padding: 0 1.6em 8em;
   display: grid;
   gap: 4em;
+  background-image: var(--gridGradient);
 
   .popular {
     font-weight: 800;
@@ -219,7 +222,7 @@
     padding-top: 1.6em;
     padding-inline: 4em;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 0.1em;
+    column-gap: 1em;
     row-gap: 5.6em;
 
     .popular {
