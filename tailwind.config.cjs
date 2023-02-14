@@ -13,9 +13,18 @@ module.exports = {
         veryDarkBlueCard: "var(--veryDarkBlueCard)",
         veryDarkBlueLine: "var(--veryDarkBlueLine)",
         white: "var(--white)",
+
+        turquoiseBlue: "var(--turquoiseBlue)",
+        coral: "var(--coral)",
+        rajah: "var(--rajah)",
+        seashell: "var(--seashell)",
+        blackRussian: "var(--blackRussian)",
       },
       backgroundImage: {
         view: "url(./nft-preview-card/icon-view.svg)",
+        mobile: "url(./equalizer/bg-main-mobile.png)",
+        tablet: "url(./equalizer/bg-main-tablet.png)",
+        desktop: "url(./equalizer/bg-main-desktop.png)",
       },
       boxShadow: {
         nftPreviewCard: "0 2.5em 5em rgba(0, 0, 0, 0.1)",
