@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layout/Layout.astro"
+import Layout from "../../layout/Layout.astro";
 ---
 
 <style>
@@ -19,36 +19,47 @@ import Layout from "../../layout/Layout.astro"
 
 <Layout title="Equalizer" component>
   <header
-    class="px-[2.4em] pt-[4em] bg-mobile bg-[left_5em_top_-25em] space-y-[6.4em]"
+    class="space-y-[6.4rem] bg-mobile bg-[left_5rem_top_-25rem] px-[2.4rem] pt-[4rem] pb-[16.6rem] md:relative md:space-y-[9.5rem] md:overflow-hidden md:bg-tablet md:bg-[top_55%_right_25%] md:px-[4rem] md:pt-[6.2rem]"
   >
     <img src="./equalizer/logo.svg" alt="Equalizer logo" />
-    <div class="space-y-[2rem]">
-      <h1 class="font-bold text-[4em] leading-[4.8rem] -tracking-[.045rem]">
+    <div class="space-y-[2rem] md:max-w-[52rem] md:space-y-[2.8rem]">
+      <h1
+        class="text-[4em] font-bold leading-[4.8rem] -tracking-[.045rem] md:text-[6.4em] md:leading-[6.4rem] md:-tracking-[.073rem]"
+      >
         We make your music sound extraordinary.
       </h1>
-      <p class="text-[1.6em] leading-[2.6rem]">
+      <p
+        class="text-[1.6em] leading-[2.6rem] md:text-[1.8em] md:leading-[2.8rem]"
+      >
         A system audio equalizer specifically designed for Android and iOS.
         Freely tune the way your music sounds with a professional grade
         parametric EQ & volume mixer. Control bass, mids, treble, gain control,
         reverb, and more!
       </p>
     </div>
+    <img
+      src="./equalizer/bg-pattern-1.svg"
+      class="hidden md:absolute md:-top-[25%] md:-right-[5%] md:block md:h-[40rem]"
+      alt=""
+    />
   </header>
-  <main class="bg-blackRussian rounded-[1.2em] relative h-[60em] mt-[16.6em]">
+  <main
+    class="relative h-[60em] rounded-[1.2em] bg-blackRussian md:mx-[3.6rem]"
+  >
     <img
       src="./equalizer/bg-pattern-2.svg"
       alt=""
-      class="absolute top-0 left-1/2 -translate-x-[50%]"
+      class="absolute top-0 left-1/2 -translate-x-[50%] md:-top-[5rem]"
     />
     <img
       src="./equalizer/illustration-app.png"
       alt=""
-      class="w-[20em] absolute top-0 left-1/2 -translate-x-[50%] -translate-y-[25%]"
+      class="absolute top-0 left-1/2 w-[20em] -translate-x-[50%] -translate-y-[25%] md:left-1/4 md:w-[27rem]"
     />
     <div
-      class="py-[4.8em] px-[3.6em] bg-coral rounded-[1.2em] absolute top-full -translate-y-[30%] grid gap-[1.2rem]"
+      class="absolute top-full grid -translate-y-[30%] gap-[1.2rem] rounded-[1.2em] bg-coral py-[4.8em] px-[3.6em] md:top-[15rem] md:right-[7.5rem] md:w-[40rem] md:translate-y-0"
     >
-      <h2 class="text-seashell font-bold text-[3.2em] leading-[4rem]">
+      <h2 class="text-[3.2em] font-bold leading-[4rem] text-seashell">
         Premium EQ
       </h2>
       <p class="text-[1.8em] leading-[2.8rem] text-seashell">
@@ -57,46 +68,50 @@ import Layout from "../../layout/Layout.astro"
         access all our incredible features!
       </p>
       <h3
-        class="font-bold text-[6.5em] leading-[5.2rem] text-seashell mt-[2.4rem] flex gap-[1.6rem]"
+        class="mt-[2.4rem] flex gap-[1.6rem] text-[6.5em] font-bold leading-[5.2rem] text-seashell"
       >
         $4<span
-          class="text-[2rem] leading-[3.2rem] -tracking-[.02rem] self-center"
+          class="self-center text-[2rem] leading-[3.2rem] -tracking-[.02rem]"
           >/ month</span
         >
       </h3>
       <button
-        class="mt-[2em] font-bold text-[1.8em] leading-[3.2rem] -tracking-[.018rem] py-[1.5rem] flex gap-[.8rem] justify-center items-center text-seashell bg-blackRussian rounded-[1.2rem]"
+        class="mt-[2em] flex items-center justify-center gap-[.8rem] rounded-[1.2rem] bg-blackRussian py-[1.5rem] text-[1.8em] font-bold leading-[3.2rem] -tracking-[.018rem] text-seashell"
       >
         <img
           src="./equalizer/icon-apple.svg"
           alt=""
-          class="w-[2rem] h-[2rem]"
+          class="h-[2rem] w-[2rem]"
         />
         iOS Download
       </button>
       <button
-        class="font-bold text-[1.8em] leading-[3.2rem] -tracking-[.018rem] py-[1.5rem] flex gap-[.8rem] justify-center items-center bg-seashell rounded-[1.2rem]"
+        class="flex items-center justify-center gap-[.8rem] rounded-[1.2rem] bg-seashell py-[1.5rem] text-[1.8em] font-bold leading-[3.2rem] -tracking-[.018rem]"
       >
         <img
           src="./equalizer/icon-android.svg"
           alt=""
-          class="w-[2rem] h-[2rem]"
+          class="h-[2rem] w-[2rem]"
         />
         Android Download
       </button>
     </div>
   </main>
-  <footer class="mt-[39em] px-[2.4em] py-[8em] space-y-[3.2rem]">
+  <footer
+    class="mt-[39rem] space-y-[3.2rem] px-[2.4rem] py-[8rem] md:mt-[10rem] md:px-[3.6rem] md:py-[8.5rem]"
+  >
     <img src="./equalizer/logo.svg" alt="" />
-    <div class="text-[1.6em] leading-[2.6rem]">
-      <p>All rights reserved © Equalizer 2021</p>
-      <p>Have any problems? Contact us via social media or email us at</p>
-      <b>equalizer@example.com</b>
-    </div>
-    <div class="mt-[3.2rem] flex gap-[2rem]">
-      <img src="./equalizer/icon-facebook.svg" alt="" />
-      <img src="./equalizer/icon-instagram.svg" alt="" />
-      <img src="./equalizer/icon-twitter.svg" alt="" />
+    <div class="grid gap-[3.2rem] md:grid-cols-2 md:items-center">
+      <div class="text-[1.6em] leading-[2.6rem]">
+        <p>All rights reserved © Equalizer 2021</p>
+        <p>Have any problems? Contact us via social media or email us at</p>
+        <b>equalizer@example.com</b>
+      </div>
+      <div class="flex gap-[2rem] justify-self-end">
+        <img src="./equalizer/icon-facebook.svg" alt="" />
+        <img src="./equalizer/icon-instagram.svg" alt="" />
+        <img src="./equalizer/icon-twitter.svg" alt="" />
+      </div>
     </div>
   </footer>
 </Layout>
