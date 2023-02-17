@@ -1,11 +1,11 @@
 ---
 type Props = {
-  color?: string
-  dark?: boolean
-}
+  color?: string;
+  dark?: boolean;
+};
 
-const { color = "blue", dark = false } = Astro.props
-let baseColor = dark ? 'white' : 'black';
+const { color = "blue", dark = false } = Astro.props;
+let baseColor = dark ? "white" : "black";
 ---
 
 <style lang="scss" define:vars={{ color, baseColor }}>

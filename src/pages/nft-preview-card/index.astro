@@ -2,17 +2,17 @@
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
 import Layout from "../../layout/Layout.astro";
-import avatar from '/public/nft-preview-card/image-avatar.png';
-import equilibrium from '/public/nft-preview-card/image-equilibrium.jpg';
+import avatar from "/public/nft-preview-card/image-avatar.png";
+import equilibrium from "/public/nft-preview-card/image-equilibrium.jpg";
 ---
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
 
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
-  
+
   :root {
     /* Primary */
     --softBlue: hsl(215, 51%, 70%);
@@ -24,7 +24,7 @@ import equilibrium from '/public/nft-preview-card/image-equilibrium.jpg';
     --veryDarkBlueLine: hsl(215, 32%, 27%);
     --white: hsl(0, 0%, 100%);
 
-    font-family: 'Outfit', sans-serif;
+    font-family: "Outfit", sans-serif;
   }
 
   @layer utilities {
@@ -32,32 +32,71 @@ import equilibrium from '/public/nft-preview-card/image-equilibrium.jpg';
       background-color: rgb(0 255 248 / 0.5);
     }
   }
-
 </style>
 
 <Layout title="NFT Preview Card" component>
-  <main class="p-[2.4em] min-h-screen bg-veryDarkBlueMain grid place-items-center">
-    <div class="bg-veryDarkBlueCard p-[2.4em] rounded-[1.5em] flex flex-col gap-[1.2em] max-w-[35em] lg:gap-[1.6em] shadow-nftPreviewCard">
-      <button class="relative after:hidden active:after:block after:absolute after:inset-0 after:h-full after:w-full after:bg-cyan/50 after:bg-view after:bg-no-repeat after:bg-center after:bg-auto after:rounded-[.8em]" type="button">
-        <Image src={equilibrium} alt="Equilibrium Image" loading={null} class='rounded-[.8em]' />
+  <main
+    class="grid min-h-screen place-items-center bg-veryDarkBlueMain p-[2.4em]"
+  >
+    <div
+      class="flex max-w-[35em] flex-col gap-[1.2em] rounded-[1.5em] bg-veryDarkBlueCard p-[2.4em] shadow-nftPreviewCard lg:gap-[1.6em]"
+    >
+      <button
+        class="after:bg-cyan/50 relative after:absolute after:inset-0 after:hidden after:h-full after:w-full after:rounded-[.8em] after:bg-view after:bg-auto after:bg-center after:bg-no-repeat active:after:block"
+        type="button"
+      >
+        <Image
+          src={equilibrium}
+          alt="Equilibrium Image"
+          loading={null}
+          class="rounded-[.8em]"
+        />
       </button>
-      <button class="mt-[1.2rem] lg:mt-[.8rem] font-semibold text-[2.2em] text-white text-start active:text-cyan" type="button">Equilibrium #3429</button>
-      <p class="font-light text-[1.8em] leading-[2.6rem] text-softBlue">Our Equilibrium collection promotes balance and calm.</p>
-      <div class="mt-[.4em] flex justify-between text-softBlue border-b border-b-veryDarkBlueLine pb-[1.6rem] lg:mt-[.8rem] lg:pb-[2.4rem]">
-        <h1 class="font-semibold text-[1.5em] lg:text-[1.6em] flex gap-[.7rem] items-center ">
-          <img src='/nft-preview-card/icon-ethereum.svg' alt="" class="w-[1.1rem] h-[1.8rem]"  />
+      <button
+        class="mt-[1.2rem] text-start text-[2.2em] font-semibold text-white active:text-cyan lg:mt-[.8rem]"
+        type="button">Equilibrium #3429</button
+      >
+      <p class="text-[1.8em] font-light leading-[2.6rem] text-softBlue">
+        Our Equilibrium collection promotes balance and calm.
+      </p>
+      <div
+        class="mt-[.4em] flex justify-between border-b border-b-veryDarkBlueLine pb-[1.6rem] text-softBlue lg:mt-[.8rem] lg:pb-[2.4rem]"
+      >
+        <h1
+          class="flex items-center gap-[.7rem] text-[1.5em] font-semibold lg:text-[1.6em]"
+        >
+          <img
+            src="/nft-preview-card/icon-ethereum.svg"
+            alt=""
+            class="h-[1.8rem] w-[1.1rem]"
+          />
           0.041 ETH
         </h1>
-        <span class="text-[1.5em] lg:text-[1.6em]  flex gap-[.7rem] items-center">
-          <img src='/nft-preview-card/icon-clock.svg' alt="" class="w-[1.6rem] h-[1.6.rem]" />
+        <span
+          class="flex items-center gap-[.7rem] text-[1.5em] lg:text-[1.6em]"
+        >
+          <img
+            src="/nft-preview-card/icon-clock.svg"
+            alt=""
+            class="h-[1.6.rem] w-[1.6rem]"
+          />
           3 days left
         </span>
       </div>
-      <div class="flex gap-[1.6em] items-center mt-[.4em] lg:pb-[.8em]">
-        <Image src={avatar} alt="Jules Wyvern's Avatar" loading={null} class='rounded-full w-[3.3em] h-[3.3em] border border-white' />
-        <h2 class="text-[1.5em] lg:text-[1.6em] text-softBlue">Creation of <button class="text-white active:text-cyan" type="button">Jules Wyvern</button></h2>
+      <div class="mt-[.4em] flex items-center gap-[1.6em] lg:pb-[.8em]">
+        <Image
+          src={avatar}
+          alt="Jules Wyvern's Avatar"
+          loading={null}
+          class="rounded-full w-[3.3em] h-[3.3em] border border-white"
+        />
+        <h2 class="text-[1.5em] text-softBlue lg:text-[1.6em]">
+          Creation of <button class="text-white active:text-cyan" type="button"
+            >Jules Wyvern</button
+          >
+        </h2>
       </div>
     </div>
   </main>
-  <Footer color='var(--softBlue)' dark/>
+  <Footer color="var(--softBlue)" dark />
 </Layout>

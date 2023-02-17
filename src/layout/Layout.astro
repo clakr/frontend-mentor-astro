@@ -1,16 +1,16 @@
 ---
 type Props = {
-  title: string
-  component?: boolean
-}
+  title: string;
+  component?: boolean;
+};
 
-const { title, component } = Astro.props
-let metaDesc = ""
+const { title, component } = Astro.props;
+let metaDesc = "";
 
 if (component) {
-  metaDesc = `This is a solution to the ${title} challenge by Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.`
+  metaDesc = `This is a solution to the ${title} challenge by Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.`;
 } else {
-  metaDesc = `Welcome! This is a one-stop-shop for all Clark Tolosa's Frontend Mentor challenge solutions. Here, you'll find a curated collection of his completed projects, demonstrating proficiency Web Development Skills such as HTML, CSS, JavaScript, etc. Take a look and see how Clark turned design concepts into functional and visually appealing web pages. Join Clark's journey as he continue to sharpen his front-end development skills.`
+  metaDesc = `Welcome! This is a one-stop-shop for all Clark Tolosa's Frontend Mentor challenge solutions. Here, you'll find a curated collection of his completed projects, demonstrating proficiency Web Development Skills such as HTML, CSS, JavaScript, etc. Take a look and see how Clark turned design concepts into functional and visually appealing web pages. Join Clark's journey as he continue to sharpen his front-end development skills.`;
 }
 ---
 
