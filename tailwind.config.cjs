@@ -22,9 +22,9 @@ module.exports = {
       },
       backgroundImage: {
         view: "url(./nft-preview-card/icon-view.svg)",
-        mobile: "url(./equalizer/bg-main-mobile.png)",
-        tablet: "url(./equalizer/bg-main-tablet.png)",
-        desktop: "url(./equalizer/bg-main-desktop.png)",
+        mobile: "var(--bg-main-mobile)",
+        tablet: "var(--bg-main-tablet)",
+        desktop: "var(--bg-main-desktop)",
       },
       boxShadow: {
         nftPreviewCard: "0 2.5em 5em rgba(0, 0, 0, 0.1)",
