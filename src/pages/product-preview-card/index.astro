@@ -12,16 +12,13 @@ import cart from "/public/product-preview-card/icon-cart.svg";
     /* Primary */
 
     --darkCyan: hsl(158, 36%, 37%);
-    --darkCyanHover: hsl(157, 43%, 18%);
+    --darkCyanActive: hsl(157, 43%, 18%);
     --cream: hsl(30, 38%, 92%);
 
     /* Neutral */
     --veryDarkBlue: hsl(212, 21%, 14%);
     --darkgrayishblue: hsl(228, 12%, 48%);
     --white: hsl(0, 0%, 100%);
-
-    // font-family: 'Fraunces', serif;
-    // font-family: 'Montserrat', sans-serif;
 
     background-color: var(--cream);
   }
@@ -31,26 +28,28 @@ import cart from "/public/product-preview-card/icon-cart.svg";
     min-height: 100svh;
     display: grid;
     place-items: center;
-    padding-inline: 1.6em;
+    padding-inline: 1.6rem;
   }
 
   .card {
     background-color: var(--white);
-    border-radius: 1em;
-    max-width: 34em;
+    border-radius: 1rem;
+    max-width: 34.3rem;
+    max-height: 61.1rem;
     overflow: hidden;
 
     &__content {
-      padding: 2.4em;
+      padding: 2.4rem;
       display: flex;
       flex-direction: column;
-      gap: 1.2em;
+      gap: 1.2rem;
     }
 
     &__category {
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
-      font-size: 1.2em;
+      font-size: 1.2rem;
+      line-height: 1.46rem;
       letter-spacing: 0.5rem;
       color: var(--darkgrayishblue);
     }
@@ -64,52 +63,55 @@ import cart from "/public/product-preview-card/icon-cart.svg";
     }
 
     &__subheading {
-      margin-top: 0.4em;
+      margin-top: 0.4rem;
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
-      font-size: 1.4em;
+      font-size: 1.4rem;
       line-height: 2.3rem;
       color: var(--darkgrayishblue);
     }
 
     &__prices {
-      margin-top: 1.2em;
+      margin-top: 1.2rem;
       display: flex;
-      gap: 1.9em;
+      gap: 1.9rem;
       align-items: center;
     }
 
     &__current_price {
       font-family: "Fraunces", serif;
       font-weight: 700;
-      font-size: 3.2em;
+      font-size: 3.2rem;
+      line-height: 3.2rem;
       color: var(--darkCyan);
     }
 
     &__previous_price {
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
-      font-size: 1.3em;
+      font-size: 1.3rem;
+      line-height: 2.3rem;
       color: var(--darkgrayishblue);
     }
 
     &__button {
+      margin-top: 0.8rem;
       font-family: "Montserrat", sans-serif;
       font-weight: 700;
-      font-size: 1.4em;
+      font-size: 1.4rem;
+      line-height: 1.7rem;
       color: var(--white);
 
-      margin-top: 0.8rem;
       background-color: var(--darkCyan);
       border-radius: 0.8rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1.1rem;
+      gap: 1.2rem;
       padding: 1.5rem;
 
       &:active {
-        background-color: var(--darkCyanHover);
+        background-color: var(--darkCyanActive);
       }
     }
   }
@@ -118,19 +120,24 @@ import cart from "/public/product-preview-card/icon-cart.svg";
     .card {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      max-width: 60em;
+      max-width: 60rem;
+      max-height: 45rem;
 
       &__image {
         height: 100%;
       }
 
       &__content {
-        padding: 3.2em;
-        gap: 2em;
+        padding: 3.2rem;
+        gap: 2rem;
+      }
+
+      &__subheading {
+        margin-top: 0.4rem;
       }
 
       &__prices {
-        margin-top: 0.9em;
+        margin-top: 0.9rem;
       }
 
       &__button {
