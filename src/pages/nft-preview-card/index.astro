@@ -28,7 +28,9 @@ import equilibrium from "/public/nft-preview-card/image-equilibrium.jpg";
 
     --bg-eye: url(../nft-preview-card/icon-view.svg);
 
-    font-family: "Outfit", sans-serif;
+    --baseFont: "Outfit", sans-serif;
+
+    font-family: var(--baseFont);
   }
 
   @layer utilities {
@@ -98,5 +100,5 @@ import equilibrium from "/public/nft-preview-card/image-equilibrium.jpg";
       </div>
     </div>
   </main>
-  <Footer color="var(--softBlue)" dark />
+  <Footer color="var(--softBlue)" font="var(--baseFont)" dark />
 </Layout>
