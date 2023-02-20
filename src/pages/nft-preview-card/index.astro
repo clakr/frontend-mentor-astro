@@ -40,53 +40,57 @@ import equilibrium from "/public/nft-preview-card/image-equilibrium.jpg";
 
 <Layout title="NFT Preview Card" component>
   <main
-    class="grid min-h-screen place-items-center bg-veryDarkBlueMain p-[2.4em]"
+    class="grid min-h-screen place-items-center bg-veryDarkBlueMain p-[2.4rem]"
   >
     <div
-      class="flex max-w-[35em] flex-col gap-[1.2em] rounded-[1.5em] bg-veryDarkBlueCard p-[2.4em] shadow-nftPreviewCard lg:gap-[1.6em]"
+      class="flex max-h-[54.3rem] max-w-[32.7rem] flex-col gap-[1.2rem] rounded-[1.5rem] bg-veryDarkBlueCard p-[2.4rem] shadow-nftPreviewCard lg:max-h-[59.6rem] lg:max-w-[35rem] lg:gap-[1.6rem] lg:pb-[3.2rem]"
     >
       <button
-        class="after:bg-cyan/50 relative after:absolute after:inset-0 after:hidden after:h-full after:w-full after:rounded-[.8em] after:bg-eye after:bg-auto after:bg-center after:bg-no-repeat active:after:block"
+        class="after:bg-cyan/50 relative after:absolute after:inset-0 after:hidden after:h-full after:w-full after:rounded-[.8rem] after:bg-eye after:bg-auto after:bg-center after:bg-no-repeat active:after:block"
         type="button"
       >
         <Image
           src={equilibrium}
           alt="Equilibrium Image"
           loading={null}
-          class="rounded-[.8em]"
+          class="rounded-[.8rem]"
         />
       </button>
       <button
-        class="mt-[1.2rem] text-start text-[2.2em] font-semibold text-white active:text-cyan lg:mt-[.8rem]"
+        class="mt-[1.2rem] text-start text-[2.2rem] font-semibold leading-[2.78rem] text-white active:text-cyan lg:mt-[.8rem]"
         type="button">Equilibrium #3429</button
       >
-      <p class="text-[1.8em] font-light leading-[2.6rem] text-softBlue">
+      <p class="text-[1.8rem] font-light leading-[2.6rem] text-softBlue">
         Our Equilibrium collection promotes balance and calm.
       </p>
       <div
-        class="mt-[.4em] flex justify-between border-b border-b-veryDarkBlueLine pb-[1.6rem] text-softBlue lg:mt-[.8rem] lg:pb-[2.4rem]"
+        class="mt-[.4rem] flex justify-between border-b border-b-veryDarkBlueLine pb-[1.6rem] text-softBlue lg:mt-[.8rem] lg:pb-[2.4rem]"
       >
         <h1
-          class="flex items-center gap-[.7rem] text-[1.5em] font-semibold lg:text-[1.6em]"
+          class="flex items-center gap-[.7rem] text-[1.5rem] font-semibold leading-[1.9rem] lg:text-[1.6em] lg:leading-[2.2rem]"
         >
           <Image alt="" src={ethereum} width={11} height={18} loading={null} />
           0.041 ETH
         </h1>
         <span
-          class="flex items-center gap-[.7rem] text-[1.5em] lg:text-[1.6em]"
+          class="flex items-center gap-[.7rem] text-[1.5rem] leading-[1.9rem] lg:text-[1.6rem] lg:leading-[2.2rem]"
         >
           <Image alt="" src={clock} width={16} height={16} loading={null} />
           3 days left
         </span>
       </div>
-      <div class="mt-[.4em] flex items-center gap-[1.6em] lg:pb-[.8em]">
+      <div class="mt-[.4rem] flex items-center gap-[1.6rem] lg:pb-[.8rem]">
         <Image
           src={avatar}
           alt="Jules Wyvern's Avatar"
           loading={null}
-          class="rounded-full w-[3.3em] h-[3.3em] border border-white"
+          width={33}
+          height={33}
+          class="rounded-full border border-white"
         />
-        <h2 class="text-[1.5em] text-softBlue lg:text-[1.6em]">
+        <h2
+          class="text-[1.5rem] leading-[1.89rem] text-softBlue lg:text-[1.6rem] lg:leading-[2.2rem]"
+        >
           Creation of <button class="text-white active:text-cyan" type="button"
             >Jules Wyvern</button
           >
