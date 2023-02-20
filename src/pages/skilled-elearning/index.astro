@@ -1,6 +1,9 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Layout from "../../layout/Layout.astro";
 import "./style.scss";
+import logoDark from "/public/skilled-elearning/logo-dark.svg";
+import logoLight from "/public/skilled-elearning/logo-light.svg";
 
 type Course = {
   heading: string;
@@ -39,10 +42,12 @@ const courses: Course[] = [
 <Layout title="Skilled eLearning" component>
   <header class="header">
     <nav class="navbar">
-      <img
-        class="navbar__logo"
-        src="./skilled-elearning/logo-dark.svg"
+      <Image
         alt="Skilled Logo"
+        src={logoDark}
+        loading={null}
+        width={89}
+        height={35}
       />
       <button class="navbar__cta" type="button">Get Started</button>
     </nav>
@@ -57,7 +62,6 @@ const courses: Course[] = [
       </div>
       <div class="image">
         <picture>
-          <!-- TODO: Add other sources -->
           <source
             media="(min-width: 1024px)"
             srcset="./skilled-elearning/image-hero-desktop@2x.webp 2x, ./skilled-elearning/image-hero-desktop.png 1x"
@@ -77,10 +81,13 @@ const courses: Course[] = [
     {
       courses.map(({ heading, subheading }) => (
         <div class="course">
-          <img
-            class="course__icon"
+          <Image
+            loading={null}
             src={`./skilled-elearning/icon-${heading.toLowerCase()}.svg`}
+            width={56}
+            height={56}
             alt=""
+            class="course__icon"
           />
           <h2 class="course__heading">{heading}</h2>
           <p class="course__subheading">{subheading}</p>
@@ -90,11 +97,14 @@ const courses: Course[] = [
     }
   </main>
   <footer class="footer">
-    <img
-      class="footer__logo"
-      src="./skilled-elearning/logo-light.svg"
+    <Image
       alt="Skilled Logo"
+      src={logoLight}
+      loading={null}
+      width={89}
+      height={35}
     />
+
     <button class="footer__cta" type="button">Get Started</button>
   </footer>
 </Layout>

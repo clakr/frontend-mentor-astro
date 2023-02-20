@@ -2,6 +2,8 @@
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
 import Layout from "../../layout/Layout.astro";
+import clock from "/public/nft-preview-card/icon-clock.svg";
+import ethereum from "/public/nft-preview-card/icon-ethereum.svg";
 import avatar from "/public/nft-preview-card/image-avatar.png";
 import equilibrium from "/public/nft-preview-card/image-equilibrium.jpg";
 ---
@@ -67,21 +69,13 @@ import equilibrium from "/public/nft-preview-card/image-equilibrium.jpg";
         <h1
           class="flex items-center gap-[.7rem] text-[1.5em] font-semibold lg:text-[1.6em]"
         >
-          <img
-            src="/nft-preview-card/icon-ethereum.svg"
-            alt=""
-            class="h-[1.8rem] w-[1.1rem]"
-          />
+          <Image alt="" src={ethereum} width={11} height={18} loading={null} />
           0.041 ETH
         </h1>
         <span
           class="flex items-center gap-[.7rem] text-[1.5em] lg:text-[1.6em]"
         >
-          <img
-            src="/nft-preview-card/icon-clock.svg"
-            alt=""
-            class="h-[1.6.rem] w-[1.6rem]"
-          />
+          <Image alt="" src={clock} width={16} height={16} loading={null} />
           3 days left
         </span>
       </div>
