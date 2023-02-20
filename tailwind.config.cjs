@@ -21,7 +21,7 @@ module.exports = {
         blackRussian: "var(--blackRussian)",
       },
       backgroundImage: {
-        view: "url(./nft-preview-card/icon-view.svg)",
+        eye: "var(--bg-eye)",
         mobile: "var(--bg-main-mobile)",
         tablet: "var(--bg-main-tablet)",
         desktop: "var(--bg-main-desktop)",
