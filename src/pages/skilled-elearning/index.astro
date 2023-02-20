@@ -2,12 +2,18 @@
 import { Image } from "@astrojs/image/components";
 import Layout from "../../layout/Layout.astro";
 import "./style.scss";
+import animation from "/public/skilled-elearning/icon-animation.svg";
+import business from "/public/skilled-elearning/icon-business.svg";
+import crypto from "/public/skilled-elearning/icon-crypto.svg";
+import design from "/public/skilled-elearning/icon-design.svg";
+import photography from "/public/skilled-elearning/icon-photography.svg";
 import logoDark from "/public/skilled-elearning/logo-dark.svg";
 import logoLight from "/public/skilled-elearning/logo-light.svg";
 
 type Course = {
   heading: string;
   subheading: string;
+  icon: ImageMetadata;
 };
 
 const courses: Course[] = [
@@ -15,26 +21,31 @@ const courses: Course[] = [
     heading: "Animation",
     subheading:
       "Learn the latest animation techniques to create stunning motion design and captivate your audience.",
+    icon: animation,
   },
   {
     heading: "Design",
     subheading:
       "Create beautiful, usable interfaces to help shape the future of how the web looks.",
+    icon: design,
   },
   {
     heading: "Photography",
     subheading:
       "Explore critical fundamentals like lighting, composition, and focus to capture exceptional photos.",
+    icon: photography,
   },
   {
     heading: "Crypto",
     subheading:
       "All you need to know to get started investing in crypto. Go from beginner to advanced with this 54 hour course.",
+    icon: crypto,
   },
   {
     heading: "Business",
     subheading:
       "A step-by-step playbook to help you start, scale, and sustain your business without outside investment.",
+    icon: business,
   },
 ];
 ---
@@ -79,11 +90,11 @@ const courses: Course[] = [
   <main class="cards_container">
     <div class="popular">Check out our most popular courses!</div>
     {
-      courses.map(({ heading, subheading }) => (
+      courses.map(({ heading, subheading, icon }) => (
         <div class="course">
           <Image
             loading={null}
-            src={`./skilled-elearning/icon-${heading.toLowerCase()}.svg`}
+            src={icon}
             width={56}
             height={56}
             alt=""
