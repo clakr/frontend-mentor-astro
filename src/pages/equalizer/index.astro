@@ -26,11 +26,19 @@ import logo from "/public/equalizer/logo.svg";
     font-family: "IBM Plex Sans", sans-serif;
     color: var(--blackRussian);
   }
+  /* xl:bg-[top_25%_right_40%] */
+
+  @media screen(xl) {
+    body {
+      background-image: var(--bg-main-desktop);
+      background-position: top 100% right 35%;
+    }
+  }
 </style>
 
 <Layout title="Equalizer" component>
   <header
-    class="space-y-[6.4rem] bg-mobile bg-[left_5rem_top_-25rem] px-[2.4rem] pt-[4rem] pb-[16.6rem] md:relative md:space-y-[9.5rem] md:overflow-hidden md:bg-tablet md:bg-[top_55%_right_25%] md:px-[4rem] md:pt-[6.2rem] xl:bg-desktop xl:bg-[top_25%_right_40%] xl:px-[16.5rem] xl:pt-[6.2rem] xl:pb-[32rem]"
+    class="space-y-[6.4rem] bg-mobile bg-[left_5rem_top_-25rem] px-[2.4rem] pt-[4rem] pb-[16.6rem] md:relative md:space-y-[9.5rem] md:overflow-hidden md:bg-tablet md:bg-[top_55%_right_25%] md:px-[4rem] md:pt-[6.2rem] xl:space-y-[12.7rem] xl:bg-[image:unset] xl:px-[16.5rem] xl:pt-[6.2rem] xl:pb-[32rem]"
   >
     <Image
       loading={null}
