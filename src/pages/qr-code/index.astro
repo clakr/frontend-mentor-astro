@@ -14,7 +14,9 @@ import qrCode from "/public/qr-code/image-qr-code.png";
     --grayishBlue: hsl(220, 15%, 55%);
     --darkBlue: hsl(218, 44%, 22%);
 
-    font-family: "Outfit", sans-serif;
+    --baseFont: "Outfit", sans-serif;
+
+    font-family: var(--baseFont);
     background-color: var(--lightGray);
   }
 
@@ -81,5 +83,5 @@ import qrCode from "/public/qr-code/image-qr-code.png";
       </p>
     </div>
   </main>
-  <Footer color="var(--darkBlue)" />
+  <Footer color="var(--darkBlue)" var="var(--baseFont)" />
 </Layout>
