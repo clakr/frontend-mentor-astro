@@ -1,0 +1,69 @@
+---
+import { Image } from "@astrojs/image/components";
+import Footer from "../../components/Footer.astro";
+import Layout from "../../layout/Layout.astro";
+import "./style.css";
+import star from "/public/interactive-rating/icon-star.svg";
+import illustration from "/public/interactive-rating/illustration-thank-you.svg";
+---
+
+<Layout title="Interactive Rating" component>
+  <main>
+    <div class="card">
+      <div class="card__icon_container">
+        <Image loading={null} alt="" src={star} class="card__icon" />
+      </div>
+      <h1 class="card__heading">How did we do?</h1>
+      <p class="card__subheading">
+        Please let us know how we did with your support request. All feedback is
+        appreciated to help us improve our offering!
+      </p>
+      <div class="card__buttons">
+        <button type="button" class="card__button">1</button>
+        <button type="button" class="card__button">2</button>
+        <button type="button" class="card__button">3</button>
+        <button type="button" class="card__button">4</button>
+        <button type="button" class="card__button">5</button>
+      </div>
+      <button type="button" class="card__cta">Submit</button>
+    </div>
+    <div class="card">
+      <Image loading={null} alt="" src={illustration} width={144} height={96} />
+      <h3 class="card__selection">You selected 5 out of 5</h3>
+      <h2 class="card__heading">Thank you!</h2>
+      <p class="card__subheading">
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don&apos;t hesitate to get in touch!
+      </p>
+    </div>
+  </main>
+  <Footer color="var(--orange)" font="var(--baseFont)" dark />
+</Layout>
+
+<script>
+  const buttons = document.querySelectorAll(".card__button");
+  const submitButton = document.querySelector(".card__cta");
+
+  function handleClick(this: Element) {
+    const activeButton = document.querySelector(".card__button.active");
+    activeButton && activeButton.classList.remove("active");
+    this.classList.add("active");
+  }
+
+  function handleSubmit() {
+    const mainElement = document.querySelector("main");
+    const selectElement = document.querySelector(".card__selection");
+    const activeButton = document.querySelector(".card__button.active");
+
+    if (mainElement && selectElement && activeButton) {
+      selectElement.textContent = `You selected ${activeButton.textContent} out of 5`;
+      mainElement.classList.add("thanks");
+    }
+  }
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", handleClick);
+  });
+
+  submitButton && submitButton.addEventListener("click", handleSubmit);
+</script>
