@@ -19,6 +19,12 @@ module.exports = {
         rajah: "var(--rajah)",
         seashell: "var(--seashell)",
         blackRussian: "var(--blackRussian)",
+
+        paleBlue: "var(--paleBlue)",
+        brightBlue: "var(--brightBlue)",
+        veryPaleBlue: "var(--veryPaleBluie)",
+        desaturatedBlue: "var(--desaturatedBlue)",
+        darkBlue: "var(--darkBlue)",
       },
       backgroundImage: {
         eye: "var(--bg-eye)",
@@ -27,7 +33,8 @@ module.exports = {
         desktop: "var(--bg-main-desktop)",
       },
       boxShadow: {
-        nftPreviewCard: "0 2.5em 5em rgba(0, 0, 0, 0.1)",
+        card: "var(--box-shadow-card)",
+        button: "var(--box-shadow-button)",
       },
     },
   },

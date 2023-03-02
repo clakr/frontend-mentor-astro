@@ -1,0 +1,89 @@
+---
+import { Image } from "@astrojs/image/components";
+import Footer from "../../components/Footer.astro";
+import Layout from "../../layout/Layout.astro";
+import icon from "/public/order-summary/icon-music.svg";
+import hero from "/public/order-summary/illustration-hero.svg";
+---
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+  :root {
+    /* Primary */
+    --paleBlue: hsl(225, 100%, 94%);
+    --brightBlue: hsl(245, 75%, 52%);
+
+    /* Neutral */
+
+    --veryPaleBlue: hsl(225, 100%, 98%);
+    --desaturatedBlue: hsl(224, 23%, 55%);
+    --darkBlue: hsl(223, 47%, 23%);
+    --white: hsl(0, 0%, 100%);
+
+    --bg-main-mobile: url(../order-summary/pattern-background-mobile.svg);
+    --bg-main-desktop: url(../order-summary/pattern-background-desktop.svg);
+
+    --box-shadow-card: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
+    --box-shadow-button: 0px 20px 20px rgba(56, 42, 225, 0.190291);
+
+    background-color: var(--paleBlue);
+    font-family: "Red Hat Display", sans-serif;
+  }
+</style>
+
+<Layout title="Order Summary" component>
+  <main
+    class="grid min-h-screen place-items-center bg-mobile bg-contain bg-no-repeat px-[2.4rem]"
+  >
+    <div
+      class="min-w-[32.7rem] overflow-hidden rounded-[2rem] bg-white shadow-card"
+    >
+      <Image
+        loading={null}
+        alt=""
+        src={hero}
+        class="min-w-[32.7rem] min-h-[16rem]"
+      />
+      <div
+        class="flex flex-col items-center gap-[1.6rem] py-[3.2rem] px-[2.4rem]"
+      >
+        <h1 class="text-[2.2rem] font-black leading-[2.91rem] text-darkBlue">
+          Order Summary
+        </h1>
+        <p
+          class="text-center text-[1.5rem] font-medium leading-[2.5rem] text-desaturatedBlue"
+        >
+          You can now listen to millions of songs, audiobooks, and podcasts on
+          any device anywhere you like!
+        </p>
+        <div class="flex gap-[2rem] bg-[hsl(228_100%_99%)] p-[1.6rem]">
+          <Image loading={null} alt="" src={icon} />
+          <div class="flex flex-col justify-center gap-[.3rem]">
+            <strong
+              class="text-[1.4rem] font-black leading-[1.85rem] text-darkBlue"
+              >Annual Plan</strong
+            >
+            <span
+              class="text-[1.4rem] font-medium leading-[1.85rem] text-desaturatedBlue"
+              >$59.99/year</span
+            >
+          </div>
+          <button
+            class="ml-[3rem] text-[1.3rem] font-bold leading-[1.72rem] text-brightBlue underline active:text-[hsl(245_83%_68%)]"
+            >Change</button
+          >
+        </div>
+        <button
+          class="mt-[.8rem] w-full rounded-[1.1rem] bg-brightBlue p-[1.5rem] text-[1.5rem] font-black leading-[2rem] text-white shadow-button active:bg-[hsl(245_83%_68%)]"
+          >Proceed to Payment</button
+        >
+        <button
+          class="w-full text-[1.5rem] font-black text-desaturatedBlue active:text-darkBlue"
+          >Cancel Order</button
+        >
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
