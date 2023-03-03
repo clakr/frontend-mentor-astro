@@ -36,9 +36,9 @@ module.exports = {
         card: "var(--box-shadow-card)",
         button: "var(--box-shadow-button)",
       },
-    },
-    screens: {
-      desktop: "1440px",
+      screens: {
+        desktop: "1440px",
+      },
     },
   },
   plugins: [
