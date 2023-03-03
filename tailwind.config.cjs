@@ -37,6 +37,9 @@ module.exports = {
         button: "var(--box-shadow-button)",
       },
     },
+    screens: {
+      desktop: "1440px",
+    },
   },
   plugins: [
     plugin(({ addBase }) => {

@@ -27,55 +27,63 @@ import hero from "/public/order-summary/illustration-hero.svg";
     --box-shadow-card: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
     --box-shadow-button: 0px 20px 20px rgba(56, 42, 225, 0.190291);
 
+    --baseFont: "Red Hat Display", sans-serif;
+
     background-color: var(--paleBlue);
-    font-family: "Red Hat Display", sans-serif;
+    font-family: var(--baseFont);
   }
 </style>
 
 <Layout title="Order Summary" component>
   <main
-    class="grid min-h-screen place-items-center bg-mobile bg-contain bg-no-repeat px-[2.4rem]"
+    class="grid min-h-screen place-items-center bg-mobile bg-contain bg-no-repeat px-[2.4rem] desktop:bg-desktop"
   >
     <div
-      class="min-w-[32.7rem] overflow-hidden rounded-[2rem] bg-white shadow-card"
+      class="max-h-[69.7rem] min-w-[32.7rem] max-w-[45rem] overflow-hidden rounded-[2rem] bg-white shadow-card"
     >
       <Image
         loading={null}
         alt=""
         src={hero}
-        class="min-w-[32.7rem] min-h-[16rem]"
+        class="min-h-[16rem] min-w-[32.7rem]"
       />
       <div
-        class="flex flex-col items-center gap-[1.6rem] py-[3.2rem] px-[2.4rem]"
+        class="flex flex-col items-center gap-[1.6rem] py-[3.2rem] px-[2.4rem] desktop:gap-[1.7rem] desktop:p-[4.8rem]"
       >
-        <h1 class="text-[2.2rem] font-black leading-[2.91rem] text-darkBlue">
+        <h1
+          class="text-[2.2rem] font-black leading-[2.91rem] text-darkBlue desktop:text-[2.8rem] desktop:leading-[3.7rem]"
+        >
           Order Summary
         </h1>
         <p
-          class="text-center text-[1.5rem] font-medium leading-[2.5rem] text-desaturatedBlue"
+          class="text-center text-[1.5rem] font-medium leading-[2.5rem] text-desaturatedBlue desktop:text-[1.6rem] desktop:leading-[2.6rem]"
         >
           You can now listen to millions of songs, audiobooks, and podcasts on
           any device anywhere you like!
         </p>
-        <div class="flex gap-[2rem] bg-[hsl(228_100%_99%)] p-[1.6rem]">
+        <div
+          class="mt-[.8rem] flex items-center gap-[2rem] bg-[hsl(228_100%_99%)] p-[1.6rem] desktop:px-[2.4rem] desktop:py-[2.5rem]"
+        >
           <Image loading={null} alt="" src={icon} />
-          <div class="flex flex-col justify-center gap-[.3rem]">
+          <div
+            class="flex flex-col justify-center gap-[.3rem] desktop:gap-[.6rem]"
+          >
             <strong
-              class="text-[1.4rem] font-black leading-[1.85rem] text-darkBlue"
+              class="text-[1.4rem] font-black leading-[1.85rem] text-darkBlue desktop:text-[1.6rem] desktop:leading-[2.12rem]"
               >Annual Plan</strong
             >
             <span
-              class="text-[1.4rem] font-medium leading-[1.85rem] text-desaturatedBlue"
+              class="text-[1.4rem] font-medium leading-[1.85rem] text-desaturatedBlue desktop:text-[1.6rem] desktop:leading-[2.12rem]"
               >$59.99/year</span
             >
           </div>
           <button
-            class="ml-[3rem] text-[1.3rem] font-bold leading-[1.72rem] text-brightBlue underline active:text-[hsl(245_83%_68%)]"
+            class="ml-[3rem] text-[1.3rem] font-bold leading-[1.72rem] text-brightBlue underline active:text-[hsl(245_83%_68%)] desktop:ml-[4.8rem] desktop:text-[1.4rem] desktop:leading-[1.85rem]"
             >Change</button
           >
         </div>
         <button
-          class="mt-[.8rem] w-full rounded-[1.1rem] bg-brightBlue p-[1.5rem] text-[1.5rem] font-black leading-[2rem] text-white shadow-button active:bg-[hsl(245_83%_68%)]"
+          class="mt-[.8rem] w-full rounded-[1.1rem] bg-brightBlue p-[1.5rem] text-[1.5rem] font-black leading-[2rem] text-white shadow-button active:bg-[hsl(245_83%_68%)] desktop:mt-[1.5rem]"
           >Proceed to Payment</button
         >
         <button
@@ -85,5 +93,5 @@ import hero from "/public/order-summary/illustration-hero.svg";
       </div>
     </div>
   </main>
-  <Footer />
+  <Footer color="var(--brightBlue)" font="var(--baseFont)" />
 </Layout>
