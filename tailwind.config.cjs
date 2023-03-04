@@ -25,6 +25,11 @@ module.exports = {
         veryPaleBlue: "var(--veryPaleBluie)",
         desaturatedBlue: "var(--desaturatedBlue)",
         darkBlue: "var(--darkBlue)",
+
+        blue: "var(--blue)",
+        lightRed: "var(--lightRed)",
+        gray: "var(--gray)",
+        veryDarkBlue: "var(--veryDarkBlue)",
       },
       backgroundImage: {
         eye: "var(--bg-eye)",
@@ -35,6 +40,7 @@ module.exports = {
       boxShadow: {
         card: "var(--box-shadow-card)",
         button: "var(--box-shadow-button)",
+        input: "var(--box-shadow-input)",
       },
       screens: {
         desktop: "1440px",

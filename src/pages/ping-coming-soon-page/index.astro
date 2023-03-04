@@ -1,8 +1,111 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
 import Layout from "../../layout/Layout.astro";
+import dashboard from "/public/ping-coming-soon-page/illustration-dashboard.png";
+import logo from "/public/ping-coming-soon-page/logo.svg";
 ---
 
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap");
+
+  :root {
+    /* Primary */
+    --blue: hsl(223, 87%, 63%);
+
+    /* Secondary */
+    --paleBlue: hsl(223, 100%, 88%);
+    --lightRed: hsl(354, 100%, 66%);
+
+    /* Neutral */
+    --white: hsl(0, 0%, 100%);
+    --gray: hsl(0, 0%, 59%);
+    --veryDarkBlue: hsl(209, 33%, 12%);
+
+    --box-shadow-input: 0px 5px 10px 2px rgba(76, 123, 243, 0.230414);
+
+    --baseFont: "Libre Franklin", sans-serif;
+    font-family: var(--baseFont);
+  }
+
+  svg {
+    @apply aspect-square h-[3.1rem] cursor-pointer rounded-full border border-[rgb(76,123,243)]/20 fill-blue py-[.75rem] hover:bg-blue hover:fill-white;
+  }
+</style>
+
 <Layout title="Ping Coming Soon" component>
-  <Footer />
+  <main
+    class="mx-auto flex max-w-[71.2rem] flex-col gap-[7.2rem] px-[2.8rem] pt-[8.1rem] pb-[3.7rem] desktop:pb-[4.9rem]"
+  >
+    <section
+      class="flex flex-col items-center gap-[1.5rem] px-[1rem] desktop:gap-[1.6rem] desktop:px-[3.7rem]"
+    >
+      <Image
+        loading={null}
+        alt=""
+        src={logo}
+        class="max-h-[2.4rem] max-w-[5.6rem] desktop:max-h-[3.9rem] desktop:max-w-[9rem]"
+      />
+      <h1
+        class="mt-[1.7rem] text-[2.2rem] leading-[3.2rem] text-gray desktop:text-[4.8rem] desktop:leading-[6rem]"
+      >
+        We are launching <b class="text-veryDarkBlue">soon!</b>
+      </h1>
+      <p
+        class="text-[1.2rem] font-light leading-[1.45rem] desktop:text-[2rem] desktop:leading-[2.42rem]"
+      >
+        Subscribe and get notified
+      </p>
+      <div
+        class="mt-[1.7rem] flex w-full flex-col gap-[1rem] px-[1rem] desktop:flex-row"
+      >
+        <div
+          class="flex flex-col items-center gap-[.2rem] desktop:relative desktop:flex-grow"
+        >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your email address..."
+            class="text-light peer w-full rounded-[2.8rem] border border-paleBlue py-[1rem] px-[3.2rem] text-[1.2rem] leading-[2rem] placeholder:text-paleBlue invalid:border-lightRed invalid:focus:outline-lightRed desktop:py-[1.8rem] desktop:px-[3rem] desktop:text-[1.6rem] desktop:leading-[2rem]"
+          />
+          <span
+            class="hidden px-[3rem] italic leading-[2rem] tracking-[.01rem] text-lightRed peer-invalid:block desktop:absolute desktop:top-full desktop:mt-[.6rem] desktop:self-start desktop:text-[1.2rem] desktop:leading-[2rem] desktop:tracking-[.02rem]"
+            >Please provide a valid email address</span
+          >
+        </div>
+        <button
+          type="button"
+          class="rounded-[2.8rem] bg-blue p-[1.2rem] text-[1.2rem] font-semibold leading-[1.6rem] text-white shadow-input active:bg-[#4C7BF3]/80 desktop:self-start desktop:px-[6.2rem] desktop:py-[1.9rem] desktop:text-[1.6rem] desktop:leading-[1.94rem]"
+          >Notify Me</button
+        >
+      </div>
+    </section>
+    <Image loading={null} alt="" src={dashboard} class="desktop:mt-[2.2rem]" />
+    <section
+      class="mt-[4.8rem] flex flex-col items-center gap-[2.7rem] desktop:mt-[0]"
+    >
+      <div class="flex gap-[1.2rem]">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+          <path
+            d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+          ></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+          ></path>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <path
+            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+          ></path>
+        </svg>
+      </div>
+      <span class="font-light leading-[1.2rem] text-gray"
+        >&copy; Copyright Ping. All rights reserved.</span
+      >
+    </section>
+  </main>
+  <Footer font="var(--baseFont)" color="var(--blue)" />
 </Layout>
