@@ -1,6 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import cardPattern from "/public/profile-card/bg-pattern-card.svg";
 import victor from "/public/profile-card/image-victor.jpg";
@@ -184,6 +185,7 @@ const stats: Stat[] = [
 
 <Layout title={projectTitle} component>
   <main>
+    <Heading title={projectTitle} />
     <div class="user">
       <div class="user__header">
         <Image loading={null} alt="" src={cardPattern} class="user__pattern" />
