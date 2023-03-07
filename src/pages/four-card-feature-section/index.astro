@@ -1,9 +1,45 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
+import calculator from "/public/four-card-feature-section/icon-calculator.svg";
+import karma from "/public/four-card-feature-section/icon-karma.svg";
+import supervisor from "/public/four-card-feature-section/icon-supervisor.svg";
+import teamBuilder from "/public/four-card-feature-section/icon-team-builder.svg";
 
 const projectTitle = "Four Card Feature Section";
+
+type Card = {
+  heading: string;
+  subheading: string;
+  image: ImageMetadata;
+};
+
+const cards: Card[] = [
+  {
+    heading: "Supervisor",
+    subheading: "Monitors activity to identify project roadblocks",
+    image: supervisor,
+  },
+  {
+    heading: "Team Builder",
+    subheading:
+      "Scans our talent network to create the optimal team for your project",
+    image: teamBuilder,
+  },
+  {
+    heading: "Karma",
+    subheading: "Regularly evaluates our talent to ensure quality",
+    image: karma,
+  },
+  {
+    heading: "Calculator",
+    subheading:
+      "Uses data from past projects to provide better delivery estimates",
+    image: calculator,
+  },
+];
 ---
 
 <style lang="scss">
@@ -23,12 +59,179 @@ const projectTitle = "Four Card Feature Section";
     --white: hsl(0, 0%, 100%);
 
     --baseFont: "Poppins", sans-serif;
+    --baseColor: var(--veryDarkBlue);
 
     font-family: var(--baseFont);
+    color: var(--baseColor);
+  }
+
+  main {
+    min-height: 100vh;
+    min-height: 100svh;
+    max-width: 111rem;
+    margin-inline: auto;
+
+    padding: 10.8rem 3.2rem 7.8rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 7.6rem;
+  }
+
+  .copywrite {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.3rem;
+    text-align: center;
+
+    &__heading {
+      font-weight: 200;
+      font-size: 2.4rem;
+      line-height: 3.6rem;
+      letter-spacing: 0.02rem;
+    }
+
+    &__strong {
+      font-weight: 600;
+    }
+
+    &__subheading {
+      opacity: 0.5;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+      letter-spacing: 0.01rem;
+    }
+  }
+
+  .cards {
+    display: grid;
+    row-gap: 2.5rem;
+  }
+
+  .card {
+    box-shadow: 0 1.5rem 3rem -1.1rem rgba(131, 166, 210, 0.5);
+    border-radius: 0.8rem;
+    padding: 2.8rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    max-width: 35rem;
+
+    &:nth-child(1) {
+      --cardColor: var(--cyan);
+    }
+    &:nth-child(2) {
+      --cardColor: var(--red);
+    }
+    &:nth-child(3) {
+      --cardColor: var(--orange);
+    }
+    &:nth-child(4) {
+      --cardColor: var(--blue);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0.36rem;
+      width: 100%;
+      background-color: var(--cardColor);
+    }
+
+    &__heading {
+      font-weight: 600;
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+
+    &__subheading {
+      opacity: 0.5;
+      font-size: 1.3rem;
+      line-height: 2.3rem;
+      letter-spacing: 0.01rem;
+    }
+
+    &__image {
+      margin-top: 3.3rem;
+      aspect-ratio: 1 / 1;
+      width: 5.7rem;
+      align-self: flex-end;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    main {
+      padding-block: 8rem;
+      row-gap: 6.4rem;
+    }
+
+    .copywrite {
+      row-gap: 1.6rem;
+
+      &__heading {
+        font-weight: 200;
+        font-size: 3.6rem;
+        line-height: 5.4rem;
+        letter-spacing: 0.03rem;
+      }
+    }
+
+    .cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .card {
+      padding: 3.2rem;
+
+      &:first-child {
+        grid-row: span 2 / span 2;
+      }
+
+      &:nth-child(3) {
+        order: 2;
+      }
+
+      &:last-child {
+        grid-row: span 2 / span 2;
+      }
+
+      &__image {
+        margin-top: 4rem;
+        width: 6.4rem;
+      }
+    }
   }
 </style>
 
 <Layout title={projectTitle}>
-  <Heading title={projectTitle} />
-  <Footer font="var(--baseFont)" />
+  <main>
+    <Heading title={projectTitle} />
+    <article class="copywrite">
+      <h2 class="copywrite__heading">
+        Reliable, efficient delivery
+        <strong class="copywrite__strong">Powered by Technology</strong>
+      </h2>
+      <p class="copywrite__subheading">
+        Our Artificial Intelligence powered tools use millions of project data
+        points to ensure that your project is successful
+      </p>
+    </article>
+    <div class="cards">
+      {
+        cards.map(({ heading, subheading, image }) => (
+          <div class="card">
+            <h3 class="card__heading">{heading}</h3>
+            <p class="card__subheading">{subheading}</p>
+            <Image class="card__image" loading={null} alt="" src={image} />
+          </div>
+        ))
+      }
+    </div>
+  </main>
+  <Footer font="var(--baseFont)" color="var(--cyan)" />
 </Layout>
