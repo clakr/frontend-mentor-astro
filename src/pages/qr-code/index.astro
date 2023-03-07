@@ -1,8 +1,11 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import qrCode from "/public/qr-code/image-qr-code.png";
+
+const projectTitle = "QR Code";
 ---
 
 <style>
@@ -65,8 +68,9 @@ import qrCode from "/public/qr-code/image-qr-code.png";
   }
 </style>
 
-<Layout title="QR Code" component>
+<Layout title={projectTitle} component>
   <main>
+    <Heading title={projectTitle} />
     <div class="card">
       <Image
         alt="QR Code Image"
@@ -74,9 +78,9 @@ import qrCode from "/public/qr-code/image-qr-code.png";
         class="card__image"
         loading={null}
       />
-      <h1 class="card__heading">
+      <h2 class="card__heading">
         Improve your front-end skills by building projects
-      </h1>
+      </h2>
       <p class="card__subheading">
         Scan the QR code to visit Frontend Mentor and take your coding skills to
         the next level

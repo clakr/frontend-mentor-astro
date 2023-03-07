@@ -1,11 +1,14 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import clock from "/public/nft-preview-card/icon-clock.svg";
 import ethereum from "/public/nft-preview-card/icon-ethereum.svg";
 import avatar from "/public/nft-preview-card/image-avatar.png";
 import equilibrium from "/public/nft-preview-card/image-equilibrium.jpg";
+
+const projectTitle = "NFT Preview Card";
 ---
 
 <style>
@@ -42,10 +45,11 @@ import equilibrium from "/public/nft-preview-card/image-equilibrium.jpg";
   }
 </style>
 
-<Layout title="NFT Preview Card" component>
+<Layout title={projectTitle} component>
   <main
     class="grid min-h-screen place-items-center bg-veryDarkBlueMain p-[2.4rem]"
   >
+    <Heading title={projectTitle} />
     <div
       class="flex max-h-[54.3rem] max-w-[32.7rem] flex-col gap-[1.2rem] rounded-[1.5rem] bg-veryDarkBlueCard p-[2.4rem] shadow-card lg:max-h-[59.6rem] lg:max-w-[35rem] lg:gap-[1.6rem] lg:pb-[3.2rem]"
     >

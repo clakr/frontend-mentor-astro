@@ -1,9 +1,12 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import icon from "/public/order-summary/icon-music.svg";
 import hero from "/public/order-summary/illustration-hero.svg";
+
+const projectTitle = "Order Summary";
 ---
 
 <style>
@@ -34,10 +37,11 @@ import hero from "/public/order-summary/illustration-hero.svg";
   }
 </style>
 
-<Layout title="Order Summary" component>
+<Layout title={projectTitle} component>
   <main
     class="grid min-h-screen place-items-center bg-mobile bg-contain bg-no-repeat px-[2.4rem] desktop:bg-desktop"
   >
+    <Heading title={projectTitle} />
     <div
       class="max-h-[69.7rem] min-w-[32.7rem] max-w-[45rem] overflow-hidden rounded-[2rem] bg-white shadow-card"
     >

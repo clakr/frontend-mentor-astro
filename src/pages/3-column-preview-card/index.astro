@@ -1,6 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import luxury from "/public/3-column-preview-card/icon-luxury.svg";
 import sedan from "/public/3-column-preview-card/icon-sedans.svg";
@@ -36,6 +37,8 @@ const cards: Card[] = [
       "Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style.",
   },
 ];
+
+const projectTitle = "3 Column Preview Card";
 ---
 
 <style lang="scss">
@@ -138,8 +141,9 @@ const cards: Card[] = [
   }
 </style>
 
-<Layout title="3 Column Preview Card" component>
+<Layout title={projectTitle} component>
   <main>
+    <Heading title={projectTitle} />
     <div class="card_container">
       {
         cards.map(({ color, image, heading, subheading }) => (

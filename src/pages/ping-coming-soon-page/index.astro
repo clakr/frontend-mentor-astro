@@ -1,9 +1,12 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import dashboard from "/public/ping-coming-soon-page/illustration-dashboard.png";
 import logo from "/public/ping-coming-soon-page/logo.svg";
+
+const projectTitle = "Ping Coming Soon Page";
 ---
 
 <style>
@@ -33,10 +36,11 @@ import logo from "/public/ping-coming-soon-page/logo.svg";
   }
 </style>
 
-<Layout title="Ping Coming Soon" component>
+<Layout title={projectTitle} component>
   <main
     class="mx-auto flex max-w-[71.2rem] flex-col gap-[7.2rem] px-[2.8rem] pt-[8.1rem] pb-[3.7rem] desktop:pb-[4.9rem]"
   >
+    <Heading title={projectTitle} />
     <section
       class="flex flex-col items-center gap-[1.5rem] px-[1rem] desktop:gap-[1.6rem] desktop:px-[0]"
     >

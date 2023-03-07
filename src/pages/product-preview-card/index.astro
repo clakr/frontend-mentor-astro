@@ -1,8 +1,11 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import cart from "/public/product-preview-card/icon-cart.svg";
+
+const projectTitle = "Product Preview Card";
 ---
 
 <style lang="scss">
@@ -149,8 +152,9 @@ import cart from "/public/product-preview-card/icon-cart.svg";
   }
 </style>
 
-<Layout title="Product Preview Card" component>
+<Layout title={projectTitle} component>
   <main>
+    <Heading title={projectTitle} />
     <div class="card">
       <picture>
         <source

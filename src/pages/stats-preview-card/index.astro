@@ -1,5 +1,6 @@
 ---
 import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 
 type Stat = {
@@ -21,6 +22,8 @@ const stats: Stat[] = [
     description: "queries",
   },
 ];
+
+const projectTitle = "Stats Preview Card";
 ---
 
 <style>
@@ -172,8 +175,9 @@ const stats: Stat[] = [
   }
 </style>
 
-<Layout title="Stats Preview Card" component>
+<Layout title={projectTitle} component>
   <main>
+    <Heading title={projectTitle} />
     <div class="card">
       <picture class="card__header">
         <source

@@ -1,6 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import "./style.scss";
 import star from "/public/social-proof-section/icon-star.svg";
@@ -58,7 +59,7 @@ const testimonials: Testimonial[] = [
 
 <Layout title="Social Proof Section" component>
   <main>
-    <h1>Social Proof Section</h1>
+    <Heading title="Social Proof Section" />
     <div class="hero">
       <section class="copywrite">
         <h2 class="copywrite__heading">

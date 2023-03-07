@@ -1,5 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import "./style.scss";
 import animation from "/public/skilled-elearning/icon-animation.svg";
@@ -48,9 +49,12 @@ const courses: Course[] = [
     icon: business,
   },
 ];
+
+const projectTitle = "Skilled eLearning";
 ---
 
-<Layout title="Skilled eLearning" component>
+<Layout title={projectTitle} component>
+  <Heading title={projectTitle} />
   <header class="header">
     <nav class="navbar">
       <Image

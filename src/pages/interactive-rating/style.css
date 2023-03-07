@@ -41,25 +41,25 @@ main {
   display: none;
 }
 
-main:not(.thanks) .card:first-child {
+main:not(.thanks) .card:first-of-type {
   display: flex;
 }
 
-main.thanks .card:first-child {
+main.thanks .card:first-of-type {
   display: none;
 }
 
-main.thanks .card:last-child {
+main.thanks .card:last-of-type {
   display: flex;
 }
 
 /* Initial */
 
-.card:first-child {
+.card:first-of-type {
   padding: 2.4rem 2.2rem 3.2rem 2.4rem;
 }
 
-.card:first-child .card__icon_container {
+.card:first-of-type .card__icon_container {
   width: 4rem;
   height: 4rem;
   background-color: var(--darkBlue);
@@ -68,12 +68,12 @@ main.thanks .card:last-child {
   place-items: center;
 }
 
-.card:first-child .card__icon {
+.card:first-of-type .card__icon {
   width: 1.4em;
   height: 1.4em;
 }
 
-.card:first-child .card__heading {
+.card:first-of-type .card__heading {
   margin-top: 0.6rem;
   font-weight: 700;
   font-size: 2.4rem;
@@ -81,20 +81,20 @@ main.thanks .card:last-child {
   color: var(--white);
 }
 
-.card:first-child .card__subheading {
+.card:first-of-type .card__subheading {
   font-size: 1.4rem;
   line-height: 2.2rem;
   color: var(--lightGray);
 }
 
-.card:first-child .card__buttons {
+.card:first-of-type .card__buttons {
   margin-top: 1.4rem;
   color: var(--mediumGray);
   display: flex;
   justify-content: space-between;
 }
 
-.card:first-child .card__button {
+.card:first-of-type .card__button {
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 2.4rem;
@@ -108,17 +108,17 @@ main.thanks .card:last-child {
   place-items: center;
 }
 
-.card:first-child .card__button:hover {
+.card:first-of-type .card__button:hover {
   background-color: var(--mediumGray);
   color: var(--white);
 }
 
-.card:first-child .card__button.active {
+.card:first-of-type .card__button.active {
   background-color: var(--orange);
   color: var(--white);
 }
 
-.card:first-child .card__cta {
+.card:first-of-type .card__cta {
   margin-top: 1.4rem;
   font-weight: 700;
   font-size: 1.4rem;
@@ -131,19 +131,19 @@ main.thanks .card:last-child {
   text-transform: uppercase;
 }
 
-.card:first-child .card__cta:active {
+.card:first-of-type .card__cta:active {
   background-color: var(--white);
   color: var(--orange);
 }
 
 /* Thanks */
 
-.card:last-child {
+.card:last-of-type {
   padding: 3.4rem 2.4rem 3.7rem;
   align-items: center;
 }
 
-.card:last-child .card__selection {
+.card:last-of-type .card__selection {
   margin-top: 1.4rem;
   font-size: 1.4rem;
   line-height: 2.2rem;
@@ -155,7 +155,7 @@ main.thanks .card:last-child {
   width: fit-content;
 }
 
-.card:last-child .card__heading {
+.card:last-of-type .card__heading {
   margin-top: 1.4rem;
   font-weight: 700;
   font-size: 2.4rem;
@@ -164,7 +164,7 @@ main.thanks .card:last-child {
   text-align: center;
 }
 
-.card:last-child .card__subheading {
+.card:last-of-type .card__subheading {
   font-size: 1.4rem;
   line-height: 2.2rem;
   text-align: center;
@@ -179,42 +179,42 @@ main.thanks .card:last-child {
 
   /* Initial */
 
-  .card:first-child {
+  .card:first-of-type {
     padding: 3.2rem 3.9rem 3.2rem 3.2rem;
   }
 
-  .card:first-child .card__icon_container {
+  .card:first-of-type .card__icon_container {
     width: 4.8rem;
     height: 4.8rem;
   }
 
-  .card:first-child .card__icon {
+  .card:first-of-type .card__icon {
     width: 1.6em;
     height: 1.6em;
   }
 
-  .card:first-child .card__heading {
+  .card:first-of-type .card__heading {
     margin-top: 2.3rem;
     font-size: 2.8rem;
     line-height: 3.55rem;
   }
 
-  .card:first-child .card__subheading {
+  .card:first-of-type .card__subheading {
     font-size: 1.5rem;
     line-height: 2.4rem;
   }
 
-  .card:first-child .card__buttons {
+  .card:first-of-type .card__buttons {
     margin-top: 1.7rem;
   }
 
-  .card:first-child .card__button {
+  .card:first-of-type .card__button {
     font-size: 1.6rem;
     width: 5.1rem;
     height: 5.1rem;
   }
 
-  .card:first-child .card__cta {
+  .card:first-of-type .card__cta {
     margin-top: 2.5rem;
     font-size: 1.5rem;
     line-height: 1.9rem;
@@ -224,24 +224,24 @@ main.thanks .card:last-child {
 
   /* Thanks */
 
-  .card:last-child {
+  .card:last-of-type {
     padding: 4.5rem 4rem 4.5rem 3.2rem;
   }
 
-  .card:last-child .card__selection {
+  .card:last-of-type .card__selection {
     margin-top: 2.5rem;
     font-size: 1.5rem;
     line-height: 2.4rem;
     padding: 0.4rem 2rem;
   }
 
-  .card:last-child .card__heading {
+  .card:last-of-type .card__heading {
     margin-top: 2.5rem;
     font-size: 2.8rem;
     line-height: 3.55rem;
   }
 
-  .card:last-child .card__subheading {
+  .card:last-of-type .card__subheading {
     font-size: 1.5rem;
     line-height: 2.4rem;
   }

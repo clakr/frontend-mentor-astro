@@ -1,14 +1,18 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import "./style.css";
 import star from "/public/interactive-rating/icon-star.svg";
 import illustration from "/public/interactive-rating/illustration-thank-you.svg";
+
+const projectTitle = "Interactive Rating";
 ---
 
-<Layout title="Interactive Rating" component>
+<Layout title={projectTitle} component>
   <main>
+    <Heading title={projectTitle} />
     <div class="card">
       <div class="card__icon_container">
         <Image loading={null} alt="" src={star} class="card__icon" />

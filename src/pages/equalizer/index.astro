@@ -1,5 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
+import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import bgPattern1 from "/public/equalizer/bg-pattern-1.svg";
 import bgPattern2 from "/public/equalizer/bg-pattern-2.svg";
@@ -7,6 +8,8 @@ import android from "/public/equalizer/icon-android.svg";
 import apple from "/public/equalizer/icon-apple.svg";
 import phone from "/public/equalizer/illustration-app.png";
 import logo from "/public/equalizer/logo.svg";
+
+const projectTitle = "Equalizer";
 ---
 
 <style>
@@ -36,7 +39,8 @@ import logo from "/public/equalizer/logo.svg";
   }
 </style>
 
-<Layout title="Equalizer" component>
+<Layout title={projectTitle} component>
+  <Heading title={projectTitle} />
   <header
     class="space-y-[6.4rem] bg-mobile bg-[left_5rem_top_-25rem] px-[2.4rem] pt-[4rem] pb-[16.6rem] md:relative md:space-y-[9.5rem] md:overflow-hidden md:bg-tablet md:bg-[top_55%_right_25%] md:px-[4rem] md:pt-[6.2rem] xl:space-y-[12.7rem] xl:bg-[image:unset] xl:px-[16.5rem] xl:pt-[6.2rem] xl:pb-[32rem]"
   >
@@ -78,13 +82,13 @@ import logo from "/public/equalizer/logo.svg";
       loading={null}
       alt=""
       src={bgPattern2}
-      class="absolute top-0 left-1/2 -translate-x-[50%] md:-top-[2.5rem] lg:-translate-x-[74%] w-[28rem] h-[42rem] xl:w-[31.2rem] xl:h-[46.8rem]"
+      class="absolute top-0 left-1/2 h-[42rem] w-[28rem] -translate-x-[50%] md:-top-[2.5rem] lg:-translate-x-[74%] xl:h-[46.8rem] xl:w-[31.2rem]"
     />
     <Image
       loading={null}
       alt=""
       src={phone}
-      class="absolute top-0 left-1/2 w-[20.9rem] h-[43rem] -translate-x-[50%] -translate-y-[25%] md:left-1/4 md:w-[27rem] md:h-[55.6rem] xl:w-[31.2rem] xl:h-[64.2rem]"
+      class="absolute top-0 left-1/2 h-[43rem] w-[20.9rem] -translate-x-[50%] -translate-y-[25%] md:left-1/4 md:h-[55.6rem] md:w-[27rem] xl:h-[64.2rem] xl:w-[31.2rem]"
     />
     <div
       class="absolute top-full grid -translate-y-[30%] gap-[1.2rem] rounded-[1.2em] bg-coral py-[4.8em] px-[3.6em] md:top-[15rem] md:right-[7.5rem] md:w-[40rem] md:translate-y-0 md:p-[4.8rem] xl:top-[10rem] xl:left-1/2 xl:min-h-[62.5rem] xl:w-[44.6rem] xl:gap-[1.6rem] xl:px-[5.7rem] xl:py-[5.3rem]"
