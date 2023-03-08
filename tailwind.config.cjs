@@ -43,6 +43,7 @@ module.exports = {
         input: "var(--box-shadow-input)",
       },
       screens: {
+        tablet: "768px",
         desktop: "1440px",
       },
     },

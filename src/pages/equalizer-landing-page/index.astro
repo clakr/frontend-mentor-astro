@@ -2,7 +2,8 @@
 import { Image } from "@astrojs/image/components";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
-import pattern from "/public/equalizer-landing-page/bg-pattern-2.svg";
+import pattern1 from "/public/equalizer-landing-page/bg-pattern-1.svg";
+import pattern2 from "/public/equalizer-landing-page/bg-pattern-2.svg";
 import android from "/public/equalizer-landing-page/icon-android.svg";
 import apple from "/public/equalizer-landing-page/icon-apple.svg";
 import phone from "/public/equalizer-landing-page/illustration-app.png";
@@ -34,44 +35,66 @@ const projectTitle = "Equalizer Landing Page";
     background-repeat: no-repeat;
     background-position: top -25rem left 3rem;
   }
-
   svg {
     @apply aspect-square w-[2rem];
+  }
+
+  @media screen(tablet) {
+    body {
+      background-image: url(../equalizer-landing-page/bg-main-tablet.png);
+      background-position: top -20rem left -40rem;
+    }
   }
 </style>
 
 <Layout title={projectTitle}>
   <Heading title={projectTitle} />
-  <header class="px-[2.4rem] pt-[4rem]">
+  <Image
+    loading={null}
+    alt=""
+    src={pattern1}
+    class="absolute -top-[3.2rem] -right-[3.6rem] h-[40rem] w-[26.7rem]"
+  />
+  <header class="px-[2.4rem] pt-[4rem] tablet:pt-[6.2rem]">
     <Image loading={null} alt="" src={logo} width={146} />
   </header>
-  <main class="flex flex-col gap-y-[16.6rem] py-[6.4rem]">
-    <div class="flex flex-col gap-y-[2rem] px-[2.4rem]">
-      <h2 class="text-[4rem] font-bold leading-[4.8rem] -tracking-[.05rem]">
+  <main
+    class="flex flex-col gap-y-[16.6rem] py-[6.4rem] tablet:gap-y-[24.9rem] tablet:py-[9.5rem]"
+  >
+    <div
+      class="flex flex-col gap-y-[2rem] px-[2.4rem] tablet:max-w-[52rem] tablet:gap-y-[2.8rem] tablet:px-[3.9rem]"
+    >
+      <h2
+        class="text-[4rem] font-bold leading-[4.8rem] -tracking-[.05rem] tablet:text-[6.4rem] tablet:leading-[6.4rem] tablet:-tracking-[.07rem]"
+      >
         We make your music sound extraordinary.
       </h2>
-      <p class="text-[1.6rem] leading-[2.6rem]">
+      <p
+        class="text-[1.6rem] leading-[2.6rem] tablet:text-[1.8rem] tablet:leading-[2.8rem]"
+      >
         A system audio equalizer specifically designed for Android and iOS.
         Freely tune the way your music sounds with a professional grade
         parametric EQ & volume mixer. Control bass, mids, treble, gain control,
         reverb, and more!
       </p>
     </div>
-    <div class="relative min-h-[60rem] rounded-[1.2rem] bg-blackRussian">
+    <div
+      class="relative ml-[3.3rem] mr-[3.9rem] min-h-[60rem] rounded-[1.2rem] bg-blackRussian"
+    >
       <Image
-        class="absolute left-1/2 top-0 h-[42rem] w-[28rem] -translate-x-1/2"
+        class="absolute left-1/2 top-0 h-[42rem] w-[28rem] -translate-x-1/2 tablet:-top-[3.1rem]"
         loading={null}
         alt=""
-        src={pattern}
+        src={pattern2}
       />
       <Image
-        class="absolute left-1/2 top-0 h-[43rem] w-[20.9rem] -translate-x-1/2 -translate-y-[9.8rem]"
+        class="absolute left-1/2 top-0 h-[43rem] w-[20.9rem] -translate-x-1/2 -translate-y-[9.8rem] tablet:left-[26%] tablet:h-[55.6rem] tablet:w-[27.02rem] tablet:-translate-y-[13.8rem]"
         loading={null}
         alt=""
         src={phone}
       />
       <div
-        class="absolute top-0 flex translate-y-[70%] flex-col gap-y-[1.2rem] rounded-[1.2rem] bg-coral py-[4.8rem] px-[3.8rem] text-seashell"
+        class="absolute top-0 flex translate-y-[70%] flex-col gap-y-[1.2rem] rounded-[1.2rem] bg-coral py-[4.8rem] px-[3.8rem] text-seashell tablet:left-[32.5%] tablet:top-1/4 tablet:max-w-[39.9rem] tablet:translate-y-0 tablet:px-[4.8rem]"
       >
         <h3 class="text-[3.2rem] font-bold leading-[4rem]">Premium EQ</h3>
         <p class="text-[1.8rem] leading-[2.8rem]">
@@ -101,8 +124,16 @@ const projectTitle = "Equalizer Landing Page";
       </div>
     </div>
   </main>
-  <footer class="mt-[24.6rem] grid gap-y-[3.2rem] py-[8rem] px-[2.4rem]">
-    <Image loading={null} alt="" src={logo} width={146} />
+  <footer
+    class="mt-[24.6rem] grid gap-y-[3.2rem] py-[8rem] px-[2.4rem] tablet:mt-[3.9rem] tablet:grid-cols-2 tablet:py-[8.5rem] tablet:px-[3.3rem]"
+  >
+    <Image
+      loading={null}
+      alt=""
+      src={logo}
+      width={146}
+      class="tablet:col-span-2"
+    />
     <div class="text-[1.6rem] leading-[2.6rem]">
       <p>All rights reserved © Equalizer 2021</p>
       <p>
@@ -110,7 +141,7 @@ const projectTitle = "Equalizer Landing Page";
         <b class="font-bold">equalizer@example.com</b>
       </p>
     </div>
-    <div class="flex gap-x-[2rem]">
+    <div class="flex gap-x-[2rem] tablet:items-center tablet:justify-end">
       <svg xmlns="http://www.w3.org/2000/svg">
         <path
           d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0Z"
