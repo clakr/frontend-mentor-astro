@@ -146,8 +146,8 @@
   body {
     background-image: url(../skilled-elearning/image-hero-tablet.png);
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: top -10rem left 36rem;
+    background-size: auto;
+    background-position: top -10rem left 37rem;
   }
 
   .nav {
@@ -173,7 +173,7 @@
   }
 
   .cards__popular {
-    padding: 5.6rem 3.2rem;
+    padding: 5.6rem 3.2rem 0;
   }
 
   .card {
@@ -182,5 +182,87 @@
 
   .footer {
     padding-inline: 4rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-image: url(../skilled-elearning/image-hero-desktop.png);
+    background-position: top -15rem left 75rem;
+  }
+
+  .nav {
+    padding: 2.4rem 16.5rem;
+  }
+
+  .nav__cta {
+    font-size: 1.8rem;
+    padding: 1.4rem 3.2rem;
+  }
+
+  .copywrite {
+    row-gap: 2.9rem;
+    padding-inline: 16.5rem;
+    margin-top: 14.8rem;
+    max-width: 80rem;
+  }
+
+  .copywrite__heading {
+    font-size: 5.6rem;
+    line-height: 7.06rem;
+  }
+
+  .copywrite__subheading {
+    margin-top: 0;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
+
+  .copywrite__cta {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    padding: 1.9rem 3.1rem 1.6rem;
+  }
+
+  .cards {
+    margin-top: 22.6rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5.6rem 3rem;
+    padding: 0.6rem 16.5rem 14rem;
+  }
+
+  .cards__popular {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    padding: 6.4rem 3.2rem 0;
+  }
+
+  .card {
+    padding: 6.4rem 3.2rem 4rem;
+    row-gap: 2.4rem;
+    border-radius: 1.5rem;
+  }
+
+  .card__heading {
+    font-size: 2.4rem;
+    line-height: 3.02rem;
+  }
+
+  .card__subheading {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+  }
+
+  .card__cta {
+    margin-top: 0rem;
+  }
+
+  .footer {
+    padding: 3.2rem 16.5rem;
+  }
+
+  .footer__cta {
+    font-size: 1.8rem;
+    padding: 1.4rem 3.2rem;
   }
 }
