@@ -14,12 +14,6 @@ module.exports = {
         veryDarkBlueLine: "var(--veryDarkBlueLine)",
         white: "var(--white)",
 
-        turquoiseBlue: "var(--turquoiseBlue)",
-        coral: "var(--coral)",
-        rajah: "var(--rajah)",
-        seashell: "var(--seashell)",
-        blackRussian: "var(--blackRussian)",
-
         paleBlue: "var(--paleBlue)",
         brightBlue: "var(--brightBlue)",
         veryPaleBlue: "var(--veryPaleBluie)",
@@ -30,6 +24,12 @@ module.exports = {
         lightRed: "var(--lightRed)",
         gray: "var(--gray)",
         veryDarkBlue: "var(--veryDarkBlue)",
+
+        turquoiseBlue: "var(--turquoiseBlue)",
+        coral: "var(--coral)",
+        rajah: "var(--rajah)",
+        seashell: "var(--seashell)",
+        blackRussian: "var(--blackRussian)",
       },
       backgroundImage: {
         eye: "var(--bg-eye)",

@@ -1,0 +1,33 @@
+---
+import { Image } from "@astrojs/image/components";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layout/Layout.astro";
+import logo from "/public/equalizer-landing-page/logo.svg";
+
+const projectTitle = "Equalizer Landing Page";
+---
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap");
+
+  :root {
+    --turquoiseBlue: #66e2dc;
+    --coral: #fa7453;
+    --rajah: #ffb964;
+    --seashell: #fcfaf9;
+    --blackRussian: #191826;
+
+    --baseFont: "IBM Plex Sans", sans-serif;
+
+    font-family: var(--baseFont);
+  }
+</style>
+
+<Layout title={projectTitle}>
+  <Heading title={projectTitle} />
+  <header>
+    <Image loading={null} alt="" src={logo} width={146} />
+  </header>
+  <main></main>
+  <footer></footer>
+</Layout>
