@@ -1,50 +1,97 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Layout from "../../layout/Layout.astro";
+import "./style.css";
+import animation from "/public/skilled-elearning/icon-animation.svg";
+import business from "/public/skilled-elearning/icon-business.svg";
+import crypto from "/public/skilled-elearning/icon-crypto.svg";
+import design from "/public/skilled-elearning/icon-design.svg";
+import photography from "/public/skilled-elearning/icon-photography.svg";
 import logoDark from "/public/skilled-elearning/logo-dark.svg";
+import logoLight from "/public/skilled-elearning/logo-light.svg";
 
 const projectTitle = "Skilled eLearning";
+
+type Card = {
+  icon: ImageMetadata;
+  heading: string;
+  subheading: string;
+};
+
+const cards: Card[] = [
+  {
+    icon: animation,
+    heading: "Animation",
+    subheading:
+      "Learn the latest animation techniques to create stunning motion design and captivate your audience.",
+  },
+  {
+    icon: design,
+    heading: "Design",
+    subheading:
+      "Create beautiful, usable interfaces to help shape the future of how the web looks.",
+  },
+  {
+    icon: photography,
+    heading: "Crypto",
+    subheading:
+      "All you need to know to get started investing in crypto. Go from beginner to advanced with this 54 hour course.",
+  },
+  {
+    icon: crypto,
+    heading: "Business",
+    subheading:
+      "A step-by-step playbook to help you start, scale, and sustain your business without outside investment.",
+  },
+  {
+    icon: business,
+    heading: "Animation",
+    subheading:
+      "Learn the latest animation techniques to create stunning motion design and captivate your audience.",
+  },
+];
 ---
-
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,700;0,800;1,500&display=swap");
-
-  :root {
-    --chetwodeBlue: #666ca3;
-    --midnightExpress: #13183f;
-    --manatee: #83869a;
-    --frenchRose: #f74780;
-    --carnationPink: #ffa7c3;
-    --white: #ffffff;
-
-    --baseFont: "Plus Jakarta Sans", sans-serif;
-
-    font-family: var(--baseFont);
-  }
-
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.6rem;
-  }
-
-  .nav__cta {
-    font-weight: 700;
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    color: var(--white);
-    padding: 0.9rem 2.4rem 1.1rem;
-    background-color: var(--midnightExpress);
-    border-radius: 2.8rem;
-  }
-</style>
 
 <Layout title={projectTitle}>
   <nav class="nav">
     <Image loading={null} alt="" src={logoDark} width={89} height={35} />
-    <button class="nav__cta">Get Started</button>
+    <button class="nav__cta" type="button">Get Started</button>
   </nav>
-  <main></main>
-  <footer></footer>
+  <main>
+    <section class="copywrite">
+      <h1 class="copywrite__heading">Maximize skill, minimize budget</h1>
+      <p class="copywrite__subheading">
+        Our modern courses across a range of in-demand skills will give you the
+        knowledge you need to live the life you want.
+      </p>
+      <button class="copywrite__cta" type="button">Get Started</button>
+    </section>
+    <picture>
+      <source
+        srcset="./skilled-elearning/image-hero-mobile@2x.png 2x,
+        ./skilled-elearning/image-hero-mobile@2x.webp 2x,
+        ./skilled-elearning/image-hero-mobile.png"
+      />
+      <img src="./skilled-elearning/image-hero-mobile.webp" alt="" />
+    </picture>
+    <section class="cards">
+      <h2 class="cards__popular">Check out our most popular courses!</h2>
+      {
+        cards.map(({ icon, heading, subheading }) => (
+          <div class="card">
+            <Image class="card__icon" loading={null} alt="" src={icon} />
+            <h3 class="card__heading">{heading}</h3>
+            <p class="card__subheading">{subheading}</p>
+            <button class="card__cta" type="button">
+              Get Started
+            </button>
+          </div>
+        ))
+      }
+    </section>
+  </main>
+  <footer class="footer">
+    <Image loading={null} alt="" src={logoLight} width={89} height={35} />
+    <button class="footer__cta" type="button">Get Started</button>
+  </footer>
 </Layout>
