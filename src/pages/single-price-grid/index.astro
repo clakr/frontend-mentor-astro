@@ -17,6 +17,7 @@ const projectTitle = "Single Price Grid";
     /* Neutral */
     --lightGray: hsl(204, 43%, 93%);
     --grayishBlue: hsl(218, 22%, 67%);
+    --white: hsl(0, 0%, 100%);
 
     --baseFont: "Karla", sans-serif;
 
@@ -25,8 +26,79 @@ const projectTitle = "Single Price Grid";
 </style>
 
 <Layout title={projectTitle}>
-  <main>
+  <main
+    class="grid min-h-screen place-items-center bg-lightGray px-[3.2rem] py-[7.2rem] pt-[7.2] pb-[6.2rem]"
+  >
     <Heading title={projectTitle} />
+    <div
+      class="overflow-hidden rounded-[.5rem] shadow-[0_1.5rem_3rem_rgba(0,_81,_171,_0.15)] desktop:grid desktop:max-w-[63.5rem] desktop:grid-cols-2 desktop:rounded-[.8rem]"
+    >
+      <div
+        class="flex flex-col gap-y-[1.6rem] bg-white py-[2.8rem] px-[2.4rem] desktop:col-span-2 desktop:gap-y-[1.1rem] desktop:p-[4rem]"
+      >
+        <h2
+          class="text-[2rem] font-bold leading-[2.34rem] -tracking-[.03rem] text-cyan desktop:text-[2.4rem] desktop:leading-[2.81rem] desktop:-tracking-[.03rem]"
+        >
+          Join our community
+        </h2>
+        <h3
+          class="mt-[.8rem] text-[1.5rem] font-bold leading-[2rem] -tracking-[.02rem] text-brightYellow desktop:mt-[1.3rem] desktop:text-[1.8rem] desktop:leading-[2.1rem]"
+        >
+          30-day, hassle-free money back guarantee
+        </h3>
+        <p
+          class="text-[1.4rem] leading-[2.6rem] -tracking-[.02rem] text-grayishBlue"
+        >
+          Gain access to our full library of tutorials along with expert code
+          reviews. Perfect for any developers who are serious about honing their
+          skills.
+        </p>
+      </div>
+      <div
+        class="flex flex-col gap-y-[.4rem] bg-cyan p-[2.4rem] text-white desktop:p-[4rem]"
+      >
+        <h2
+          class="text-[1.8rem] font-bold leading-[2.10rem] -tracking-[.02rem]"
+        >
+          Monthly Subscription
+        </h2>
+        <span
+          class="mt-[1.4rem] flex items-center gap-x-[1.1rem] text-[1.6rem] leading-[2.6rem] -tracking-[.02rem] text-[hsla(0,0%,100%,.5)]"
+          ><span
+            class="text-[3.2rem] font-bold leading-[3.74rem] -tracking-[.04rem] text-white"
+            >$29</span
+          > per month</span
+        >
+        <p class="text-[1.6rem] leading-[2.6rem] -tracking-[.02rem]">
+          Full access for less than $1 a day
+        </p>
+        <button
+          type="button"
+          class="mt-[2.2rem] rounded-[.5rem] bg-brightYellow py-[1.5rem] text-[1.6rem] font-bold leading-[1.87rem] -tracking-[.02rem] shadow-[0_1rem_1rem_rgba(0,_0,_0,_0.1)]"
+          >Sign Up</button
+        >
+      </div>
+      <div
+        class="flex flex-col gap-y-[1.8rem] bg-[hsla(179,62%,43%,.85)] p-[2.4rem] desktop:p-[4rem]"
+      >
+        <h4
+          class="text-[1.8rem] font-bold leading-[2.1rem] -tracking-[.02rem] text-white"
+        >
+          Why Us
+        </h4>
+        <ul
+          class="text-[1.4rem] leading-[2rem] -tracking-[.02rem] text-[hsla(0,0%,100%,.75)]"
+        >
+          <li>Tutorials by industry experts</li>
+          <li>Peer & expert code review</li>
+          <li>Coding exercises</li>
+          <li>Access to our GitHub repos</li>
+          <li>Community forum</li>
+          <li>Flashcard decks</li>
+          <li>New videos every week</li>
+        </ul>
+      </div>
+    </div>
   </main>
-  <Footer font="var(--baseFont)" />
+  <Footer font="var(--baseFont)" color="var(--cyan)" />
 </Layout>
