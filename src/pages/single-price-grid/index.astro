@@ -1,0 +1,32 @@
+---
+import Footer from "../../components/Footer.astro";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layout/Layout.astro";
+
+const projectTitle = "Single Price Grid";
+---
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+  :root {
+    /* Primary */
+    --cyan: hsl(179, 62%, 43%);
+    --brightYellow: hsl(71, 73%, 54%);
+
+    /* Neutral */
+    --lightGray: hsl(204, 43%, 93%);
+    --grayishBlue: hsl(218, 22%, 67%);
+
+    --baseFont: "Karla", sans-serif;
+
+    font-family: var(--baseFont);
+  }
+</style>
+
+<Layout title={projectTitle}>
+  <main>
+    <Heading title={projectTitle} />
+  </main>
+  <Footer font="var(--baseFont)" />
+</Layout>

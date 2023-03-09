@@ -30,6 +30,10 @@ module.exports = {
         rajah: "var(--rajah)",
         seashell: "var(--seashell)",
         blackRussian: "var(--blackRussian)",
+
+        brightYellow: "var(--brightYellow)",
+        lightGray: "var(--lightGray)",
+        grayishBlue: "var(--grayishBlue)",
       },
       backgroundImage: {
         eye: "var(--bg-eye)",
