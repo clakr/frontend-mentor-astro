@@ -16,15 +16,13 @@ type Category = {
   icon: ImageMetadata;
 };
 
-const categories: Category[] = data.map(({ category, score }) => ({
+const icons = [reaction, memory, verbal, visual];
+
+const categories: Category[] = data.map(({ category, score }, index) => ({
   category,
   score,
-  icon: reaction,
+  icon: icons[index],
 }));
-
-categories[1].icon = memory;
-categories[2].icon = verbal;
-categories[3].icon = visual;
 
 const projectTitle = "Results Summary";
 ---
