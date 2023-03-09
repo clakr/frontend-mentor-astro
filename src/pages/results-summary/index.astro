@@ -4,99 +4,53 @@ import Footer from "../../components/Footer.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import data from "./data.json";
+import "./style.css";
 
 const projectTitle = "Results Summary";
 ---
-
-<style>
-  @font-face {
-    font-family: "Hanken Grotesk";
-    src: url(../results-summary/HankenGrotesk-VariableFont_wght.ttf)
-      format("truetype");
-  }
-
-  :root {
-    /* Primary */
-
-    --lightRed: hsl(0, 100%, 67%);
-    --orangeyYellow: hsl(39, 100%, 56%);
-    --greenTeal: hsl(166, 100%, 37%);
-    --cobaltBlue: hsl(234, 85%, 45%);
-
-    /* Gradients */
-
-    --lightSlateBlue: hsl(252, 100%, 67%);
-    --lightRoyalBlue: hsl(241, 81%, 54%);
-
-    --violetBlue: hsla(256, 72%, 46%, 1);
-    --PersianBlue: hsla(241, 72%, 46%, 0);
-
-    /* Neutral */
-
-    --white: hsl(0, 0%, 100%);
-    --paleBlue: hsl(221, 100%, 96%);
-    --lightLavender: hsl(241, 100%, 89%);
-    --darkGrayBlue: hsl(224, 30%, 27%);
-
-    --baseFont: "Hanken Grotesk";
-
-    font-family: var(--baseFont);
-    background-color: var(--paleBlue);
-  }
-
-  main {
-    min-height: 100vh;
-    min-height: 100svh;
-  }
-
-  .card__result {
-    background-image: linear-gradient(
-      180deg,
-      var(--lightSlateBlue) 0%,
-      var(--lightRoyalBlue) 100%
-    );
-    box-shadow: 0 3rem 6rem rgba(61, 108, 236, 0.15);
-    border-radius: 0 0 3.2rem 3.2rem;
-    padding: 2.4rem 5.8rem 4rem;
-  }
-
-  .card__heading {
-    font-weight: 700;
-    font-size: 1.8rem;
-    line-height: 2.35rem;
-  }
-</style>
 
 <Layout title={projectTitle}>
   <main>
     <Heading title={projectTitle} />
     <div class="card">
-      <div class="card__result">
-        <span class="card__heading">Your Result</span>
-        <div class="card__total">
-          <span class="card__score">76</span>
+      <div class="result">
+        <span class="result__title">Your Result</span>
+        <div class="result__total">
+          <span class="result__score">76</span>
           of 100
         </div>
-        <span class="card__subheading">Great</span>
-        <p class="card__description">
-          Your performance exceed 65% of the people conducting the test here!
-        </p>
+        <div class="result__description">
+          <span class="result__heading">Great</span>
+          <p class="result__subheading">
+            Your performance exceed 65% of the people conducting the test here!
+          </p>
+        </div>
       </div>
-      <div>
-        <h2>Summary</h2>
-        {
-          data.map(({ category, score, icon }) => (
-            <div>
-              <Image loading={null} alt="" src={icon} width={20} height={20} />
-              <span>{category}</span>
-              <span>
-                <span>{score}</span> / 100
-              </span>
-            </div>
-          ))
-        }
+      <div class="summary">
+        <h2 class="summary__heading">Summary</h2>
+        <div class="categories">
+          {
+            data.map(({ category, score, icon }) => (
+              <div class="category">
+                <Image
+                  class="category__icon"
+                  loading={null}
+                  alt=""
+                  src={icon}
+                  width={20}
+                  height={20}
+                />
+                <span class="category__name">{category}</span>
+                <span class="category__total">
+                  <span class="category__score">{score}</span> / 100
+                </span>
+              </div>
+            ))
+          }
+        </div>
+        <button type="button" class="summary__cta">Continue</button>
       </div>
     </div>
   </main>
-  <Footer />
+  <Footer font="var(--baseFont)" color="var(--lightSlateBlue)" />
 </Layout>
