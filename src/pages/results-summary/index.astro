@@ -5,6 +5,26 @@ import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import data from "./data.json";
 import "./style.css";
+import memory from "/public/results-summary/icon-memory.svg";
+import reaction from "/public/results-summary/icon-reaction.svg";
+import verbal from "/public/results-summary/icon-verbal.svg";
+import visual from "/public/results-summary/icon-visual.svg";
+
+type Category = {
+  category: string;
+  score: number;
+  icon: ImageMetadata;
+};
+
+const categories: Category[] = data.map(({ category, score }) => ({
+  category,
+  score,
+  icon: reaction,
+}));
+
+categories[1].icon = memory;
+categories[2].icon = verbal;
+categories[3].icon = visual;
 
 const projectTitle = "Results Summary";
 ---
@@ -30,7 +50,7 @@ const projectTitle = "Results Summary";
         <h2 class="summary__heading">Summary</h2>
         <div class="categories">
           {
-            data.map(({ category, score, icon }) => (
+            categories.map(({ category, score, icon }) => (
               <div class="category">
                 <Image
                   class="category__icon"
