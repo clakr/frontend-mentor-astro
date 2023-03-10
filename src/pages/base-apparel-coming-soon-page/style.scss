@@ -147,6 +147,9 @@ main {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 61rem;
     grid-template-rows: 18.3rem 1fr;
+    background-image: url(../base-apparel-coming-soon-page/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 1fr 90rem;
   }
 
   .logo {
