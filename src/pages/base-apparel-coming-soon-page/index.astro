@@ -3,70 +3,62 @@ import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
-import heroMobile from "/public/base-apparel-coming-soon-page/hero-mobile.jpg";
+import "./style.scss";
 import arrow from "/public/base-apparel-coming-soon-page/icon-arrow.svg";
+import error from "/public/base-apparel-coming-soon-page/icon-error.svg";
 import logo from "/public/base-apparel-coming-soon-page/logo.svg";
 
 const projectTitle = "Base Apparel Coming Soon Page";
 ---
 
-<style lang="scss">
-  @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
-
-  :root {
-    /* Primary */
-    --desaturatedRed: hsl(0, 36%, 70%);
-    --softRed: hsl(0, 93%, 68%);
-
-    /* Neutral */
-    --darkGrayishRed: hsl(0, 6%, 24%);
-
-    /* Gradients */
-    --gradient1: linear-gradient(
-      135deg,
-      hsl(0, 0%, 100%) 0%,
-      hsl(0, 100%, 98%) 100%
-    );
-    --gradient2: linear-gradient(
-      135deg,
-      hsl(0, 80%, 86%) 0%,
-      hsl(0, 74%, 74%) 100%
-    );
-
-    --baseFont: "Josefin Sans", sans-serif;
-
-    font-family: var(--baseFont);
-  }
-
-  .logo {
-    padding: 3.1rem;
-
-    &__image {
-      max-width: 10rem;
-    }
-  }
-</style>
-
 <Layout title={projectTitle}>
   <Heading title={projectTitle} />
-
   <main>
     <header class="logo">
       <Image class="logo__image" loading={null} alt="" src={logo} />
     </header>
-    <Image loading={null} alt="" src={heroMobile} />
-    <section>
-      <h2>We're coming soon</h2>
-      <p>
+    <picture class="hero">
+      <source
+        srcset="/base-apparel-coming-soon-page/hero-desktop.jpg"
+        media="(min-width: 1440px)"
+      />
+      <img
+        src="/base-apparel-coming-soon-page/hero-mobile.jpg"
+        alt=""
+        class="card__image"
+      />
+    </picture>
+    <section class="copywrite">
+      <h2 class="copywrite__heading">
+        We're <span class="copywrite__emphasize">Coming Soon</span>
+      </h2>
+      <p class="copywrite__subheading">
         Hello fellow shoppers! We're currently building our new fashion store.
         Add your email below to stay up-to-date with announcements and our
         launch deals.
       </p>
-      <form action="#">
-        <input type="email" name="email" id="email" />
-        <button type="submit">
-          <Image loading={null} alt="" src={arrow} />
-        </button>
+      <form class="form" action="#">
+        <input
+          class="form__input"
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email Address"
+        />
+        <div class="form__button_container">
+          <Image
+            class="form__invalid_icon"
+            loading={null}
+            alt=""
+            src={error}
+            width={24}
+            height={24}
+          />
+          <button class="form__button" type="submit">
+            <Image loading={null} alt="" src={arrow} width={9} height={18} />
+          </button>
+        </div>
+        <span class="form__invalid">Please provide a valid email</span>
       </form>
     </section>
   </main>
