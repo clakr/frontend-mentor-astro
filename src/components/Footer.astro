@@ -3,22 +3,32 @@ type Props = {
   color?: string;
   font?: string;
   dark?: boolean;
+  left?: boolean;
 };
 
-const { color = "blue", font = "Arial", dark = false } = Astro.props;
-let baseColor = dark ? "white" : "black";
+const {
+  color = "blue",
+  font = "Arial",
+  dark = false,
+  left = false,
+} = Astro.props;
+const baseColor = dark ? "white" : "black";
+const basePosition = left ? "auto auto 1em 1em" : "auto 1em 1em auto";
+const baseAlign = left ? "start" : "end";
 ---
 
-<style lang="scss" define:vars={{ color, font, baseColor }}>
+<style
+  lang="scss"
+  define:vars={{ color, font, baseColor, basePosition, baseAlign }}
+>
   footer {
     display: none;
-    position: absolute;
-    bottom: 1em;
-    right: 1em;
-    font-size: 1.5em;
-    text-align: end;
     font-family: var(--font);
     color: var(--baseColor);
+    font-size: 1.5em;
+    position: absolute;
+    inset: var(--basePosition);
+    text-align: var(--baseAlign);
   }
 
   a {
