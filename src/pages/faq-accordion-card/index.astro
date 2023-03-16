@@ -1,18 +1,124 @@
 ---
-import Layout from "../../layout/Layout.astro"
+import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
 import Heading from "../../components/Heading.astro";
+import Layout from "../../layout/Layout.astro";
+import patternMobile from "/public/faq-accordion-card/bg-pattern-mobile.svg";
+import arrow from "/public/faq-accordion-card/icon-arrow-down.svg";
+import womanMobile from "/public/faq-accordion-card/illustration-woman-online-mobile.svg";
 
-const projectTitle = 'FAQ Accordion Card'
+const projectTitle = "FAQ Accordion Card";
+
+type Accordion = {
+  summary: string;
+  description: string;
+};
+
+const accordions: Accordion[] = [
+  {
+    summary: "How many team members can I invite?",
+    description:
+      "You can invite up to 2 additional users on the Free plan. There is no limit on team members for the Premium plan.",
+  },
+  {
+    summary: "What is the maximum file upload size?",
+    description:
+      "No more than 2GB. All files in your account must fit your allotted storage space.",
+  },
+  {
+    summary: "How do I reset my password?",
+    description:
+      "Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be emailed to you.",
+  },
+  {
+    summary: "Can I cancel my subscription?",
+    description:
+      "Yes! Send us a message and we'll process your request no questions asked.",
+  },
+  {
+    summary: "Do you provide additional support?",
+    description:
+      "Chat and email support is available 24/7. Phone lines are open during normal business hours.",
+  },
+];
 ---
 
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+  :root {
+    /* Text */
+    --veryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+    --softRed: hsl(14, 88%, 65%);
+
+    /* Gradient */
+    --softViolet: hsl(273, 75%, 66%);
+    --softBlue: hsl(240, 73%, 65%);
+
+    /* Neutral */
+    --veryDarkGrayishBlue: hsl(237, 12%, 33%);
+    --darkGrayishBlue: hsl(240, 6%, 50%);
+
+    /* Dividers */
+    --lightGrayishBlue: hsl(240, 5%, 91%);
+    --white: hsl(0, 0%, 100%);
+
+    --baseFont: "Kumbh Sans", sans-serif;
+
+    font-family: var(--baseFont);
+  }
+</style>
+
 <Layout title={projectTitle}>
+  <main
+    class="min-h-screen bg-[linear-gradient(180deg,_var(--softViolet)_0%,_var(--softBlue)_100%)] px-[2.4rem] pt-[14.8rem] pb-[8.5rem]"
+  >
     <Heading title={projectTitle} />
-    <main>
-        <details>
-            <summary>qwe</summary>
-            asd
-        </details>
-    </main>
-    <Footer />
-</Layout> 
+    <div
+      class="relative flex flex-col gap-y-[1.8rem] rounded-[2.3rem] bg-white px-[2.4rem] pt-[13.2rem] pb-[4.8rem] shadow-[0_5rem_5rem_-2rem_rgba(53,18,122,0.5)]"
+    >
+      <Image
+        class="absolute top-0 left-1/2 -translate-y-[60%] -translate-x-1/2"
+        loading={null}
+        alt=""
+        src={womanMobile}
+        width={237}
+        height={180}
+      />
+      <Image
+        class="absolute top-0 left-1/2 -translate-x-1/2"
+        loading={null}
+        alt=""
+        src={patternMobile}
+        width={240}
+        height={145}
+      />
+      <h2
+        class="self-center text-[3.2rem] font-bold leading-[4rem] text-veryDarkDesaturatedBlue"
+      >
+        FAQ
+      </h2>
+      <div>
+        {
+          accordions.map(({ summary, description }) => (
+            <details class="border-b-lightGrayishBlue text-veryDarkGrayishBlue group border-b py-[2rem] text-[1.3rem] leading-[1.61rem]">
+              <summary class="active:text-softRed group-open:text-veryDarkDesaturatedBlue flex items-center justify-between group-open:pb-[1.3rem] group-open:font-bold">
+                {summary}
+                <Image
+                  loading={null}
+                  alt=""
+                  src={arrow}
+                  class="group-open:rotate-180"
+                />
+              </summary>
+              <p class="text-darkGrayishBlue text-[1.2rem] leading-[1.8rem]">
+                {description}
+              </p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+  <Footer font="var(--baseFont)" />
+</Layout>

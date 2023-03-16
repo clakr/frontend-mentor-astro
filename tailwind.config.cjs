@@ -34,6 +34,14 @@ module.exports = {
         brightYellow: "var(--brightYellow)",
         lightGray: "var(--lightGray)",
         grayishBlue: "var(--grayishBlue)",
+        
+        veryDarkDesaturatedBlue: "var(--veryDarkDesaturatedBlue)",
+        softRed: "var(--softRed)",
+        softViolet: "var(--softViolet)",
+        softBlue: "var(--softBlue)",
+        veryDarkGrayishBlue: "var(--veryDarkGrayishBlue)",
+        darkGrayishBlue: "var(--darkGrayishBlue)",
+        lightGrayishBlue: "var(--lightGrayishBlue)",
       },
       backgroundImage: {
         eye: "var(--bg-eye)",
