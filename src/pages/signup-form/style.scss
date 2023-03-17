@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Primary */
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+
+  /* Accent */
+  --blue: hsl(248, 32%, 49%);
+
+  /* Neutral */
+  --darkBlue: hsl(249, 10%, 26%);
+  --grayishBlue: hsl(246, 25%, 77%);
+  --white: hsl(0, 0%, 100%);
+
+  --baseFont: "Poppins", sans-serif;
+  --baseColor: var(--white);
+
+  font-family: var(--baseFont);
+  color: var(--baseColor);
+}
+
+body {
+  background-image: url(../signup-form/bg-intro-mobile.png);
+  background-color: var(--red);
+}
+
+main {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 8.8rem 2.4rem 6.8rem;
+  display: grid;
+  row-gap: 6.4rem;
+}
+
+.copywrite {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+  text-align: center;
+
+  &__heading {
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+    letter-spacing: -0.03rem;
+  }
+
+  &__subheading {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+}
+
+.offer {
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.03rem;
+  text-align: center;
+  padding: 1.8rem 6.6rem;
+  background-color: var(--blue);
+  box-shadow: 0 0.8rem 0 rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+
+  &__emphasize {
+    font-weight: 500;
+  }
+}
+
+.form {
+  background-color: var(--white);
+  box-shadow: 0 0.8rem 0 rgba(0, 0, 0, 0.15);
+  border-radius: 1rem;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+
+  &:has(input:invalid) {
+    row-gap: 3.5rem;
+  }
+
+  &__group {
+    position: relative;
+  }
+
+  &__input {
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    letter-spacing: 0.03rem;
+    color: var(--darkBlue);
+    padding: 1.3rem 4.2rem 1.3rem 3.2rem;
+    border: 0.1rem solid #dedede;
+    border-radius: 0.5rem;
+    width: 100%;
+
+    &:focus {
+      outline: 0.2rem solid var(--blue);
+    }
+
+    &:invalid {
+      color: var(--red);
+      border: 0.2rem solid var(--red);
+
+      & ~ .form__invalid {
+        &_icon {
+          display: block;
+        }
+        &_label {
+          display: block;
+        }
+      }
+    }
+
+    &:invalid:focus {
+      outline: 0.2rem solid var(--red);
+    }
+  }
+
+  &__invalid {
+    &_icon {
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      transform: translateY(-50%);
+    }
+
+    &_label {
+      display: none;
+      font-weight: 500;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.65rem;
+      color: var(--red);
+      position: absolute;
+      bottom: -2.2rem;
+      right: 0;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.8rem;
+  }
+
+  &__button {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2.6rem;
+    letter-spacing: 0.1rem;
+    padding: 1.5rem;
+    background-color: var(--green);
+    box-shadow: inset 0 -0.4rem 0 rgba(0, 0, 0, 0.01);
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+
+    &:active {
+      background-color: #77e2b3;
+    }
+  }
+
+  &__notice {
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 2.1rem;
+    text-align: center;
+    color: var(--grayishBlue);
+  }
+
+  &__link {
+    font-weight: 700;
+    color: var(--red);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-image: url(../signup-form/bg-intro-desktop.png);
+  }
+
+  main {
+    padding: 7.7rem 16.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: unset;
+    column-gap: 4.5rem;
+  }
+
+  .copywrite {
+    row-gap: 1.1rem;
+    text-align: start;
+    justify-content: center;
+
+    &__heading {
+      font-size: 5rem;
+      line-height: 5.5rem;
+      letter-spacing: -0.05rem;
+    }
+  }
+
+  .content {
+    justify-content: center;
+  }
+
+  .form {
+    padding: 4rem;
+
+    &:has(input:invalid) {
+      row-gap: 4.2rem;
+    }
+  }
+}
