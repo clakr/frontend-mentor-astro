@@ -196,7 +196,7 @@ main {
   }
 
   .copywrite {
-    row-gap: 4.2rem;
+    row-gap: 3rem;
     text-align: start;
     justify-content: center;
 
@@ -215,7 +215,7 @@ main {
     padding: 4rem;
 
     &:has(input:invalid) {
-      row-gap: 3rem;
+      row-gap: 4.2rem;
     }
   }
 }
