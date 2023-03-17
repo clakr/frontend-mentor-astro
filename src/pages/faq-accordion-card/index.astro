@@ -3,15 +3,15 @@ import { Image } from "@astrojs/image/components";
 import Footer from "../../components/Footer.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
-import patternMobile from "/public/faq-accordion-card/bg-pattern-mobile.svg";
 import arrow from "/public/faq-accordion-card/icon-arrow-down.svg";
-import womanMobile from "/public/faq-accordion-card/illustration-woman-online-mobile.svg";
+import box from "/public/faq-accordion-card/illustration-box-desktop.svg";
 
 const projectTitle = "FAQ Accordion Card";
 
 type Accordion = {
   summary: string;
   description: string;
+  open?: boolean;
 };
 
 const accordions: Accordion[] = [
@@ -24,6 +24,7 @@ const accordions: Accordion[] = [
     summary: "What is the maximum file upload size?",
     description:
       "No more than 2GB. All files in your account must fit your allotted storage space.",
+    open: true,
   },
   {
     summary: "How do I reset my password?",
@@ -63,6 +64,9 @@ const accordions: Accordion[] = [
     --lightGrayishBlue: hsl(240, 5%, 91%);
     --white: hsl(0, 0%, 100%);
 
+    --bg-main-mobile: url(../faq-accordion-card/bg-pattern-mobile.svg);
+    --bg-main-desktop: url(../faq-accordion-card/bg-pattern-desktop.svg);
+
     --baseFont: "Kumbh Sans", sans-serif;
 
     font-family: var(--baseFont);
@@ -71,54 +75,81 @@ const accordions: Accordion[] = [
 
 <Layout title={projectTitle}>
   <main
-    class="min-h-screen bg-[linear-gradient(180deg,_var(--softViolet)_0%,_var(--softBlue)_100%)] px-[2.4rem] pt-[14.8rem] pb-[8.5rem]"
+    class="min-h-screen bg-[linear-gradient(180deg,_var(--softViolet)_0%,_var(--softBlue)_100%)] px-[2.4rem] pt-[14.8rem] pb-[8.5rem] desktop:grid desktop:place-items-center desktop:py-0"
   >
     <Heading title={projectTitle} />
     <div
-      class="relative flex flex-col gap-y-[1.8rem] rounded-[2.3rem] bg-white px-[2.4rem] pt-[13.2rem] pb-[4.8rem] shadow-[0_5rem_5rem_-2rem_rgba(53,18,122,0.5)]"
+      class="relative grid overflow-y-hidden rounded-[2.3rem] bg-white bg-mobile bg-top bg-no-repeat px-[2.4rem] pt-[13.2rem] pb-[4.8rem] shadow-[0_5rem_5rem_-2rem_rgba(53,18,122,0.5)] desktop:h-[50.9rem] desktop:w-[92rem] desktop:grid-cols-2 desktop:bg-desktop desktop:bg-[left_-57.5rem_bottom_-15rem] desktop:p-0"
     >
       <Image
-        class="absolute top-0 left-1/2 -translate-y-[60%] -translate-x-1/2"
         loading={null}
         alt=""
-        src={womanMobile}
-        width={237}
-        height={180}
+        src={box}
+        class="hidden desktop:absolute desktop:top-1/2 desktop:left-0 desktop:z-10 desktop:block desktop:-translate-x-[60%] desktop:-translate-y-1/4"
       />
-      <Image
-        class="absolute top-0 left-1/2 -translate-x-1/2"
-        loading={null}
-        alt=""
-        src={patternMobile}
-        width={240}
-        height={145}
-      />
-      <h2
-        class="self-center text-[3.2rem] font-bold leading-[4rem] text-veryDarkDesaturatedBlue"
+      <div
+        class="desktop:relative desktop:col-span-1 desktop:overflow-x-hidden"
       >
-        FAQ
-      </h2>
-      <div>
-        {
-          accordions.map(({ summary, description }) => (
-            <details class="border-b-lightGrayishBlue text-veryDarkGrayishBlue group border-b py-[2rem] text-[1.3rem] leading-[1.61rem]">
-              <summary class="active:text-softRed group-open:text-veryDarkDesaturatedBlue flex items-center justify-between group-open:pb-[1.3rem] group-open:font-bold">
-                {summary}
-                <Image
-                  loading={null}
-                  alt=""
-                  src={arrow}
-                  class="group-open:rotate-180"
-                />
-              </summary>
-              <p class="text-darkGrayishBlue text-[1.2rem] leading-[1.8rem]">
-                {description}
-              </p>
-            </details>
-          ))
-        }
+        <picture
+          class="absolute top-0 left-1/2 w-[23.7rem] -translate-y-[60%] -translate-x-1/2 desktop:left-0 desktop:top-1/2 desktop:w-[47.2rem] desktop:-translate-x-[8.4rem] desktop:-translate-y-1/2"
+        >
+          <source
+            srcset="/faq-accordion-card/illustration-woman-online-desktop.svg"
+            media="(min-width: 1440px)"
+          />
+          <img
+            src="/faq-accordion-card/illustration-woman-online-mobile.svg"
+            alt=""
+          />
+        </picture>
+      </div>
+      <div
+        class="flex flex-col gap-y-[1.8rem] desktop:col-span-1 desktop:gap-y-[1.7rem] desktop:pt-[6.5rem] desktop:pr-[9.5rem]"
+      >
+        <h2
+          class="self-center text-[3.2rem] font-bold leading-[4rem] text-veryDarkDesaturatedBlue desktop:self-start"
+        >
+          FAQ
+        </h2>
+        <div>
+          {
+            accordions.map(({ summary, description, open }) => (
+              <details
+                class="border-b-lightGrayishBlue text-veryDarkGrayishBlue desktop:text-[1.4rem] desktop:leading-[1.74rem] group cursor-pointer select-none border-b py-[1.8rem] text-[1.3rem] leading-[1.61rem]"
+                open={open}
+              >
+                <summary class="active:text-softRed group-open:text-veryDarkDesaturatedBlue flex items-center justify-between group-open:pb-[1.1rem] group-open:font-bold">
+                  {summary}
+                  <Image
+                    loading={null}
+                    alt=""
+                    src={arrow}
+                    class="group-open:rotate-180"
+                  />
+                </summary>
+                <p class="text-darkGrayishBlue text-[1.2rem] leading-[1.8rem]">
+                  {description}
+                </p>
+              </details>
+            ))
+          }
+        </div>
       </div>
     </div>
   </main>
-  <Footer font="var(--baseFont)" />
+  <Footer font="var(--baseFont)" color="var(--veryDarkDesaturatedBlue)" />
 </Layout>
+
+<script>
+  const details = document.querySelectorAll("details");
+
+  details.forEach((targetDetail) => {
+    targetDetail.addEventListener("click", function () {
+      details.forEach((detail) => {
+        if (detail !== targetDetail) {
+          detail.open = false;
+        }
+      });
+    });
+  });
+</script>
