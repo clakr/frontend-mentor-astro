@@ -1,6 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Footer from "../../components/Footer.astro";
+import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import qrCode from "/public/qr-code/image-qr-code.png";
@@ -87,5 +87,6 @@ const projectTitle = "QR Code";
       </p>
     </div>
   </main>
-  <Footer color="var(--darkBlue)" font="var(--baseFont)" />
+  <Author />
+  <!-- <Footer color="var(--darkBlue)" font="var(--baseFont)" /> -->
 </Layout>

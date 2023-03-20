@@ -1,0 +1,139 @@
+<style lang="scss">
+  .information_button {
+    position: fixed;
+    inset: auto 1rem 1rem auto;
+
+    &__icon {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+
+  .dialog {
+    &[open] {
+      width: 30em;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: rgba(14, 18, 22, 0.35) 0 1rem 3.8rem -1rem,
+        rgba(14, 18, 22, 0.2) 0 1 2 -1.5;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__heading {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    &__close {
+      &_icon {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      column-gap: 1rem;
+      font-size: 1.2rem;
+    }
+
+    &::backdrop {
+      background: black;
+      opacity: 0.5;
+    }
+  }
+
+  .github {
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+
+    &__avatar {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+    }
+  }
+</style>
+
+<button
+  class="information_button"
+  type="button"
+  title="Open Information Dialog Button"
+>
+  <svg
+    class="information_button__icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512"
+  >
+    <path
+      d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+    >
+    </path>
+  </svg>
+</button>
+
+<dialog class="dialog">
+  <form class="dialog__header" method="dialog">
+    <h1 class="dialog__heading">Project Information</h1>
+    <button class="dialog__close" title="Close Information Dialog Button">
+      <svg
+        class="dialog__close_icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+      >
+        <path
+          d="M175 175C184.4 165.7 199.6 165.7 208.1 175L255.1 222.1L303 175C312.4 165.7 327.6 165.7 336.1 175C346.3 184.4 346.3 199.6 336.1 208.1L289.9 255.1L336.1 303C346.3 312.4 346.3 327.6 336.1 336.1C327.6 346.3 312.4 346.3 303 336.1L255.1 289.9L208.1 336.1C199.6 346.3 184.4 346.3 175 336.1C165.7 327.6 165.7 312.4 175 303L222.1 255.1L175 208.1C165.7 199.6 165.7 184.4 175 175V175zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"
+        >
+        </path>
+      </svg>
+    </button>
+  </form>
+
+  <div class="dialog__body">
+    <p class="dialog__item">
+      Challenge by:
+      <a href="https://www.frontendmentor.io/" target="_blank">
+        <img
+          src="https://www.frontendmentor.io/static/images/logo-desktop.svg"
+          alt="Frontend Mentor Icon"
+        />
+      </a>
+    </p>
+    <p class="dialog__item">
+      Coded by:
+      <a class="github" href="https://github.com/clakr" target="_blank">
+        <img
+          class="github__avatar"
+          src="https://avatars.githubusercontent.com/u/103111910?v=4"
+          alt="Clark Tolosa's Avatar"
+        />
+        Clark Tolosa
+      </a>
+    </p>
+  </div>
+</dialog>
+
+<script>
+  const openBtn = document.querySelector(".information_button")!;
+  const dialog = document.querySelector("dialog")!;
+
+  openBtn.addEventListener("click", () => {
+    dialog.showModal();
+  });
+</script>
