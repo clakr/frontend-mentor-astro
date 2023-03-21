@@ -1,6 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Footer from "../../components/Footer.astro";
+import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import "./style.scss";
@@ -110,5 +110,5 @@ const testimonials: Testimonial[] = [
       }
     </article>
   </main>
-  <Footer font="var(--baseFont)" color="var(--veryDarkMagenta)" />
+  <Author />
 </Layout>

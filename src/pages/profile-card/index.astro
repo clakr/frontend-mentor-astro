@@ -1,6 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Footer from "../../components/Footer.astro";
+import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import cardPattern from "/public/profile-card/bg-pattern-card.svg";
@@ -158,7 +158,6 @@ const stats: Stat[] = [
   }
 
   @media screen and (min-width: 1440px) {
-    /* TODO: change positions */
     body {
       background-position: bottom calc(100% + 35rem) left calc(100% - 76rem),
         top calc(100% + 48rem) right calc(100% - 70rem);
@@ -214,5 +213,5 @@ const stats: Stat[] = [
       </div>
     </div>
   </main>
-  <Footer font="var(--baseFont)" color="var(--veryDarkDesaturatedBlue)" />
+  <Author />
 </Layout>

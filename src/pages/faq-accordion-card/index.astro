@@ -1,5 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
+import Author from "../../components/Author.astro";
 import Footer from "../../components/Footer.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
@@ -137,6 +138,7 @@ const accordions: Accordion[] = [
       </div>
     </div>
   </main>
+  <Author dark />
   <Footer font="var(--baseFont)" color="var(--veryDarkDesaturatedBlue)" />
 </Layout>
 

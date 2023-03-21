@@ -1,5 +1,6 @@
 ---
 import { Image } from "@astrojs/image/components";
+import Author from "../../components/Author.astro";
 import Footer from "../../components/Footer.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
@@ -70,5 +71,6 @@ const projectTitle = "Results Summary";
       </div>
     </div>
   </main>
+  <Author />
   <Footer font="var(--baseFont)" color="var(--lightSlateBlue)" />
 </Layout>
