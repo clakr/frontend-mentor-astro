@@ -1,0 +1,32 @@
+---
+import Author from "../../components/Author.astro";
+import Layout from "../../layout/Layout.astro";
+
+const projectTitle = "WorkIt Landing Page";
+---
+
+<style>
+  @font-face {
+    font-family: "Fraunces";
+    src: url(../workit-landing-page/Fraunces.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "Manrope";
+    src: url(../workit-landing-page/Manrope.ttf) format("truetype");
+  }
+
+  :root {
+    --blackcurrant: #24053e;
+    --shamrock: #44ffa1;
+    --mulledWine: #584d62;
+    --magnolia: #fcf8ff;
+    --white: #ffffff;
+
+    font-family: "Manrope";
+  }
+</style>
+
+<Layout title={projectTitle}>
+  <Author />
+</Layout>
