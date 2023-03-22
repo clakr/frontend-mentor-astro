@@ -2,6 +2,10 @@
 import { Image } from "@astrojs/image/components";
 import Author from "../../components/Author.astro";
 import Layout from "../../layout/Layout.astro";
+import "./style.css";
+import patternOne from "/public/workit-landing-page/bg-pattern-1.svg";
+import patternTwo from "/public/workit-landing-page/bg-pattern-2.svg";
+import patternThree from "/public/workit-landing-page/bg-pattern-3.svg";
 import founder from "/public/workit-landing-page/image-founder.webp";
 import hero from "/public/workit-landing-page/image-hero.webp";
 import logoDark from "/public/workit-landing-page/logo-dark.svg";
@@ -33,218 +37,18 @@ const cards: Card[] = [
 ];
 ---
 
-<style>
-  @font-face {
-    font-family: "Fraunces";
-    src: url(../workit-landing-page/Fraunces.ttf) format("truetype");
-  }
-
-  @font-face {
-    font-family: "Manrope";
-    src: url(../workit-landing-page/Manrope.ttf) format("truetype");
-  }
-
-  :root {
-    --blackcurrant: #24053e;
-    --shamrock: #44ffa1;
-    --mulledWine: #584d62;
-    --magnolia: #fcf8ff;
-    --white: #ffffff;
-
-    font-family: "Manrope";
-  }
-
-  .header {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 375 482' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' %3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0H375.303V464C375.303 464 282.249 481.707 188.173 481.707C94.0966 481.707 0 464 0 464V0Z' fill='%2324053E'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    padding: 3.2rem 1.6rem 15.67rem;
-    display: flex;
-    flex-direction: column;
-    row-gap: 6.4rem;
-    position: relative;
-  }
-
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav__cta {
-    font-weight: 700;
-    font-size: 1.6rem;
-    line-height: 3.2rem;
-    letter-spacing: -0.02rem;
-    color: var(--white);
-    border-bottom: 3px solid var(--shamrock);
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    row-gap: 4rem;
-    align-items: center;
-    text-align: center;
-    position: relative;
-  }
-
-  .hero__header {
-    font-family: "Fraunces";
-    font-size: 5rem;
-    line-height: 5rem;
-    color: var(--white);
-  }
-
-  .hero__cta {
-    font-weight: 700;
-    font-size: 1.6rem;
-    line-height: 3.2rem;
-    letter-spacing: -0.02rem;
-    color: var(--blackcurrant);
-    padding: 1.2rem 2.4rem;
-    background-color: var(--shamrock);
-    width: fit-content;
-  }
-
-  .hero__image {
-    width: 32rem;
-    height: 18.4rem;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%) translateY(50%);
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    row-gap: 6.4rem;
-  }
-
-  .cards {
-    padding: 24.5rem 1.6rem 7.1rem;
-    display: grid;
-    row-gap: 4rem;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 375 1071' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' %3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0H375.303V1053C375.303 1053 282.249 1070.71 188.173 1070.71C94.0966 1070.71 0 1053 0 1053L0 0Z' fill='%23FCF8FF'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    margin-top: -9rem;
-  }
-
-  .card {
-    display: grid;
-    place-items: center;
-    row-gap: 2.4rem;
-  }
-
-  .card__number {
-    font-family: "Fraunces";
-    font-weight: 600;
-    font-size: 2rem;
-    line-height: 3.6rem;
-    color: var(--blackcurrant);
-    padding: 0.5rem 1.6rem;
-    border: 1px solid var(--blackcurrant);
-    border-radius: 50%;
-  }
-
-  .card__body {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.6rem;
-  }
-
-  .card__heading {
-    font-family: "Fraunces";
-    font-weight: 600;
-    font-size: 2.8rem;
-    line-height: 3.6rem;
-    text-align: center;
-    color: var(--blackcurrant);
-  }
-
-  .card__subheading {
-    font-family: "Manrope";
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    text-align: center;
-    color: var(--mulledWine);
-  }
-
-  .founder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .founder__image {
-    width: 28.1rem;
-    height: 28.1rem;
-  }
-
-  .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1.6rem;
-    padding: 3.2rem;
-    background-color: var(--blackcurrant);
-    margin-inline: 1.6rem;
-    color: var(--white);
-    text-align: center;
-    margin-top: -5.3rem;
-  }
-
-  .info__heading {
-    font-family: "Fraunces";
-    font-size: 3.2rem;
-    line-height: 4.8rem;
-  }
-
-  .info__subheading {
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-  }
-
-  .info__cta {
-    margin-top: 0.8rem;
-    font-weight: 700;
-    font-size: 1.6rem;
-    line-height: 3.2rem;
-    letter-spacing: -0.02rem;
-    color: var(--blackcurrant);
-    padding: 1.1rem 2.35rem;
-    background-color: var(--shamrock);
-    width: fit-content;
-  }
-
-  .footer {
-    padding: 6.4rem 13rem;
-    display: flex;
-    flex-direction: column;
-    row-gap: 5.8rem;
-    align-items: center;
-  }
-
-  .icons {
-    display: flex;
-    column-gap: 2.8rem;
-  }
-
-  .icon {
-    width: 2rem;
-    height: 2rem;
-    fill: var(--mulledWine);
-  }
-</style>
-
 <Layout title={projectTitle}>
   <header class="header">
+    <Image class="header__pattern_one" loading={null} alt="" src={patternOne} />
+    <Image class="header__pattern_two" loading={null} alt="" src={patternTwo} />
     <nav class="nav">
       <Image loading={null} alt="" src={logoLight} width={96} height={25} />
       <button class="nav__cta">Apply for access</button>
     </nav>
     <div class="hero">
-      <h1 class="hero__header">Data tailored to your needs.</h1>
+      <h1 class="hero__heading">
+        Data <span class="hero__emphasize">tailored</span> to your needs.
+      </h1>
       <button class="hero__cta">Learn more</button>
     </div>
     <Image class="hero__image" loading={null} alt="" src={hero} />
@@ -265,7 +69,15 @@ const cards: Card[] = [
     </div>
     <div class="founder">
       <Image class="founder__image" loading={null} alt="" src={founder} />
+
       <div class="info">
+        <Image
+          class="header__pattern_three"
+          loading={null}
+          alt=""
+          src={patternThree}
+        />
+
         <h3 class="info__heading">Be the first to test</h3>
         <p class="info__subheading">
           Hi, I'm Louis Graham, the founder of the company. Book a demo call

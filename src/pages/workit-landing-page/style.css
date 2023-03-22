@@ -1,0 +1,322 @@
+@font-face {
+  font-family: "Fraunces";
+  src: url(../workit-landing-page/Fraunces.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(../workit-landing-page/Manrope.ttf) format("truetype");
+}
+
+:root {
+  --blackcurrant: #24053e;
+  --shamrock: #44ffa1;
+  --mulledWine: #584d62;
+  --magnolia: #fcf8ff;
+  --white: #ffffff;
+
+  font-family: "Manrope";
+}
+
+.header {
+  background-image: url("data:image/svg+xml,%3Csvg width='375' height='482' viewBox='0 0 375 482' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0H375.303V464C375.303 464 282.249 481.707 188.173 481.707C94.0966 481.707 0 464 0 464V0Z' fill='%2324053E'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-color: var(--magnolia);
+  padding: 3.2rem 1.6rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 6.4rem;
+}
+
+.header__pattern_one,
+.header__pattern_two,
+.header__pattern_three {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__cta {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.02rem;
+  color: var(--white);
+  border-bottom: 3px solid var(--shamrock);
+}
+
+.nav__cta:active {
+  color: var(--shamrock);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+  align-items: center;
+  text-align: center;
+}
+
+.hero__heading {
+  font-family: "Fraunces";
+  font-size: 5rem;
+  line-height: 5rem;
+  color: var(--white);
+}
+
+.hero__emphasize {
+  position: relative;
+}
+
+.hero__emphasize::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.3rem;
+  bottom: 0.5rem;
+  left: 0;
+  background-color: var(--shamrock);
+}
+
+.hero__cta {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.02rem;
+  color: var(--blackcurrant);
+  padding: 1.2rem 2.4rem;
+  background-color: var(--shamrock);
+  width: fit-content;
+}
+
+:is(.hero__cta, .info__cta):active {
+  background-color: transparent;
+  color: var(--shamrock);
+  outline: 2px solid var(--shamrock);
+}
+
+.hero__image {
+  width: 32rem;
+  height: 18.4rem;
+  align-self: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6.4rem;
+}
+
+.cards {
+  padding: 7.1rem 1.6rem;
+  display: grid;
+  row-gap: 4rem;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 375 1071' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' %3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0H375.303V1053C375.303 1053 282.249 1070.71 188.173 1070.71C94.0966 1070.71 0 1053 0 1053L0 0Z' fill='%23FCF8FF'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+.card {
+  display: grid;
+  place-items: center;
+  row-gap: 2.4rem;
+}
+
+.card__number {
+  font-family: "Fraunces";
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 3.6rem;
+  color: var(--blackcurrant);
+  padding: 0.5rem 1.6rem;
+  border: 1px solid var(--blackcurrant);
+  border-radius: 50%;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+  text-align: center;
+}
+
+.card__heading {
+  font-family: "Fraunces";
+  font-weight: 600;
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  color: var(--blackcurrant);
+}
+
+.card__subheading {
+  font-family: "Manrope";
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  color: var(--mulledWine);
+}
+
+.founder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.founder__image {
+  width: 28.1rem;
+  height: 28.1rem;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.6rem;
+  padding: 3.2rem;
+  background-color: var(--blackcurrant);
+  margin-inline: 1.6rem;
+  color: var(--white);
+  text-align: center;
+  margin-top: -5.3rem;
+}
+
+.info__heading {
+  font-family: "Fraunces";
+  font-size: 3.2rem;
+  line-height: 4.8rem;
+}
+
+.info__subheading {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+}
+
+.info__cta {
+  margin-top: 0.8rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.02rem;
+  color: var(--blackcurrant);
+  padding: 1.1rem 2.35rem;
+  background-color: var(--shamrock);
+  width: fit-content;
+}
+
+.footer {
+  padding: 7.4rem 13rem 6.4rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5.8rem;
+  align-items: center;
+  user-select: none;
+}
+
+.icons {
+  display: flex;
+  column-gap: 2.8rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--mulledWine);
+  cursor: pointer;
+}
+
+.icon:active {
+  fill: var(--blackcurrant);
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    background-image: url("data:image/svg+xml,%3Csvg width='768' height='541' viewBox='0 0 768 541' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0H768V504C768 504 577.579 540.236 385.067 540.236C192.554 540.236 0 504 0 504V0Z' fill='%2324053E'/%3E%3C/svg%3E%0A");
+    padding: 3.2rem 4rem 0;
+    row-gap: 5.6rem;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .header__pattern_one,
+  .header__pattern_two,
+  .header__pattern_three {
+    display: block;
+    position: absolute;
+  }
+
+  .header__pattern_one {
+    top: 7.11rem;
+    left: -22.72rem;
+  }
+
+  .header__pattern_two {
+    top: 24.9rem;
+    right: -9.4rem;
+  }
+
+  .hero__heading {
+    font-size: 6rem;
+    line-height: 6rem;
+    max-width: 7.5em;
+  }
+
+  .hero__image {
+    width: 51.4rem;
+    height: 29.6rem;
+  }
+
+  /* add rowgap */
+
+  main {
+    row-gap: 10.03rem;
+  }
+
+  .cards {
+    padding: 5.6rem 9.8rem 10.37rem;
+    row-gap: 4.8rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='768' height='636' viewBox='0 0 768 636' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0H768V610.97C768 610.97 577.579 636 385.067 636C192.554 636 0 610.97 0 610.97V0Z' fill='%23FCF8FF'/%3E%3C/svg%3E%0A");
+  }
+
+  .card {
+    grid-template-columns: 4.8rem 1fr;
+    column-gap: 3.2rem;
+  }
+
+  .card__body {
+    text-align: start;
+  }
+
+  /* --- */
+
+  .founder {
+    align-items: start;
+    padding-inline: 4rem;
+  }
+
+  .info {
+    align-items: flex-start;
+    row-gap: 2.4rem;
+    padding: 4.8rem 5.6rem 5.6rem;
+    text-align: start;
+    margin-top: -13rem;
+    width: 51.4rem;
+    align-self: flex-end;
+    position: relative;
+  }
+
+  .info__heading {
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+  }
+
+  .header__pattern_three {
+    bottom: -10.53rem;
+    right: 1.3rem;
+  }
+
+  .footer {
+    padding-block: 8rem 12.18rem;
+  }
+}
