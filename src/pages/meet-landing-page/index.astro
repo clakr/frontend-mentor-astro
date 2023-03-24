@@ -1,10 +1,75 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Layout from "../../layout/Layout.astro";
 import "./style.scss";
+import man from "/public/meet-landing-page/desktop/image-man-texting.jpg";
+import men from "/public/meet-landing-page/desktop/image-men-in-meeting.jpg";
+import woman from "/public/meet-landing-page/desktop/image-woman-in-videocall.jpg";
+import women from "/public/meet-landing-page/desktop/image-women-videochatting.jpg";
+import logo from "/public/meet-landing-page/logo.svg";
+import heroTablet from "/public/meet-landing-page/tablet/image-hero.png";
 
 const projectTitle = "Meet Landing Page";
 ---
 
 <Layout title={projectTitle}>
-  <header></header>
+  <header class="header">
+    <Image
+      class="header__logo"
+      loading={null}
+      alt=""
+      src={logo}
+      width={119}
+      height={28}
+    />
+    <div class="hero">
+      <Image class="hero__main" loading={null} alt="" src={heroTablet} />
+      <div class="copywrite">
+        <h1 class="copywrite__heading">Group Chat for Everyone</h1>
+        <p class="copywrite__subheading">
+          Meet makes it easy to connect with others face-to-face virtually and
+          collaborate across any device.
+        </p>
+        <div class="copywrite__buttons">
+          <button class="copywrite__download">
+            Download
+            <span class="copywrite__version">v1.3</span>
+          </button>
+          <button class="copywrite__what"> What is it?</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="main__counter">01</div>
+    <div class="grid">
+      <Image class="grid__image" loading={null} alt="" src={woman} />
+      <Image class="grid__image" loading={null} alt="" src={women} />
+      <Image class="grid__image" loading={null} alt="" src={men} />
+      <Image class="grid__image" loading={null} alt="" src={man} />
+    </div>
+    <div class="copywrite">
+      <span class="copywrite__overline">Built for modern use</span>
+      <h2 class="copywrite__heading">Smarter meetings, all in one place</h2>
+      <p class="copywrite__subheading">
+        Send messages, share files, show your screen, and record your meetings —
+        all in one workspace. Control who can join with invite-only team access,
+        data encryption, and data export.
+      </p>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="counter_wrapper">
+      <div class="footer__counter">02</div>
+    </div>
+    <h3 class="footer__heading">Experience more together</h3>
+    <p class="footer__subheading">
+      Stay connected with reliable HD meetings and unlimited one-on-one and
+      group video sessions.
+    </p>
+    <button class="footer__cta">
+      Download
+      <span class="footer__version">v1.3</span>
+    </button>
+  </footer>
 </Layout>

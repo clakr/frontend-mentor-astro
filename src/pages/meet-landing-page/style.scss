@@ -1,13 +1,368 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;900&display=swap");
 
 :root {
-  --bostonBlue: #4d96a9;
+  --bostonBlue: #4d96a8;
   --deluge: #855fb1;
   --valhalla: #28283d;
   --manatee: #87879d;
   --columbiaBlue: #8fe3f9;
   --mauve: #d9b8ff;
   --snow: #fafafa;
+  --white: #ffffff;
 
   font-family: "Red Hat Display", sans-serif;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__logo {
+    padding-block: 4.8rem 5.4rem;
+  }
+
+  .hero {
+    display: grid;
+    row-gap: 4.8rem;
+
+    &__main {
+      width: 41.4rem;
+      height: 15.3rem;
+      object-fit: cover;
+    }
+
+    .copywrite {
+      display: flex;
+      flex-direction: column;
+      row-gap: 2.4rem;
+      padding-inline: 2.4rem;
+      text-align: center;
+
+      &__heading {
+        font-weight: 900;
+        font-size: 4rem;
+        line-height: 4.4rem;
+        color: var(--valhalla);
+      }
+
+      &__subheading {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        color: var(--manatee);
+      }
+
+      &__buttons {
+        margin-top: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.6rem;
+        align-items: center;
+      }
+
+      &__download {
+        font-weight: 900;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        color: var(--white);
+        background-color: var(--bostonBlue);
+        padding: 1.6rem 4rem;
+        border-radius: 2.9rem;
+        width: fit-content;
+      }
+
+      &__what {
+        font-weight: 900;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        color: var(--white);
+        background-color: var(--deluge);
+        padding: 1.6rem 2.9rem;
+        border-radius: 2.9rem;
+        width: fit-content;
+      }
+
+      &__version {
+        color: var(--columbiaBlue);
+      }
+    }
+  }
+}
+
+.main {
+  margin-top: 6.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 6.4rem;
+  padding-inline: 2.4rem;
+
+  &__counter {
+    margin-top: 8.4rem;
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    padding: 1.5rem 1.9rem;
+    background-color: var(--snow);
+    border: 1px solid rgba(135, 135, 157, 0.25);
+    border-radius: 50%;
+    width: fit-content;
+    position: relative;
+    color: var(--manatee);
+
+    &::before {
+      content: "";
+      width: 0.1rem;
+      height: 8.4rem;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      opacity: 0.25;
+      background-color: var(--manatee);
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.4rem;
+
+    &__image {
+      border-radius: 0.8rem;
+    }
+  }
+
+  .copywrite {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4rem;
+    text-align: center;
+
+    &__overline {
+      font-weight: 900;
+      font-size: 1.6rem;
+      line-height: 2.6rem;
+      letter-spacing: 0.4rem;
+      color: var(--bostonBlue);
+      text-transform: uppercase;
+    }
+
+    &__heading {
+      font-weight: 900;
+      font-size: 3.2rem;
+      line-height: 3.6rem;
+      color: var(--valhalla);
+    }
+
+    &__subheading {
+      margin-top: 0.8rem;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.6rem;
+      color: var(--manatee);
+    }
+  }
+}
+
+.footer {
+  margin-top: 17.6rem;
+  background-color: var(--bostonBlue);
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.4rem;
+  align-items: center;
+  padding: 9.2rem 2.4rem 7.2rem;
+
+  .counter_wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+  }
+
+  &__counter {
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    padding: 1.5rem 1.9rem;
+    background-color: var(--snow);
+    border: 1px solid rgba(135, 135, 157, 0.25);
+    border-radius: 50%;
+    width: fit-content;
+    position: relative;
+    color: var(--manatee);
+
+    &::before {
+      content: "";
+      width: 0.1rem;
+      height: 8.4rem;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      opacity: 0.25;
+      background-color: var(--manatee);
+    }
+  }
+
+  &__heading {
+    font-weight: 900;
+    font-size: 3.2rem;
+    line-height: 3.6rem;
+    color: var(--snow);
+  }
+
+  &__subheading {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    color: var(--snow);
+  }
+
+  &__cta {
+    margin-top: 0.8rem;
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    color: var(--white);
+    padding: 1.6rem 4rem;
+    background-color: var(--deluge);
+    border-radius: 2.9rem;
+    width: fit-content;
+    z-index: 1;
+  }
+
+  &__version {
+    color: var(--mauve);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(../meet-landing-page/mobile/image-footer.jpg);
+    background-size: cover;
+    opacity: 0.1;
+    user-select: none;
+    z-index: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    &__logo {
+      padding-bottom: 6.4rem;
+    }
+
+    .hero {
+      row-gap: 7.2rem;
+
+      &__main {
+        width: 82rem;
+        height: 30.3rem;
+      }
+
+      .copywrite {
+        padding-inline: 15.6rem;
+
+        &__heading {
+          font-size: 4.8rem;
+          line-height: 4.8rem;
+        }
+
+        &__subheading {
+        }
+
+        &__buttons {
+          margin-top: 0.8rem;
+          flex-direction: row;
+          row-gap: unset;
+          column-gap: 1.6rem;
+          justify-content: center;
+        }
+
+        &__download {
+        }
+
+        &__what {
+        }
+
+        &__version {
+        }
+      }
+    }
+  }
+
+  .main {
+    margin-top: 8rem;
+    row-gap: 4.8rem;
+    padding-inline: 4rem;
+
+    &__counter {
+      &::before {
+      }
+    }
+
+    .grid {
+      margin-top: 1.9rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0 1.1rem;
+
+      &__image {
+      }
+    }
+
+    .copywrite {
+      row-gap: 1.6rem;
+
+      &__overline {
+      }
+
+      &__heading {
+        font-size: 4rem;
+        line-height: 4.4rem;
+      }
+
+      &__subheading {
+        margin-top: 1.6rem;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 19.2rem;
+    row-gap: 3.2rem;
+    padding-inline: 9.8rem;
+    padding-bottom: 6.6rem;
+
+    .counter_wrapper {
+    }
+
+    &__counter {
+      &::before {
+      }
+    }
+
+    &__heading {
+      font-size: 4rem;
+      line-height: 4.4rem;
+    }
+
+    &__subheading {
+    }
+
+    &__cta {
+    }
+
+    &__version {
+    }
+
+    &::after {
+      content: "";
+      background-image: url(../meet-landing-page/tablet/image-footer.jpg);
+    }
+  }
 }
