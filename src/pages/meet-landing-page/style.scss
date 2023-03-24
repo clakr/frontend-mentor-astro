@@ -25,11 +25,19 @@
   .hero {
     display: grid;
     row-gap: 4.8rem;
+    overflow: hidden;
+    width: 100%;
+
+    &__left,
+    &__right {
+      display: none;
+    }
 
     &__main {
       width: 41.4rem;
       height: 15.3rem;
       object-fit: cover;
+      place-self: center;
     }
 
     .copywrite {
@@ -70,6 +78,10 @@
         padding: 1.6rem 4rem;
         border-radius: 2.9rem;
         width: fit-content;
+
+        &:active {
+          background-color: #71c0d4;
+        }
       }
 
       &__what {
@@ -81,6 +93,10 @@
         padding: 1.6rem 2.9rem;
         border-radius: 2.9rem;
         width: fit-content;
+
+        &:active {
+          background-color: #b18bdd;
+        }
       }
 
       &__version {
@@ -170,9 +186,9 @@
   background-color: var(--bostonBlue);
   position: relative;
   text-align: center;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   row-gap: 2.4rem;
+  justify-content: center;
   align-items: center;
   padding: 9.2rem 2.4rem 7.2rem;
 
@@ -233,6 +249,11 @@
     border-radius: 2.9rem;
     width: fit-content;
     z-index: 1;
+    justify-self: center;
+
+    &:active {
+      background-color: #b18bdd;
+    }
   }
 
   &__version {
@@ -273,24 +294,12 @@
           line-height: 4.8rem;
         }
 
-        &__subheading {
-        }
-
         &__buttons {
           margin-top: 0.8rem;
           flex-direction: row;
           row-gap: unset;
           column-gap: 1.6rem;
           justify-content: center;
-        }
-
-        &__download {
-        }
-
-        &__what {
-        }
-
-        &__version {
         }
       }
     }
@@ -301,25 +310,14 @@
     row-gap: 4.8rem;
     padding-inline: 4rem;
 
-    &__counter {
-      &::before {
-      }
-    }
-
     .grid {
       margin-top: 1.9rem;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 0 1.1rem;
-
-      &__image {
-      }
     }
 
     .copywrite {
       row-gap: 1.6rem;
-
-      &__overline {
-      }
 
       &__heading {
         font-size: 4rem;
@@ -338,31 +336,95 @@
     padding-inline: 9.8rem;
     padding-bottom: 6.6rem;
 
-    .counter_wrapper {
-    }
-
-    &__counter {
-      &::before {
-      }
-    }
-
     &__heading {
       font-size: 4rem;
       line-height: 4.4rem;
     }
 
+    &::after {
+      background-image: url(../meet-landing-page/tablet/image-footer.jpg);
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    &__logo {
+      padding-block: 8rem 6.1rem;
+    }
+
+    .hero {
+      gap: 0 8.8rem;
+      grid-template-columns: 1fr 54rem 1fr;
+
+      &__left,
+      &__right {
+        display: block;
+        overflow: visible;
+      }
+
+      &__left {
+        transform: translateX(-3.2rem);
+        place-self: end;
+      }
+
+      &__main {
+        display: none;
+      }
+
+      &__right {
+        transform: translateX(3.2rem);
+      }
+
+      .copywrite {
+        padding-inline: unset;
+        row-gap: 3.2rem;
+
+        &__heading {
+          font-size: 6.4rem;
+          line-height: 6.4rem;
+        }
+
+        &__subheading {
+          margin-top: 0.2rem;
+        }
+      }
+    }
+  }
+
+  .main {
+    margin-top: 11rem;
+    row-gap: 6.4rem;
+    padding-inline: 16.5rem;
+
+    .grid {
+      column-gap: 3rem;
+    }
+
+    .copywrite {
+      margin-top: 1.6rem;
+      padding-inline: 29.5rem;
+
+      &__subheading {
+        margin-top: 1.6rem;
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 18.4rem;
+    padding: 11.6rem 16.5rem 10.4rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 9.2rem;
+    text-align: start;
+
     &__subheading {
-    }
-
-    &__cta {
-    }
-
-    &__version {
+      margin-left: 3.3rem;
     }
 
     &::after {
-      content: "";
-      background-image: url(../meet-landing-page/tablet/image-footer.jpg);
+      background-image: url(../meet-landing-page/desktop/image-footer.jpg);
     }
   }
 }

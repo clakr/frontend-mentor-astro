@@ -2,6 +2,8 @@
 import { Image } from "@astrojs/image/components";
 import Layout from "../../layout/Layout.astro";
 import "./style.scss";
+import heroLeft from "/public/meet-landing-page/desktop/image-hero-left.png";
+import heroRight from "/public/meet-landing-page/desktop/image-hero-right.png";
 import man from "/public/meet-landing-page/desktop/image-man-texting.jpg";
 import men from "/public/meet-landing-page/desktop/image-men-in-meeting.jpg";
 import woman from "/public/meet-landing-page/desktop/image-woman-in-videocall.jpg";
@@ -24,6 +26,7 @@ const projectTitle = "Meet Landing Page";
     />
     <div class="hero">
       <Image class="hero__main" loading={null} alt="" src={heroTablet} />
+      <Image class="hero__left" loading={null} alt="" src={heroLeft} />
       <div class="copywrite">
         <h1 class="copywrite__heading">Group Chat for Everyone</h1>
         <p class="copywrite__subheading">
@@ -38,6 +41,7 @@ const projectTitle = "Meet Landing Page";
           <button class="copywrite__what"> What is it?</button>
         </div>
       </div>
+      <Image class="hero__right" loading={null} alt="" src={heroRight} />
     </div>
   </header>
   <main class="main">
