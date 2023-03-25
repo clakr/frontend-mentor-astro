@@ -1,82 +1,22 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import qrCode from "/public/qr-code/image-qr-code.png";
+import './style.css'
 
 const projectTitle = "QR Code";
 ---
-
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
-
-  :root {
-    --white: hsl(0, 0%, 100%);
-    --lightGray: hsl(211, 45%, 89%);
-    --grayishBlue: hsl(220, 15%, 55%);
-    --darkBlue: hsl(218, 44%, 22%);
-
-    --baseFont: "Outfit", sans-serif;
-
-    font-family: var(--baseFont);
-    background-color: var(--lightGray);
-  }
-
-  main {
-    min-height: 100vh;
-    min-height: 100svh;
-    display: grid;
-    place-items: center;
-
-    padding-inline: 2.7rem;
-  }
-
-  .card {
-    background-color: var(--white);
-    padding: 1.6rem 1.6rem 4rem;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    max-width: 32rem;
-    box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.05);
-  }
-
-  .card__image {
-    border-radius: 1rem;
-    width: 28.8rem;
-    height: 28.8rem;
-  }
-
-  .card__heading {
-    font-weight: 700;
-    font-size: 2.2rem;
-    line-height: 2.77rem;
-    text-align: center;
-    margin-top: 0.8rem;
-    color: var(--darkBlue);
-  }
-
-  .card__subheading {
-    font-size: 1.5em;
-    line-height: 1.9rem;
-    letter-spacing: 0.02rem;
-    text-align: center;
-    color: var(--grayishBlue);
-    padding-inline: 1.6rem;
-  }
-</style>
 
 <Layout title={projectTitle} component>
   <main>
     <Heading title={projectTitle} />
     <div class="card">
       <Image
-        alt="QR Code Image"
+      class="card__image"
+      loading={null}
+      alt="QR Code Image"
         src={qrCode}
-        class="card__image"
-        loading={null}
       />
       <h2 class="card__heading">
         Improve your front-end skills by building projects
@@ -87,5 +27,4 @@ const projectTitle = "QR Code";
       </p>
     </div>
   </main>
-  <Author />
 </Layout>
