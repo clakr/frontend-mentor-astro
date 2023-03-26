@@ -1,6 +1,5 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import "./style.scss";
@@ -8,6 +7,8 @@ import star from "/public/social-proof-section/icon-star.svg";
 import anne from "/public/social-proof-section/image-anne.jpg";
 import colton from "/public/social-proof-section/image-colton.jpg";
 import irene from "/public/social-proof-section/image-irene.jpg";
+
+const projectTitle = "Social Proof Section";
 
 type Rating = {
   description: string;
@@ -57,9 +58,9 @@ const testimonials: Testimonial[] = [
 ];
 ---
 
-<Layout title="Social Proof Section" component>
+<Layout title={projectTitle} component>
   <main>
-    <Heading title="Social Proof Section" />
+    <Heading title={projectTitle} />
     <div class="hero">
       <section class="copywrite">
         <h2 class="copywrite__heading">
@@ -110,5 +111,4 @@ const testimonials: Testimonial[] = [
       }
     </article>
   </main>
-  <Author />
 </Layout>
