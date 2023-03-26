@@ -5,6 +5,10 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    screens: {
+      tablet: "768px",
+      desktop: "1440px",
+    },
     extend: {
       colors: {
         softBlue: "var(--softBlue)",
@@ -53,10 +57,6 @@ module.exports = {
         card: "var(--box-shadow-card)",
         button: "var(--box-shadow-button)",
         input: "var(--box-shadow-input)",
-      },
-      screens: {
-        tablet: "768px",
-        desktop: "1440px",
       },
     },
   },
