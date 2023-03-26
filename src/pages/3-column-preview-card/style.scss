@@ -82,7 +82,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   .card_container {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
