@@ -1,11 +1,13 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
+import "./style.scss";
 import luxury from "/public/3-column-preview-card/icon-luxury.svg";
 import sedan from "/public/3-column-preview-card/icon-sedans.svg";
 import suvs from "/public/3-column-preview-card/icon-suvs.svg";
+
+const projectTitle = "3 Column Preview Card";
 
 type Card = {
   color: string;
@@ -37,109 +39,7 @@ const cards: Card[] = [
       "Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in style.",
   },
 ];
-
-const projectTitle = "3 Column Preview Card";
 ---
-
-<style lang="scss">
-  @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
-
-  :root {
-    /* Primary */
-    --brightOrange: hsl(31, 77%, 52%);
-    --darkCyan: hsl(184, 100%, 22%);
-    --veryDarkCyan: hsl(179, 100%, 13%);
-
-    /* Neutral */
-    --transparentWhite: hsla(0, 0%, 100%, 0.75);
-    --veryLightGray: hsl(0, 0%, 95%);
-
-    --baseFont: "Lexend Deca", sans-serif;
-
-    background-color: var(--veryLightGray);
-  }
-
-  main {
-    min-height: 100vh;
-    min-height: 100svh;
-
-    padding: 8.8rem 2.4rem;
-    display: grid;
-    place-items: center;
-  }
-
-  .card_container {
-    border-radius: 0.8rem;
-    overflow: hidden;
-  }
-
-  .card {
-    --color: unset;
-    padding: 4.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    background-color: var(--color);
-    max-width: 30.7rem;
-
-    &__heading {
-      margin-top: 1rem;
-      font-family: "Big Shoulders Display", cursive;
-      font-weight: 700;
-      font-size: 4rem;
-      line-height: 4.79rem;
-      color: var(--veryLightGray);
-      text-transform: uppercase;
-    }
-
-    &__subheading {
-      font-size: 1.5rem;
-      line-height: 2.5rem;
-      color: var(--transparentWhite);
-    }
-
-    &__cta {
-      font-size: 1.5rem;
-      line-height: 2.5rem;
-      color: var(--color);
-      padding: 1.1rem 3.15rem;
-      width: fit-content;
-      background-color: var(--veryLightGray);
-      border-radius: 2.5rem;
-
-      &:active {
-        outline: 0.2rem solid var(--veryLightGray);
-        background-color: var(--color);
-        color: var(--veryLightGray);
-      }
-    }
-
-    &--brightOrange {
-      --color: var(--brightOrange);
-    }
-
-    &--darkCyan {
-      --color: var(--darkCyan);
-    }
-
-    &--veryDarkCyan {
-      --color: var(--veryDarkCyan);
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    .card_container {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .card {
-      &__cta {
-        margin-top: 5.8rem;
-      }
-    }
-  }
-</style>
 
 <Layout title={projectTitle} component>
   <main>
@@ -159,5 +59,4 @@ const projectTitle = "3 Column Preview Card";
       }
     </div>
   </main>
-  <Author />
 </Layout>
