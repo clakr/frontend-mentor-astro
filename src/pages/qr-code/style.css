@@ -1,58 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
 
-  :root {
-    --white: hsl(0, 0%, 100%);
-    --lightGray: hsl(211, 45%, 89%);
-    --grayishBlue: hsl(220, 15%, 55%);
-    --darkBlue: hsl(218, 44%, 22%);
+:root {
+  --white: hsl(0, 0%, 100%);
+  --lightGray: hsl(211, 45%, 89%);
+  --grayishBlue: hsl(220, 15%, 55%);
+  --darkBlue: hsl(218, 44%, 22%);
 
-    --baseFont: "Outfit", sans-serif;
+  font-family: "Outfit", sans-serif;
+  background-color: var(--lightGray);
+}
 
-    font-family: var(--baseFont);
-    background-color: var(--lightGray);
-  }
+main {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
 
-  main {
-    min-height: 100vh;
-    min-height: 100svh;
-    display: grid;
-    place-items: center;
+  padding-inline: 2.7rem;
+}
 
-    padding-inline: 2.7rem;
-  }
+.card {
+  background-color: var(--white);
+  padding: 1.6rem 1.6rem 4rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  max-width: 32rem;
+  box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.05);
+}
 
-  .card {
-    background-color: var(--white);
-    padding: 1.6rem 1.6rem 4rem;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    max-width: 32rem;
-    box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.05);
-  }
+.card__image {
+  border-radius: 1rem;
+  width: 28.8rem;
+  height: 28.8rem;
+  object-fit: cover;
+}
 
-  .card__image {
-    border-radius: 1rem;
-    width: 28.8rem;
-    height: 28.8rem;
-    object-fit: cover;
-  }
+.card__heading {
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 2.77rem;
+  text-align: center;
+  margin-top: 0.8rem;
+  color: var(--darkBlue);
+}
 
-  .card__heading {
-    font-weight: 700;
-    font-size: 2.2rem;
-    line-height: 2.77rem;
-    text-align: center;
-    margin-top: 0.8rem;
-    color: var(--darkBlue);
-  }
-
-  .card__subheading {
-    font-size: 1.5em;
-    line-height: 1.9rem;
-    letter-spacing: 0.02rem;
-    text-align: center;
-    color: var(--grayishBlue);
-    padding-inline: 1.6rem;
-  }
+.card__subheading {
+  font-size: 1.5em;
+  line-height: 1.9rem;
+  letter-spacing: 0.02rem;
+  text-align: center;
+  color: var(--grayishBlue);
+  padding-inline: 1.6rem;
+}

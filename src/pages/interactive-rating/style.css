@@ -11,9 +11,7 @@
   --darkBlue: hsl(213, 19%, 18%);
   --veryDarkBlue: #121417;
 
-  --baseFont: "Overpass", sans-serif;
-
-  font-family: var(--baseFont);
+  font-family: "Overpass", sans-serif;
   background-color: var(--veryDarkBlue);
 }
 
