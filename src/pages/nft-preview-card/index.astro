@@ -1,6 +1,5 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import clock from "/public/nft-preview-card/icon-clock.svg";
@@ -13,10 +12,6 @@ const projectTitle = "NFT Preview Card";
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
-
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
 
   :root {
     /* Primary */
@@ -37,12 +32,6 @@ const projectTitle = "NFT Preview Card";
 
     font-family: var(--baseFont);
   }
-
-  @layer utilities {
-    .bg-cyan\/50 {
-      background-color: rgb(0 255 248 / 0.5);
-    }
-  }
 </style>
 
 <Layout title={projectTitle} component>
@@ -51,10 +40,10 @@ const projectTitle = "NFT Preview Card";
   >
     <Heading title={projectTitle} />
     <div
-      class="flex max-h-[54.3rem] max-w-[32.7rem] flex-col gap-[1.2rem] rounded-[1.5rem] bg-veryDarkBlueCard p-[2.4rem] shadow-card lg:max-h-[59.6rem] lg:max-w-[35rem] lg:gap-[1.6rem] lg:pb-[3.2rem]"
+      class="flex max-h-[54.3rem] max-w-[32.7rem] flex-col gap-y-[1.2rem] rounded-[1.5rem] bg-veryDarkBlueCard p-[2.4rem] shadow-card lg:max-h-[59.6rem] lg:max-w-[35rem] lg:gap-y-[1.6rem] lg:pb-[3.2rem]"
     >
       <button
-        class="after:bg-cyan/50 relative after:absolute after:inset-0 after:hidden after:h-full after:w-full after:rounded-[.8rem] after:bg-eye after:bg-auto after:bg-center after:bg-no-repeat active:after:block"
+        class="relative after:absolute after:inset-0 after:hidden after:h-full after:w-full after:rounded-[.8rem] after:bg-[rgb(0_255_248_/_0.5)] after:bg-eye after:bg-auto after:bg-center after:bg-no-repeat active:after:block"
         type="button"
       >
         <Image
@@ -75,19 +64,21 @@ const projectTitle = "NFT Preview Card";
         class="mt-[.4rem] flex justify-between border-b border-b-veryDarkBlueLine pb-[1.6rem] text-softBlue lg:mt-[.8rem] lg:pb-[2.4rem]"
       >
         <h1
-          class="flex items-center gap-[.7rem] text-[1.5rem] font-semibold leading-[1.9rem] lg:text-[1.6em] lg:leading-[2.2rem]"
+          class="flex items-center gap-[.7rem] text-[1.5rem] font-semibold leading-[1.89rem] lg:text-[1.6em] lg:leading-[2.02rem]"
         >
           <Image alt="" src={ethereum} width={11} height={18} loading={null} />
           0.041 ETH
         </h1>
         <span
-          class="flex items-center gap-[.7rem] text-[1.5rem] leading-[1.9rem] lg:text-[1.6rem] lg:leading-[2.2rem]"
+          class="flex items-center gap-[.7rem] text-[1.5rem] leading-[1.89rem] lg:text-[1.6rem] lg:leading-[2.02rem]"
         >
           <Image alt="" src={clock} width={16} height={16} loading={null} />
           3 days left
         </span>
       </div>
-      <div class="mt-[.4rem] flex items-center gap-[1.6rem] lg:pb-[.8rem]">
+      <div
+        class="mt-[.4rem] flex items-center gap-x-[1.6rem] lg:mt-0 lg:pb-[.8rem]"
+      >
         <Image
           src={avatar}
           alt="Jules Wyvern's Avatar"
@@ -97,14 +88,14 @@ const projectTitle = "NFT Preview Card";
           class="rounded-full border border-white"
         />
         <h2
-          class="text-[1.5rem] leading-[1.89rem] text-softBlue lg:text-[1.6rem] lg:leading-[2.2rem]"
+          class="text-[1.5rem] leading-[1.89rem] text-softBlue lg:text-[1.6rem] lg:leading-[2.02rem]"
         >
-          Creation of <button class="text-white active:text-cyan" type="button"
-            >Jules Wyvern</button
-          >
+          Creation of
+          <button class="text-white active:text-cyan" type="button">
+            Jules Wyvern
+          </button>
         </h2>
       </div>
     </div>
   </main>
-  <Author dark />
 </Layout>
