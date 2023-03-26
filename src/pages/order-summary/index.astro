@@ -1,6 +1,5 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import icon from "/public/order-summary/icon-music.svg";
@@ -30,10 +29,8 @@ const projectTitle = "Order Summary";
     --box-shadow-card: 0px 40px 40px -20px rgba(13, 48, 189, 0.151826);
     --box-shadow-button: 0px 20px 20px rgba(56, 42, 225, 0.190291);
 
-    --baseFont: "Red Hat Display", sans-serif;
-
     background-color: var(--paleBlue);
-    font-family: var(--baseFont);
+    font-family: "Red Hat Display", sans-serif;
   }
 </style>
 
@@ -43,16 +40,11 @@ const projectTitle = "Order Summary";
   >
     <Heading title={projectTitle} />
     <div
-      class="max-h-[69.7rem] min-w-[32.7rem] max-w-[45rem] overflow-hidden rounded-[2rem] bg-white shadow-card"
+      class="h-[56.7rem] w-[32.7rem] overflow-hidden rounded-[2rem] bg-white shadow-card desktop:h-[69.7rem] desktop:w-[45rem]"
     >
-      <Image
-        loading={null}
-        alt=""
-        src={hero}
-        class="min-h-[16rem] min-w-[32.7rem]"
-      />
+      <Image loading={null} alt="" src={hero} class="w-full" />
       <div
-        class="flex flex-col items-center gap-[1.6rem] py-[3.2rem] px-[2.4rem] desktop:gap-[1.7rem] desktop:p-[4.8rem]"
+        class="flex flex-col items-center gap-y-[1.6rem] py-[3.2rem] px-[2.4rem] desktop:gap-y-[1.7rem] desktop:p-[4.8rem]"
       >
         <h1
           class="text-[2.2rem] font-black leading-[2.91rem] text-darkBlue desktop:text-[2.8rem] desktop:leading-[3.7rem]"
@@ -66,36 +58,40 @@ const projectTitle = "Order Summary";
           any device anywhere you like!
         </p>
         <div
-          class="mt-[.8rem] flex items-center gap-[2rem] bg-[hsl(228_100%_99%)] p-[1.6rem] desktop:px-[2.4rem] desktop:py-[2.5rem]"
+          class="mt-[.8rem] flex items-center gap-x-[2rem] bg-[hsl(228_100%_99%)] p-[1.6rem] desktop:mt-[.3rem] desktop:px-[2.4rem] desktop:py-[2.5rem]"
         >
-          <Image loading={null} alt="" src={icon} />
+          <Image loading={null} alt="" src={icon} width={48} height={48} />
           <div
-            class="flex flex-col justify-center gap-[.3rem] desktop:gap-[.6rem]"
+            class="flex flex-col justify-center gap-y-[.3rem] desktop:gap-y-[.6rem]"
           >
             <strong
               class="text-[1.4rem] font-black leading-[1.85rem] text-darkBlue desktop:text-[1.6rem] desktop:leading-[2.12rem]"
-              >Annual Plan</strong
             >
+              Annual Plan
+            </strong>
             <span
               class="text-[1.4rem] font-medium leading-[1.85rem] text-desaturatedBlue desktop:text-[1.6rem] desktop:leading-[2.12rem]"
-              >$59.99/year</span
             >
+              $59.99/year
+            </span>
           </div>
           <button
-            class="ml-[3rem] text-[1.3rem] font-bold leading-[1.72rem] text-brightBlue underline active:text-[hsl(245_83%_68%)] desktop:ml-[4.8rem] desktop:text-[1.4rem] desktop:leading-[1.85rem]"
-            >Change</button
+            class="ml-[3rem] text-[1.3rem] font-bold leading-[1.72rem] text-brightBlue underline active:text-[hsl(245_83%_68%)] desktop:ml-[7.4rem] desktop:text-[1.4rem] desktop:leading-[1.85rem]"
           >
+            Change
+          </button>
         </div>
         <button
-          class="mt-[.8rem] w-full rounded-[1.1rem] bg-brightBlue p-[1.5rem] text-[1.5rem] font-black leading-[2rem] text-white shadow-button active:bg-[hsl(245_83%_68%)] desktop:mt-[1.5rem]"
-          >Proceed to Payment</button
+          class="mt-[.8rem] w-full rounded-[1.1rem] bg-brightBlue p-[1.5rem] text-[1.5rem] font-black leading-[1.99rem] text-white shadow-button active:bg-[hsl(245_83%_68%)] desktop:mt-[1.5rem]"
         >
+          Proceed to Payment
+        </button>
         <button
-          class="w-full text-[1.5rem] font-black text-desaturatedBlue active:text-darkBlue"
-          >Cancel Order</button
+          class="mt-[.8rem] w-full text-[1.5rem] font-black leading-[1.99rem] text-desaturatedBlue active:text-darkBlue"
         >
+          Cancel Order
+        </button>
       </div>
     </div>
   </main>
-  <Author />
 </Layout>
