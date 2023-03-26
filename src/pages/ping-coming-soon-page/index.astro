@@ -1,6 +1,5 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import dashboard from "/public/ping-coming-soon-page/illustration-dashboard.png";
@@ -25,10 +24,9 @@ const projectTitle = "Ping Coming Soon Page";
     --gray: hsl(0, 0%, 59%);
     --veryDarkBlue: hsl(209, 33%, 12%);
 
-    --box-shadow-input: 0px 5px 10px 2px rgba(76, 123, 243, 0.230414);
+    --box-shadow-input: 0rem 0.5rem 1rem 0.2rem rgba(76, 123, 243, 0.23);
 
-    --baseFont: "Libre Franklin", sans-serif;
-    font-family: var(--baseFont);
+    font-family: "Libre Franklin", sans-serif;
   }
 
   svg {
@@ -38,11 +36,11 @@ const projectTitle = "Ping Coming Soon Page";
 
 <Layout title={projectTitle} component>
   <main
-    class="mx-auto flex max-w-[71.2rem] flex-col gap-[7.2rem] px-[2.8rem] pt-[8.1rem] pb-[3.7rem] desktop:pb-[4.9rem]"
+    class="mx-auto flex max-w-[71.2rem] flex-col gap-y-[4rem] px-[2.8rem] pt-[8.1rem] pb-[3.7rem] desktop:gap-y-[7.2rem] desktop:pb-[4.9rem]"
   >
     <Heading title={projectTitle} />
     <section
-      class="flex flex-col items-center gap-[1.5rem] px-[1rem] desktop:gap-[1.6rem] desktop:px-[0]"
+      class="flex flex-col items-center gap-y-[1.5rem] px-[1rem] desktop:gap-[1.6rem] desktop:px-0"
     >
       <Image
         loading={null}
@@ -61,10 +59,10 @@ const projectTitle = "Ping Coming Soon Page";
         Subscribe and get notified
       </p>
       <div
-        class="mt-[1.7rem] flex w-full flex-col gap-[1rem] px-[1rem] desktop:mt-[2.4rem] desktop:flex-row desktop:gap-[1.6rem]"
+        class="mt-[1.7rem] flex w-full flex-col gap-y-[1rem] px-[1rem] desktop:mt-[2.4rem] desktop:flex-row desktop:gap-[0_1.6rem]"
       >
         <div
-          class="flex flex-col items-center gap-[.2rem] desktop:relative desktop:flex-grow"
+          class="flex flex-col items-center gap-y-[.2rem] desktop:relative desktop:flex-grow"
         >
           <input
             type="email"
@@ -81,15 +79,16 @@ const projectTitle = "Ping Coming Soon Page";
         <button
           type="button"
           class="rounded-[2.8rem] bg-blue p-[1.2rem] text-[1.2rem] font-semibold leading-[1.6rem] text-white shadow-input active:bg-[#4C7BF3]/80 desktop:self-start desktop:px-[6.2rem] desktop:py-[1.9rem] desktop:text-[1.6rem] desktop:leading-[1.94rem]"
-          >Notify Me</button
         >
+          Notify Me
+        </button>
       </div>
     </section>
     <Image loading={null} alt="" src={dashboard} class="desktop:mt-[2.2rem]" />
     <section
-      class="mt-[4.8rem] flex flex-col items-center gap-[2.7rem] desktop:mt-[0]"
+      class="mt-[8rem] flex flex-col items-center gap-y-[2.7rem] desktop:mt-0"
     >
-      <div class="flex gap-[1.2rem]">
+      <div class="flex gap-x-[1.2rem]">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
           <path
             d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
@@ -106,10 +105,9 @@ const projectTitle = "Ping Coming Soon Page";
           ></path>
         </svg>
       </div>
-      <span class="font-light leading-[1.2rem] text-gray"
+      <span class="text-[1.2rem] font-light leading-[1.45rem] text-gray"
         >&copy; Copyright Ping. All rights reserved.</span
       >
     </section>
   </main>
-  <Author />
 </Layout>
