@@ -1,163 +1,13 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
+import "./style.css";
 import illustration from "/public/huddle-landing-page/illustration-mockups.svg";
 import logo from "/public/huddle-landing-page/logo.svg";
 
 const projectTitle = "Huddle Landing Page";
 ---
-
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
-
-  :root {
-    --violet: hsl(257, 40%, 49%);
-    --softMagenta: hsl(300, 69%, 71%);
-    --white: hsl(0, 0%, 100%);
-
-    /* 
-    
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Poppins', sans-serif;
-
-    */
-
-    --baseFont: "Open Sans", sans-serif;
-
-    font-family: var(--baseFont);
-    color: var(--white);
-  }
-
-  body {
-    background-image: url(../huddle-landing-page/bg-mobile.svg);
-    background-repeat: no-repeat;
-    background-color: var(--violet);
-    background-size: cover;
-  }
-
-  .header {
-    padding: 3.82rem 4rem;
-  }
-
-  .header__logo {
-    max-width: 12rem;
-  }
-
-  .main {
-    padding: 3.16rem 3.6rem;
-    display: grid;
-    row-gap: 6rem;
-  }
-
-  .copywrite {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.6rem;
-    text-align: center;
-    padding-inline: 1rem;
-  }
-
-  .copywrite__heading {
-    font-weight: 600;
-    font-size: 2.4rem;
-    line-height: 3.6rem;
-    font-family: "Poppins";
-  }
-
-  .copywrite__subheading {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-  }
-
-  .copywrite__cta {
-    font-family: "Poppins";
-    margin-top: 0.8rem;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-    color: var(--violet);
-    padding: 1.1rem 7.5rem;
-    background-color: var(--white);
-    box-shadow: 0.1rem 0.3rem 0.5rem rgba(0, 0, 0, 0.27);
-    border-radius: 2rem;
-    width: fit-content;
-    align-self: center;
-  }
-
-  .footer {
-    display: flex;
-    column-gap: 1.1rem;
-    justify-content: center;
-    align-items: center;
-    padding-block: 3.24rem 4rem;
-  }
-  .footer__icon {
-    box-sizing: content-box;
-    width: 1.7rem;
-    height: 1.8rem;
-    fill: var(--white);
-    border: 0.1rem solid var(--white);
-    padding: 1rem;
-    border-radius: 50%;
-  }
-
-  @media screen and (min-width: 1440px) {
-    body {
-      background-image: url(../huddle-landing-page/bg-desktop.svg);
-    }
-
-    .header {
-      padding: 6.4rem 8rem;
-    }
-
-    .header__logo {
-      max-width: 20rem;
-    }
-
-    .main {
-      padding: 4rem 8rem 0;
-      grid-template-columns: 69.6rem 1fr;
-      column-gap: 6rem;
-    }
-
-    .copywrite {
-      row-gap: 2.4rem;
-      text-align: start;
-      padding-inline: unset;
-      padding-top: 3.2rem;
-    }
-
-    .copywrite__heading {
-      font-size: 4rem;
-      line-height: 6rem;
-    }
-
-    .copywrite__subheading {
-      font-size: 1.8rem;
-      line-height: 2.7rem;
-    }
-
-    .copywrite__cta {
-      margin-top: unset;
-      font-size: 1.8rem;
-      line-height: 2.7rem;
-      padding: 1.3rem 6.3rem 1.6rem;
-      border-radius: 2.8rem;
-      align-self: flex-start;
-    }
-
-    .copywrite__cta:active {
-      background-color: var(--softMagenta);
-    }
-
-    .footer {
-      padding: 2.7rem 8rem 4rem;
-      column-gap: 1.6rem;
-      justify-content: flex-end;
-    }
-  }
-</style>
 
 <Layout title={projectTitle}>
   <header class="header">
@@ -165,7 +15,7 @@ const projectTitle = "Huddle Landing Page";
   </header>
   <main class="main">
     <Heading title={projectTitle} />
-    <Image loading={null} alt="" src={illustration} />
+    <Image class="main__image" loading={null} alt="" src={illustration} />
     <div class="copywrite">
       <h2 class="copywrite__heading">
         Build The Community Your Fans Will Love
@@ -212,5 +62,4 @@ const projectTitle = "Huddle Landing Page";
       </path>
     </svg>
   </footer>
-  <Author dark />
 </Layout>
