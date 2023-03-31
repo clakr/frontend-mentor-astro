@@ -284,6 +284,7 @@ main {
 
   .card__body {
     text-align: start;
+    justify-self: start;
   }
 
   .founder {
