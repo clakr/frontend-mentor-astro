@@ -13,11 +13,8 @@
   --grayishBlue: hsl(246, 25%, 77%);
   --white: hsl(0, 0%, 100%);
 
-  --baseFont: "Poppins", sans-serif;
-  --baseColor: var(--white);
-
-  font-family: var(--baseFont);
-  color: var(--baseColor);
+  font-family: "Poppins", sans-serif;
+  color: var(--white);
 }
 
 body {
@@ -31,6 +28,8 @@ main {
   padding: 8.8rem 2.4rem 6.8rem;
   display: grid;
   row-gap: 6.4rem;
+  max-width: 76.8rem;
+  margin-inline: auto;
 }
 
 .copywrite {
@@ -38,6 +37,7 @@ main {
   flex-direction: column;
   row-gap: 1.6rem;
   text-align: center;
+  justify-content: end;
 
   &__heading {
     font-weight: 700;
@@ -193,6 +193,7 @@ main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: unset;
     column-gap: 4.5rem;
+    max-width: unset;
   }
 
   .copywrite {
