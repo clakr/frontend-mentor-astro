@@ -27,9 +27,7 @@
   --lightLavender: hsl(241, 100%, 89%);
   --darkGrayBlue: hsl(224, 30%, 27%);
 
-  --baseFont: "Hanken Grotesk";
-
-  font-family: var(--baseFont);
+  font-family: "Hanken Grotesk", sans-serif;
   background-color: var(--paleBlue);
 }
 
