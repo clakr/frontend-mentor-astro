@@ -1,6 +1,5 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import pattern2 from "/public/equalizer-landing-page/bg-pattern-2.svg";
@@ -22,11 +21,8 @@ const projectTitle = "Equalizer Landing Page";
     --seashell: #fcfaf9;
     --blackRussian: #191826;
 
-    --baseFont: "IBM Plex Sans", sans-serif;
-    --baseColor: var(--blackRussian);
-
-    font-family: var(--baseFont);
-    color: var(--baseColor);
+    font-family: "IBM Plex Sans", sans-serif;
+    color: var(--blackRussian);
   }
 
   body {
@@ -172,5 +168,4 @@ const projectTitle = "Equalizer Landing Page";
       </svg>
     </div>
   </footer>
-  <Author />
 </Layout>
