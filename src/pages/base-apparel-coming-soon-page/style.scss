@@ -20,9 +20,7 @@
     hsl(0, 74%, 74%) 100%
   );
 
-  --baseFont: "Josefin Sans", sans-serif;
-
-  font-family: var(--baseFont);
+  font-family: "Josefin Sans", sans-serif;
 }
 
 main {
@@ -41,7 +39,8 @@ main {
 
 .hero {
   display: block;
-  height: 25rem;
+  max-height: 25rem;
+  object-fit: contain;
 }
 
 .copywrite {
@@ -149,7 +148,8 @@ main {
     grid-template-rows: 18.3rem 1fr;
     background-image: url(../base-apparel-coming-soon-page/bg-pattern-desktop.svg);
     background-repeat: no-repeat;
-    background-size: 1fr 90rem;
+    background-size: cover;
+    background-position: top left;
   }
 
   .logo {
@@ -162,9 +162,9 @@ main {
 
   .hero {
     grid-row: span 2 / span 2;
-    height: unset;
+    max-height: unset;
 
-    & > img {
+    &__image {
       height: 100%;
       object-fit: cover;
     }

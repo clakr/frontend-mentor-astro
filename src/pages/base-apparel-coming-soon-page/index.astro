@@ -1,6 +1,5 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Author from "../../components/Author.astro";
 import Heading from "../../components/Heading.astro";
 import Layout from "../../layout/Layout.astro";
 import "./style.scss";
@@ -9,6 +8,10 @@ import error from "/public/base-apparel-coming-soon-page/icon-error.svg";
 import logo from "/public/base-apparel-coming-soon-page/logo.svg";
 
 const projectTitle = "Base Apparel Coming Soon Page";
+
+/**
+ * Scheduled for rewrite
+ */
 ---
 
 <Layout title={projectTitle}>
@@ -25,7 +28,7 @@ const projectTitle = "Base Apparel Coming Soon Page";
       <img
         src="/base-apparel-coming-soon-page/hero-mobile.jpg"
         alt=""
-        class="card__image"
+        class="hero__image"
       />
     </picture>
     <section class="copywrite">
@@ -62,5 +65,4 @@ const projectTitle = "Base Apparel Coming Soon Page";
       </form>
     </section>
   </main>
-  <Author />
 </Layout>
