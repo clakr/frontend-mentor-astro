@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo:wght@100;400;700&display=swap");
+
+:root {
+  --mediumAquamarine: #54e6af;
+  --bunting: #2c344b;
+  --blackRussian: #121725;
+  --white: #ffffff;
+  --waikawaGrey: #5a668a;
+  --periwinkle: #c2cbe5;
+
+  font-family: "Chivo";
+  font-weight: 100;
+  background-color: var(--blackRussian);
+  background-image: url(../pod-request-access-landing-page/mobile/image-host.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+}
+
+main {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 6.2rem 2rem 5rem;
+}
+
+.logo {
+  margin-inline: auto;
+}
+
+.content {
+  margin-top: 5.7rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.3rem;
+}
+
+.copywrite {
+  text-align: center;
+}
+
+.copywrite__heading {
+  font-size: 2.7rem;
+  line-height: 3.8rem;
+  color: var(--mediumAquamarine);
+  text-transform: uppercase;
+}
+
+.copywrite__heading--emphasize {
+  font-size: 2.6rem;
+  color: var(--white);
+}
+
+.copywrite__subheading {
+  margin-top: 1.6rem;
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: var(--periwinkle);
+  padding-inline: 0.4rem;
+}
+
+.logos {
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo--spotify {
+  width: 5.6rem;
+  height: 1.7rem;
+  margin-right: 2.3rem;
+}
+
+.logo--apple {
+  width: 4.5rem;
+  height: 1.7rem;
+  margin-right: 2.5rem;
+}
+
+.logo--google {
+  width: 7.3rem;
+  height: 1.1rem;
+  margin-right: 1.6rem;
+}
+
+.logo--pocket {
+  width: 7.7rem;
+  height: 1.5rem;
+}
+
+.form {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+}
+
+.form__email {
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  color: var(--white);
+  padding: 0.9rem 3.2rem;
+  background-color: var(--bunting);
+  border-radius: 2.8rem;
+  font-weight: 400;
+}
+
+.form__email:invalid + .form__invalid {
+  display: block;
+}
+
+.form__invalid {
+  font-size: 1.2rem;
+  line-height: 1.43rem;
+  color: #fb3e3e;
+  font-weight: 400;
+  padding-left: 3.2rem;
+  display: none;
+}
+
+.form__cta {
+  margin-top: 0.8rem;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2.8rem;
+  text-align: center;
+  color: var(--blackRussian);
+  padding: 0.9rem;
+  background-color: var(--mediumAquamarine);
+  border-radius: 2.8rem;
+  box-shadow: 0px 25px 20px -20px rgba(84, 230, 175, 0.5);
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    background-image: url("../pod-request-access-landing-page/tablet/image-host.jpg"),
+      url("../pod-request-access-landing-page/desktop/bg-pattern-dots.svg");
+    background-size: 49.1rem 76.7rem, auto;
+    background-position: top right, bottom left 3rem;
+    background-blend-mode: unset;
+  }
+
+  main {
+    padding: 5rem 9.4rem 25.7rem 3.9rem;
+  }
+
+  .logo {
+    margin-inline: unset;
+  }
+
+  .content {
+    margin-top: 15.2rem;
+    padding-top: 9.3rem;
+    row-gap: 4rem;
+    background-color: var(--blackRussian);
+  }
+
+  .copywrite {
+    text-align: unset;
+  }
+
+  .copywrite__heading {
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+  }
+
+  .copywrite__heading--emphasize {
+    font-size: inherit;
+  }
+
+  .copywrite__subheading {
+    margin-top: 3.1rem;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    max-width: 44.5rem;
+  }
+
+  .logos {
+    order: 2;
+    margin-top: 2.5rem;
+  }
+
+  .logo--spotify {
+    width: 9.6rem;
+    height: 2.9rem;
+    margin-right: 4rem;
+  }
+
+  .logo--apple {
+    width: 7.8rem;
+    height: 2.9rem;
+    margin-right: 4.1rem;
+  }
+
+  .logo--google {
+    width: 12.5rem;
+    height: 1.8rem;
+    margin-right: 2.7rem;
+  }
+
+  .logo--pocket {
+    width: 12.9rem;
+    height: 2.6rem;
+  }
+
+  .form {
+    margin-top: unset;
+    max-width: 42.7rem;
+    position: relative;
+    row-gap: unset;
+  }
+
+  .form__email {
+    padding: 1.4rem 3.2rem;
+  }
+
+  .form__invalid {
+    position: absolute;
+    top: calc(100% + 0.8rem);
+    left: 0;
+  }
+
+  .form__cta {
+    position: absolute;
+    right: 0.5rem;
+    top: -0.25rem;
+
+    padding-inline: 2.7rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  :root {
+    background-image: url("../pod-request-access-landing-page/desktop/bg-pattern-dots.svg"),
+      url("../pod-request-access-landing-page/desktop/image-host.jpg");
+    background-size: auto, 88.8rem 64rem;
+    background-position: bottom 7.8rem right, center right;
+    background-blend-mode: unset;
+  }
+
+  main {
+    padding: 10.2rem 16.5rem 13rem;
+  }
+
+  .content {
+    margin-top: 10.3rem;
+    padding-top: 8.8rem;
+    max-width: 72.3rem;
+  }
+
+  .copywrite__heading {
+    font-size: 5.2rem;
+    line-height: 6.2rem;
+  }
+
+  .copywrite__subheading {
+    margin-top: 2.4rem;
+  }
+
+  .logos {
+    margin-top: 2.4rem;
+  }
+}

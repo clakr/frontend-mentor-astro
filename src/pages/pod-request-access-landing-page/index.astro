@@ -1,0 +1,71 @@
+---
+import { Image } from "@astrojs/image/components";
+import Heading from "../../components/Heading.astro";
+import Layout from "../../layout/Layout.astro";
+import "./style.css";
+import logo from "/public/pod-request-access-landing-page/desktop/logo.svg";
+import spotify from "/public/pod-request-access-landing-page/desktop/spotify.svg";
+import apple from "/public/pod-request-access-landing-page/desktop/apple-podcast.svg";
+import google from "/public/pod-request-access-landing-page/desktop/google-podcasts.svg";
+import pocket from "/public/pod-request-access-landing-page/desktop/pocket-casts.svg";
+
+const projectTitle = "Pod Request Access Landing Page";
+---
+
+<Layout title={projectTitle} component>
+  <main>
+    <Heading title={projectTitle} />
+    <Image
+      loading={null}
+      alt="Logo"
+      src={logo}
+      width={134.85}
+      height={56}
+      class="logo"
+    />
+    <div class="content">
+      <div class="copywrite">
+        <h2 class="copywrite__heading">
+          Publish your podcasts
+          <span class="copywrite__heading--emphasize">everywhere.</span>
+        </h2>
+        <p class="copywrite__subheading">
+          Upload your audio to Pod with a single click. We’ll then distribute
+          your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket Casts
+          and more!
+        </p>
+      </div>
+      <div class="logos">
+        <Image
+          loading={null}
+          alt="Spotify Logo"
+          src={spotify}
+          class="logo--spotify"
+        />
+        <Image
+          loading={null}
+          alt="Apple Podcast Logo"
+          src={apple}
+          class="logo--apple"
+        />
+        <Image
+          loading={null}
+          alt="Google Podcasts Logo"
+          src={google}
+          class="logo--google"
+        />
+        <Image
+          loading={null}
+          alt="Pocket Casts Logo"
+          src={pocket}
+          class="logo--pocket"
+        />
+      </div>
+      <form class="form" action="">
+        <input type="email" class="form__email" placeholder="Email address" />
+        <span class="form__invalid">Oops! Please check your email</span>
+        <button class="form__cta">Request Access</button>
+      </form>
+    </div>
+  </main>
+</Layout>
