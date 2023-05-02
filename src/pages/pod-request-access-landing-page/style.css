@@ -173,11 +173,15 @@ main {
     font-size: 1.8rem;
     line-height: 2.8rem;
     max-width: 44.5rem;
+    padding-inline: unset;
+    
   }
 
   .logos {
     order: 2;
     margin-top: 2.5rem;
+  padding-inline: unset;
+    
   }
 
   .logo--spotify {
